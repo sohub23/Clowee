@@ -18,7 +18,7 @@ const ClarificationSection = () => (
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-          Partnership Model — <span className="text-primary">Not Machine Sales</span>
+          <span className="text-primary">Partnership Model</span>
         </h2>
         <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
           Clowee does not sell claw machines. We invest, install, maintain, and operate the machines ourselves.
