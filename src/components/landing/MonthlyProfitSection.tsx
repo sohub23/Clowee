@@ -21,7 +21,7 @@ const MonthlyProfitSection = () => (
         </h2>
       </motion.div>
 
-      <div className="space-y-6">
+      <div className="grid lg:grid-cols-2 gap-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
