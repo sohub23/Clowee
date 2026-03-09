@@ -25,7 +25,7 @@ const HeroSection = () => {
             <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
               Clowee by i3 Technologies installs and fully manages smart claw machines in restaurants under a 50% profit-sharing partnership model.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 mb-6">
               <Button variant="hero" size="xl" onClick={() => scrollTo("apply")}>
                 Become a Partner
               </Button>
@@ -33,6 +33,9 @@ const HeroSection = () => {
                 Calculate Your Earnings
               </Button>
             </div>
+            <p className="text-sm font-semibold text-muted-foreground">
+              ⚠️ We operate only through partnership.
+            </p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
