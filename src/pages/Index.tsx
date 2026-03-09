@@ -7,6 +7,7 @@ import InvestmentSection from "@/components/landing/InvestmentSection";
 import EarningsSection from "@/components/landing/EarningsSection";
 import BenefitsSection from "@/components/landing/BenefitsSection";
 import MonthlyProfitSection from "@/components/landing/MonthlyProfitSection";
+import MachineSpecsSection from "@/components/landing/MachineSpecsSection";
 import PartnersSection from "@/components/landing/PartnersSection";
 import HowItWorksSection from "@/components/landing/HowItWorksSection";
 import FAQSection from "@/components/landing/FAQSection";
@@ -25,6 +26,7 @@ const Index = () => {
       <EarningsSection />
       <BenefitsSection />
       <MonthlyProfitSection />
+      <MachineSpecsSection />
       <PartnersSection />
       <HowItWorksSection />
       <FAQSection />
