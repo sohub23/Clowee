@@ -212,8 +212,8 @@ const PartnersSection = () => {
                   </div>
                 </div>
               </div>
-              <div className="p-4 bg-primary/10">
-                <h4 className="font-semibold text-foreground">{video.title}</h4>
+              <div className="p-4 bg-primary">
+                <h4 className="font-semibold text-white">{video.title}</h4>
               </div>
             </motion.div>
           ))}
