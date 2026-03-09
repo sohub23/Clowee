@@ -41,7 +41,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative max-w-sm mx-auto"
+            className="relative max-w-xs mx-auto"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img src={heroImage} alt="Clowee smart claw machine in a restaurant" className="w-full h-auto" />
