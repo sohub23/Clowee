@@ -37,10 +37,9 @@ const Footer = () => (
 
         {/* Contact */}
         <div>
-          <h3 className="font-heading font-bold text-white mb-4">Contact</h3>
+          <h3 className="font-heading font-bold text-white mb-4">Contact Us</h3>
           <ul className="space-y-2 text-sm">
             <li><a href="tel:+8801325886868" className="text-white/90 hover:text-white transition-colors">01325886868</a></li>
-            <li><a href="tel:+8801325886868" className="text-white/90 hover:text-white transition-colors">Contact Us</a></li>
           </ul>
         </div>
       </div>
