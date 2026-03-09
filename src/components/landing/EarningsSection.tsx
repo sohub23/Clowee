@@ -43,7 +43,7 @@ const EarningsSection = () => (
           <div className="overflow-x-auto">
             <table className="w-full border-collapse table-fixed">
               <thead>
-                <tr className="border-b-2 border-border">
+                <tr className="bg-primary/10">
                   <th className="text-left py-2 px-2 font-semibold text-foreground text-xs md:text-sm w-[35%]">Income Step</th>
                   <th className="text-left py-2 px-2 font-semibold text-foreground text-xs md:text-sm hidden md:table-cell w-[40%]">Explanation</th>
                   <th className="text-right py-2 px-2 font-semibold text-foreground text-xs md:text-sm w-[25%]">Amount (BDT)</th>
@@ -81,7 +81,7 @@ const EarningsSection = () => (
           <div className="overflow-x-auto">
             <table className="w-full border-collapse table-fixed">
               <thead>
-                <tr className="border-b-2 border-border">
+                <tr className="bg-primary/10">
                   <th className="text-left py-2 px-2 font-semibold text-foreground text-xs md:text-sm w-[35%]">Income Step</th>
                   <th className="text-left py-2 px-2 font-semibold text-foreground text-xs md:text-sm hidden md:table-cell w-[40%]">Explanation</th>
                   <th className="text-right py-2 px-2 font-semibold text-foreground text-xs md:text-sm w-[25%]">Amount (BDT)</th>
