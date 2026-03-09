@@ -70,12 +70,12 @@ const CTASection = () => {
           >
             <h3 className="font-heading font-bold text-lg text-foreground mb-2">Apply for Partnership</h3>
             <div>
-              <Label htmlFor="restaurant/BusbusinessName" className="text-foreground">Restaurant/Busbusiness Name *</Label>
-              <Input id="restaurantName" value={form.restaurant/BusbusinessName} onChange={(e) => update("restaurant/BusbusinessName", e.target.value)} maxLength={100} />
+              <Label htmlFor="restaurantName" className="text-foreground">Restaurant/Business Name *</Label>
+              <Input id="restaurantName" value={form.restaurantName} onChange={(e) => update("restaurantName", e.target.value)} maxLength={100} />
             </div>
             <div>
-              <Label htmlFor="Email" className="text-foreground">Email *</Label>
-              <Input id="ownerName" value={form.Email} onChange={(e) => update("Email", e.target.value)} maxLength={100} />
+              <Label htmlFor="ownerName" className="text-foreground">Owner Name *</Label>
+              <Input id="ownerName" value={form.ownerName} onChange={(e) => update("ownerName", e.target.value)} maxLength={100} />
             </div>
             <div>
               <Label htmlFor="location" className="text-foreground">Location *</Label>
