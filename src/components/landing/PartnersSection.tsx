@@ -192,7 +192,7 @@ const PartnersSection = () => {
           {videos.map((video, index) => (
             <motion.div
               key={video.title}
-              className="rounded-xl overflow-hidden border-2 border-primary bg-card shadow-lg cursor-pointer group"
+              className="rounded-xl overflow-hidden bg-primary shadow-lg cursor-pointer group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -212,7 +212,7 @@ const PartnersSection = () => {
                   </div>
                 </div>
               </div>
-              <div className="p-4 bg-primary">
+              <div className="p-4">
                 <h4 className="font-semibold text-white">{video.title}</h4>
               </div>
             </motion.div>
