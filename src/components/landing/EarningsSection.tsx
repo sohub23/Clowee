@@ -9,7 +9,7 @@ const weeklyData = [
 
 const monthlyData = [
   { step: "Monthly Revenue (30 Days)", explanation: "৳3,000 × 30 days", amount: "≈ ৳90,000 per month" },
-  { step: "Estimated Net Profit", explanation: "Profit after basic operating costs", amount: "৳45,000 – ৳50,000" },
+  { step: "Estimated Net Profit", explanation:"Profit after basic operating costs", amount: "৳45,000 – ৳50,000" },
   { step: "Partner Profit Share (50%)", explanation: "Partner receives 50% of the net profit", amount: "৳22,000 – ৳25,000 per month" },
   { step: "", explanation: "", amount: "" },
 ];
@@ -36,7 +36,7 @@ const EarningsSection = () => (
           viewport={{ once: true }}
           className="bg-card rounded-2xl border border-border p-4 md:p-5 h-full"
         >
-          <h3 className="text-lg md:text-xl font-heading font-bold text-foreground mb-4">
+          <h3 className="text-lg md:text-xl font-heading font-bold text-primary mb-4">
             Weekly Earnings
           </h3>
           
@@ -74,7 +74,7 @@ const EarningsSection = () => (
           viewport={{ once: true }}
           className="bg-card rounded-2xl border border-border p-4 md:p-5 h-full"
         >
-          <h3 className="text-lg md:text-xl font-heading font-bold text-foreground mb-4">
+          <h3 className="text-lg md:text-xl font-heading font-bold text-primary mb-4">
             Monthly Earnings
           </h3>
           
