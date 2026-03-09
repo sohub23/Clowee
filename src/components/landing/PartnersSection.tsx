@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Play, MapPin } from "lucide-react";
+import { Play, MapPin, X } from "lucide-react";
 import { useState } from "react";
 import chnImg from "@/assets/chn.jpg";
 import pbgulsanImg from "@/assets/pbgulsan.jpg";
@@ -96,13 +96,33 @@ const videos = [
 ];
 
 const PartnersSection = () => {
-  const [playingVideo, setPlayingVideo] = useState<string | null>(null);
-
-  const toggleVideo = (videoId: string) => {
-    setPlayingVideo(playingVideo === videoId ? null : videoId);
-  };
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   return (
+    <>
+      {/* Video Modal */}
+      {selectedVideo && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+          onClick={() => setSelectedVideo(null)}
+        >
+          <div className="relative w-full max-w-4xl aspect-video" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={() => setSelectedVideo(null)}
+              className="absolute -top-10 right-0 text-white hover:text-primary transition-colors"
+            >
+              <X className="w-8 h-8" />
+            </button>
+            <iframe
+              src={selectedVideo + "?autoplay=1"}
+              className="w-full h-full rounded-lg"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
+
     <section className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
@@ -172,40 +192,26 @@ const PartnersSection = () => {
           {videos.map((video, index) => (
             <motion.div
               key={video.title}
-              className="rounded-xl overflow-hidden border border-border bg-card shadow-sm"
+              className="rounded-xl overflow-hidden border border-border bg-card shadow-sm cursor-pointer group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.15 }}
+              onClick={() => setSelectedVideo(video.videoUrl)}
             >
-              {playingVideo === video.videoUrl ? (
-                <div className="aspect-video">
-                  <iframe
-                    src={video.videoUrl + "?autoplay=1"}
-                    title={video.title}
-                    className="w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              ) : (
-                <div 
-                  className="aspect-video relative overflow-hidden cursor-pointer group"
-                  onClick={() => toggleVideo(video.videoUrl)}
-                >
-                  <img
-                    src={video.thumbnail}
-                    alt={video.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-foreground/20 flex items-center justify-center group-hover:bg-foreground/30 transition-colors">
-                    <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg">
-                      <Play className="w-6 h-6 text-primary-foreground ml-1" />
-                    </div>
+              <div className="aspect-video relative overflow-hidden">
+                <img
+                  src={video.thumbnail}
+                  alt={video.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-foreground/20 flex items-center justify-center group-hover:bg-foreground/30 transition-colors">
+                  <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg">
+                    <Play className="w-6 h-6 text-primary-foreground ml-1" />
                   </div>
                 </div>
-              )}
+              </div>
               <div className="p-4">
                 <h4 className="font-semibold text-foreground">{video.title}</h4>
               </div>
@@ -214,6 +220,7 @@ const PartnersSection = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
