@@ -41,23 +41,23 @@ const EarningsSection = () => (
           </h3>
           
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
+            <table className="w-full border-collapse table-fixed">
               <thead>
                 <tr className="border-b-2 border-border">
-                  <th className="text-left py-2 px-2 font-semibold text-foreground text-xs md:text-sm">Income Step</th>
-                  <th className="text-left py-2 px-2 font-semibold text-foreground text-xs md:text-sm hidden md:table-cell">Explanation</th>
-                  <th className="text-right py-2 px-2 font-semibold text-foreground text-xs md:text-sm">Amount (BDT)</th>
+                  <th className="text-left py-2 px-2 font-semibold text-foreground text-xs md:text-sm w-[35%]">Income Step</th>
+                  <th className="text-left py-2 px-2 font-semibold text-foreground text-xs md:text-sm hidden md:table-cell w-[40%]">Explanation</th>
+                  <th className="text-right py-2 px-2 font-semibold text-foreground text-xs md:text-sm w-[25%]">Amount (BDT)</th>
                 </tr>
               </thead>
               <tbody>
                 {weeklyData.map((row) => (
                   <tr key={row.step} className="border-b border-border/50">
-                    <td className="py-3 px-2 text-foreground">
+                    <td className="py-2 px-2 text-foreground">
                       <div className="font-medium text-xs md:text-sm">{row.step}</div>
                       <div className="text-xs text-muted-foreground md:hidden mt-1">{row.explanation}</div>
                     </td>
-                    <td className="py-3 px-2 text-xs text-muted-foreground hidden md:table-cell">{row.explanation}</td>
-                    <td className="py-3 px-2 text-right text-xs md:text-sm font-bold text-foreground">
+                    <td className="py-2 px-2 text-xs text-muted-foreground hidden md:table-cell">{row.explanation}</td>
+                    <td className="py-2 px-2 text-right text-xs md:text-sm font-bold text-foreground">
                       {row.amount}
                     </td>
                   </tr>
@@ -79,23 +79,23 @@ const EarningsSection = () => (
           </h3>
           
           <div className="overflow-x-auto">
-            <table className="w-full border-collapse">
+            <table className="w-full border-collapse table-fixed">
               <thead>
                 <tr className="border-b-2 border-border">
-                  <th className="text-left py-2 px-2 font-semibold text-foreground text-xs md:text-sm">Income Step</th>
-                  <th className="text-left py-2 px-2 font-semibold text-foreground text-xs md:text-sm hidden md:table-cell">Explanation</th>
-                  <th className="text-right py-2 px-2 font-semibold text-foreground text-xs md:text-sm">Amount (BDT)</th>
+                  <th className="text-left py-2 px-2 font-semibold text-foreground text-xs md:text-sm w-[35%]">Income Step</th>
+                  <th className="text-left py-2 px-2 font-semibold text-foreground text-xs md:text-sm hidden md:table-cell w-[40%]">Explanation</th>
+                  <th className="text-right py-2 px-2 font-semibold text-foreground text-xs md:text-sm w-[25%]">Amount (BDT)</th>
                 </tr>
               </thead>
               <tbody>
                 {monthlyData.map((row, idx) => (
                   <tr key={idx} className="border-b border-border/50">
-                    <td className="py-3 px-2 text-foreground">
+                    <td className="py-2 px-2 text-foreground">
                       <div className="font-medium text-xs md:text-sm">{row.step}</div>
                       <div className="text-xs text-muted-foreground md:hidden mt-1">{row.explanation}</div>
                     </td>
-                    <td className="py-3 px-2 text-xs text-muted-foreground hidden md:table-cell">{row.explanation}</td>
-                    <td className="py-3 px-2 text-right text-xs md:text-sm font-bold text-foreground">
+                    <td className="py-2 px-2 text-xs text-muted-foreground hidden md:table-cell">{row.explanation}</td>
+                    <td className="py-2 px-2 text-right text-xs md:text-sm font-bold text-foreground">
                       {row.amount}
                     </td>
                   </tr>
