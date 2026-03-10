@@ -11,25 +11,6 @@ const Footer = () => (
             <span className="font-heading font-bold text-white text-lg">Clowee</span>
           </div>
           <p className="text-sm mb-4 text-white/90">Smart claw machine partnership for restaurants in Bangladesh.</p>
-          <a href="mailto:hello@sohub.com.bd" className="text-sm text-white/90 hover:text-white transition-colors">
-            hello@sohub.com.bd
-          </a>
-          
-          {/* Social Links */}
-          <div className="flex gap-3 mt-4">
-            <a href="https://i3technologies.com.bd" target="_blank" rel="noopener noreferrer" 
-               className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
-              <Globe className="w-4 h-4 text-white" />
-            </a>
-            <a href="https://youtube.com/@i3technologies" target="_blank" rel="noopener noreferrer" 
-               className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
-              <Youtube className="w-4 h-4 text-white" />
-            </a>
-            <a href="https://facebook.com/i3technologiesbd" target="_blank" rel="noopener noreferrer" 
-               className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
-              <Facebook className="w-4 h-4 text-white" />
-            </a>
-          </div>
         </div>
 
         {/* Quick Links */}
@@ -55,9 +36,34 @@ const Footer = () => (
 
         {/* Contact */}
         <div>
-          <h3 className="font-heading font-bold text-white mb-4">Contact Us</h3>
-          <ul className="space-y-2 text-sm">
-            <li><a href="tel:+8801325886868" className="text-white/90 hover:text-white transition-colors">01325886868</a></li>
+          <h3 className="font-heading font-bold text-white mb-4">Follow Us</h3>
+          <div className="mb-4">
+            <a href="mailto:support@i3technologies.com.bd" className="text-white/90 hover:text-white transition-colors text-sm">
+              support@i3technologies.com.bd
+            </a>
+          </div>
+          <ul className="space-y-3 text-sm">
+            <li>
+              <a href="https://www.youtube.com/@i3technologies" target="_blank" rel="noopener noreferrer" 
+                 className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                <Youtube className="w-4 h-4" />
+                <span>YouTube</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/i3technologiesbd" target="_blank" rel="noopener noreferrer" 
+                 className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                <Facebook className="w-4 h-4" />
+                <span>Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://i3technologies.com.bd/" target="_blank" rel="noopener noreferrer" 
+                 className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                <Globe className="w-4 h-4" />
+                <span>Website</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>

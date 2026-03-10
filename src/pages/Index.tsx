@@ -10,6 +10,7 @@ import MonthlyProfitSection from "@/components/landing/MonthlyProfitSection";
 import MachineSpecsSection from "@/components/landing/MachineSpecsSection";
 import PartnersSection from "@/components/landing/PartnersSection";
 import HowItWorksSection from "@/components/landing/HowItWorksSection";
+import VideoShowcaseSection from "@/components/landing/VideoShowcaseSection";
 import FAQSection from "@/components/landing/FAQSection";
 import CTASection from "@/components/landing/CTASection";
 import Footer from "@/components/landing/Footer";
@@ -27,7 +28,8 @@ const Index = () => {
       <ProfitEstimationSection />
       <BenefitsSection />
       <MonthlyProfitSection />
-      <PartnersSection />
+      {/* <PartnersSection /> */}
+      <VideoShowcaseSection />
       <HowItWorksSection />
       <FAQSection />
       <CTASection />

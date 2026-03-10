@@ -15,15 +15,6 @@ interface YouTubeVideo {
 // Static video data with the provided YouTube URLs
 const staticVideos = [
   {
-    id: { videoId: "iorKosbaUPs" },
-    snippet: {
-      title: "Clowee Machine Demo - Restaurant Setup",
-      description: "See how Clowee claw machine works in restaurant environment",
-      publishedAt: "2024-01-01",
-      thumbnails: { medium: { url: `https://img.youtube.com/vi/iorKosbaUPs/hqdefault.jpg` } }
-    }
-  },
-  {
     id: { videoId: "aOnyKBfwKrE" },
     snippet: {
       title: "Clowee Customer Success Story",
@@ -40,10 +31,19 @@ const staticVideos = [
       publishedAt: "2024-01-03",
       thumbnails: { medium: { url: `https://img.youtube.com/vi/3V-3oOpi5Hc/hqdefault.jpg` } }
     }
+  },
+  {
+    id: { videoId: "iorKosbaUPs" },
+    snippet: {
+      title: "Clowee Machine in Action - Chillox",
+      description: "Watch Clowee claw machine in action at Chillox restaurant",
+      publishedAt: "2024-01-04",
+      thumbnails: { medium: { url: `https://img.youtube.com/vi/iorKosbaUPs/hqdefault.jpg` } }
+    }
   }
 ];
 
-const filters = ["All", "Product Demo", "Customer Stories", "How It Works"];
+const filters = [];
 
 // Decode HTML entities from YouTube API titles
 const decodeHtml = (html: string): string => {
@@ -155,25 +155,29 @@ const VideoShowcaseSection = () => {
         </div>
 
         {/* Filters */}
-        <div className="flex items-center justify-center gap-2 mb-10 flex-wrap">
-          {filters.map(f => (
-            <button
-              key={f}
-              onClick={() => { setActive(f); setExpanded(false); }}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${active === f
-                ? "bg-[#E291BE] text-white shadow-lg"
-                : "bg-card text-foreground hover:bg-secondary shadow-sm"
-                }`}
-            >
-              {f}
-            </button>
-          ))}
-        </div>
+        {filters.length > 0 && (
+          <div className="flex items-center justify-center gap-2 mb-10 flex-wrap">
+            {filters.map(f => (
+              <button
+                key={f}
+                onClick={() => { setActive(f); setExpanded(false); }}
+                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${active === f
+                  ? "bg-[#E291BE] text-white shadow-lg"
+                  : "bg-card text-foreground hover:bg-secondary shadow-sm"
+                  }`}
+              >
+                {f}
+              </button>
+            ))}
+          </div>
+        )}
 
         {/* Video Grid */}
         <div className="space-y-6">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {visibleItems.map((video, i) => renderVideoCard(video, i))}
+          <div className="flex justify-center">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl">
+              {visibleItems.map((video, i) => renderVideoCard(video, i))}
+            </div>
           </div>
           {hasMore && !expanded && (
             <div className="text-center">

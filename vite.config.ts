@@ -6,13 +6,9 @@ import path from "path";
 export default defineConfig(({ mode }) => ({
   server: {
     host: "0.0.0.0",
-    port: 5173,
-    strictPort: true,
-    hmr: {
-      host: "192.168.0.167",
-      port: 5173,
-      overlay: false,
-    },
+    port: 3002,
+    strictPort: false,
+    hmr: false,
     watch: {
       usePolling: false,
       interval: 3000,

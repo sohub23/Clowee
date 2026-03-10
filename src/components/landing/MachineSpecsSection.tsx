@@ -3,9 +3,12 @@ import { Package, Zap, Ruler, ArrowUpDown, ArrowLeftRight, Layers } from "lucide
 import machineImage from "@/assets/sohub-clowee-DUY35_tt.png";
 
 const specs = [
-  { icon: Package, label: "Machine Load Capacity", value: "50 kg" },
-  { icon: Zap, label: "Machine Power Requirement", value: "220V AC" },
-  { icon: ArrowUpDown, label: "Machine Height", value: "180 cm" },
+  { icon: ArrowUpDown, label: "Height", value: "6 Feet" },
+  { icon: ArrowLeftRight, label: "Width", value: "31 Inches" },
+  { icon: Layers, label: "Depth", value: "24 Inches" },
+  { icon: Zap, label: "Power Supply", value: "220V AC" },
+  { icon: Package, label: "Operating Time", value: "15-16 hours/day" },
+  { icon: Zap, label: "Power Consumption", value: "1.5 kW" },
 ];
 
 const MachineSpecsSection = () => (
@@ -34,11 +37,11 @@ const MachineSpecsSection = () => (
           transition={{ duration: 0.5 }}
           className="flex justify-center"
         >
-          <div className="rounded-2xl overflow-hidden shadow-xl max-w-lg w-full">
+          <div className="rounded-2xl p-1 shadow-lg h-full flex items-center justify-center">
             <img
               src={machineImage}
               alt="Clowee Claw Machine"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-contain rounded-xl"
             />
           </div>
         </motion.div>
@@ -50,25 +53,28 @@ const MachineSpecsSection = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="space-y-4">
-            {specs.map((spec, index) => (
-              <motion.div
-                key={spec.label}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex items-start gap-4 p-4 rounded-xl bg-card border border-border hover:shadow-md hover:bg-[#E291BE] hover:border-[#E291BE] hover:text-white transition-all duration-300 cursor-pointer group"
-              >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-white/20">
-                  <spec.icon className="w-5 h-5 text-primary group-hover:text-white" />
-                </div>
-                <div className="flex-1">
-                  <p className="text-sm text-muted-foreground mb-1">{spec.label}</p>
-                  <p className="text-lg font-bold text-foreground">{spec.value}</p>
-                </div>
-              </motion.div>
-            ))}
+          <div className="bg-card rounded-2xl p-3 shadow-lg">
+            <h3 className="text-base font-bold text-foreground mb-3 text-center">Technical Specifications</h3>
+            <div className="grid gap-2">
+              {specs.map((spec, index) => (
+                <motion.div
+                  key={spec.label}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="flex items-center gap-2 p-1.5 rounded-lg bg-background border border-border hover:shadow-md hover:bg-[#E291BE] hover:border-[#E291BE] hover:text-white transition-all duration-300 cursor-pointer group"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-white/20">
+                    <spec.icon className="w-4 h-4 text-primary group-hover:text-white" />
+                  </div>
+                  <div className="flex-1 flex justify-between items-center">
+                    <span className="text-sm font-medium text-muted-foreground group-hover:text-white">{spec.label}:</span>
+                    <span className="text-sm font-bold text-foreground group-hover:text-white">{spec.value}</span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
