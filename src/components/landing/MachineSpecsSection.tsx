@@ -58,7 +58,7 @@ const MachineSpecsSection = () => (
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-start gap-4 p-4 rounded-xl bg-card border border-border hover:shadow-md transition-shadow"
+                className="flex items-start gap-4 p-4 rounded-xl bg-card border border-border hover:shadow-md hover:bg-pink-50 hover:border-pink-200 transition-all duration-300 cursor-pointer"
               >
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                   <spec.icon className="w-5 h-5 text-primary" />

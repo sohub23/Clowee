@@ -1,22 +1,83 @@
 import { motion } from "framer-motion";
 
-const weeklyData = [
-  { step: "Cost Per Play", explanation: "The amount a customer pays for one play", amount: "৳25" },
-  { step: "Average Plays Per Day", explanation: "On average, about 120 people play the machine daily", amount: "120 plays" },
-  { step: "Daily Revenue", explanation: "120 plays × ৳25", amount: "৳3,000 per day" },
-  { step: "Weekly Revenue (7 Days)", explanation: "৳3,000 × 7 days", amount: "৳21,000 per week" },
+const dailyData = [
+  { item: "Coin Count", value: "120" },
+  { item: "Coin Rate", value: "25" },
+  { item: "Total Sales (TK)", value: "3,000" },
+  { item: "Prize out Ratio", value: "10" },
+  { item: "Doll Rate", value: "150" },
+  { item: "Total Doll Cost", value: "1,500" },
+  { item: "Total Profit (Total Sales-Doll Cost)", value: "1,500", highlight: true },
+  { item: "10% Maintenance Charge", value: "150" },
+  { item: "Total Profit after 10% Maintenance Charge", value: "1,350", highlight: true },
+  { item: "Profit Share(50%)- Clowee", value: "675", clowee: true },
+  { item: "Profit Share(50%)- Franchise", value: "675", franchise: true },
 ];
 
 const monthlyData = [
-  { step: "Monthly Revenue (30 Days)", explanation: "৳3,000 × 30 days", amount: "≈ ৳90,000 per month" },
-  { step: "Estimated Net Profit", explanation:"Profit after basic operating costs", amount: "৳45,000 – ৳50,000" },
-  { step: "Partner Profit Share (50%)", explanation: "Partner receives 50% of the net profit", amount: "৳22,000 – ৳25,000 per month" },
-  { step: "", explanation: "", amount: "" },
+  { item: "Coin Count", value: "3600" },
+  { item: "Coin Rate", value: "25" },
+  { item: "Total Sales (TK)", value: "90,000" },
+  { item: "Prize out Ratio", value: "300" },
+  { item: "Doll Rate", value: "150" },
+  { item: "Total Doll Cost", value: "45,000" },
+  { item: "Total Profit (Total Sales-Doll Cost)", value: "45,000", highlight: true },
+  { item: "10% Maintenance Charge", value: "4500" },
+  { item: "Total Profit after 10% Maintenance Charge", value: "40,500", highlight: true },
+  { item: "Profit Share(50%)- Clowee", value: "20,250", clowee: true },
+  { item: "Profit Share(50%)- Franchise", value: "20,250", franchise: true },
 ];
 
+const ProfitTable = ({ title, data, isDaily }: { title: string; data: typeof dailyData; isDaily?: boolean }) => (
+  <div className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
+    <div className="bg-gray-50 px-4 py-3 border-b border-gray-200">
+      <h3 className="text-center font-bold text-gray-800">
+        I3 Technologies Business Model(Use-Case)
+      </h3>
+      <p className="text-center text-sm text-gray-600 mt-1">
+        ABC Company<br />
+        (Daily/Monthly Report)
+      </p>
+    </div>
+    <div className="bg-purple-100 px-4 py-2 text-center">
+      <h4 className="font-semibold text-gray-800">I3 Technologies & ABC Company</h4>
+    </div>
+    <div className="overflow-x-auto">
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="bg-blue-100">
+            <th className="text-left px-4 py-2 font-semibold text-gray-800 border-r border-gray-300"></th>
+            <th className="text-center px-4 py-2 font-semibold text-gray-800 border-r border-gray-300 bg-blue-200">
+              {isDaily ? 'Per Day (approx.)' : 'Per Month (approx.)'}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((row, index) => {
+            let bgColor = 'bg-white';
+            if (row.clowee) bgColor = 'bg-purple-100';
+            if (row.franchise) bgColor = 'bg-green-200';
+            
+            return (
+              <tr key={index} className={`border-b border-gray-200 ${bgColor}`}>
+                <td className="px-4 py-2 font-medium text-gray-800 border-r border-gray-300">
+                  {row.item}
+                </td>
+                <td className="px-4 py-2 text-center font-semibold text-gray-800">
+                  {row.value}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </div>
+);
+
 const EarningsSection = () => (
-  <section id="earnings" className="section-padding section-alt-bg">
-    <div className="container max-w-6xl">
+  <section id="earnings" className="section-padding">
+    <div className="container max-w-7xl">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -29,80 +90,22 @@ const EarningsSection = () => (
       </motion.div>
 
       <div className="grid lg:grid-cols-2 gap-8">
-        {/* Weekly Earnings Table */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="bg-card rounded-2xl border border-border p-4 md:p-5 h-full"
+          transition={{ duration: 0.5 }}
         >
-          <h3 className="text-lg md:text-xl font-heading font-bold text-primary mb-4">
-            Weekly Earnings
-          </h3>
-          
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse table-fixed">
-              <thead>
-                <tr className="bg-primary/10">
-                  <th className="text-left py-2 px-2 font-semibold text-foreground text-xs md:text-sm w-[35%]">Income Step</th>
-                  <th className="text-left py-2 px-2 font-semibold text-foreground text-xs md:text-sm hidden md:table-cell w-[40%]">Explanation</th>
-                  <th className="text-right py-2 px-2 font-semibold text-foreground text-xs md:text-sm w-[25%]">Amount (BDT)</th>
-                </tr>
-              </thead>
-              <tbody>
-                {weeklyData.map((row) => (
-                  <tr key={row.step} className="border-b border-border/50">
-                    <td className="py-2 px-2 text-foreground">
-                      <div className="font-medium text-xs md:text-sm">{row.step}</div>
-                      <div className="text-xs text-muted-foreground md:hidden mt-1">{row.explanation}</div>
-                    </td>
-                    <td className="py-2 px-2 text-xs text-muted-foreground hidden md:table-cell">{row.explanation}</td>
-                    <td className="py-2 px-2 text-right text-xs md:text-sm font-bold text-foreground">
-                      {row.amount}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <ProfitTable title="Daily Calculation" data={dailyData} isDaily={true} />
         </motion.div>
 
-        {/* Monthly Earnings Table */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="bg-card rounded-2xl border border-border p-4 md:p-5 h-full"
+          transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <h3 className="text-lg md:text-xl font-heading font-bold text-primary mb-4">
-            Monthly Earnings
-          </h3>
-          
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse table-fixed">
-              <thead>
-                <tr className="bg-primary/10">
-                  <th className="text-left py-2 px-2 font-semibold text-foreground text-xs md:text-sm w-[35%]">Income Step</th>
-                  <th className="text-left py-2 px-2 font-semibold text-foreground text-xs md:text-sm hidden md:table-cell w-[40%]">Explanation</th>
-                  <th className="text-right py-2 px-2 font-semibold text-foreground text-xs md:text-sm w-[25%]">Amount (BDT)</th>
-                </tr>
-              </thead>
-              <tbody>
-                {monthlyData.map((row, idx) => (
-                  <tr key={idx} className="border-b border-border/50">
-                    <td className="py-2 px-2 text-foreground">
-                      <div className="font-medium text-xs md:text-sm">{row.step}</div>
-                      <div className="text-xs text-muted-foreground md:hidden mt-1">{row.explanation}</div>
-                    </td>
-                    <td className="py-2 px-2 text-xs text-muted-foreground hidden md:table-cell">{row.explanation}</td>
-                    <td className="py-2 px-2 text-right text-xs md:text-sm font-bold text-foreground">
-                      {row.amount}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <ProfitTable title="Monthly Calculation" data={monthlyData} isDaily={false} />
         </motion.div>
       </div>
     </div>
