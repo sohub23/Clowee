@@ -17,8 +17,11 @@ const MonthlyProfitSection = () => (
         className="text-center mb-10"
       >
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-3">
-          Revenue <span className="text-primary">Sharing</span>
+          Partnership <span className="text-primary">Business Model</span>
         </h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto">
+          Our partners receive profit sharing <strong className="text-primary">twice every month</strong> - ensuring consistent cash flow and transparent earnings
+        </p>
       </motion.div>
 
       <div className="grid lg:grid-cols-2 gap-6">
@@ -35,10 +38,10 @@ const MonthlyProfitSection = () => (
             </div>
             <div className="flex-1">
               <p className="text-base md:text-lg font-heading font-bold text-foreground mb-1">
-                2× Growth vs. last month
+                Bi-Monthly Profit Distribution
               </p>
               <p className="text-xs text-muted-foreground">
-                Profit is calculated <strong className="text-foreground">twice a month</strong> for consistent cash flow
+                Partners receive their <strong className="text-foreground">50% profit share twice every month</strong> (15th & 30th)
               </p>
             </div>
           </div>
@@ -71,7 +74,7 @@ const MonthlyProfitSection = () => (
             </div>
             <div className="flex-1">
               <h3 className="text-base md:text-lg font-heading font-bold text-foreground mb-1">
-                💰 Monthly Profit Share
+                💰 Bi-Monthly Profit Share
               </h3>
             </div>
           </div>
@@ -80,20 +83,20 @@ const MonthlyProfitSection = () => (
             <div className="bg-white/60 dark:bg-purple-900/30 rounded-xl p-3">
               <div className="flex items-center gap-2 mb-1">
                 <Calendar className="w-4 h-4 text-purple-600 dark:text-purple-400" />
-                <p className="font-heading font-semibold text-foreground text-sm">Profit Distribution</p>
+                <p className="font-heading font-semibold text-foreground text-sm">Payment Schedule</p>
               </div>
               <p className="text-xs text-muted-foreground pl-6">
-                <mark className="bg-yellow-200 dark:bg-yellow-900/50 px-1 rounded">Twice monthly</mark> for consistent cash flow
+                <mark className="bg-yellow-200 dark:bg-yellow-900/50 px-1 rounded">15th & 30th of every month</mark> - guaranteed payment dates
               </p>
             </div>
 
             <div className="bg-white/60 dark:bg-purple-900/30 rounded-xl p-3">
               <div className="flex items-center gap-2 mb-1">
                 <TrendingUp className="w-4 h-4 text-purple-600 dark:text-purple-400" />
-                <p className="font-heading font-semibold text-foreground text-sm">Benefit</p>
+                <p className="font-heading font-semibold text-foreground text-sm">Partnership Benefits</p>
               </div>
               <p className="text-xs text-muted-foreground pl-6">
-                Regular and transparent earnings for all partners
+                Consistent bi-monthly income with full transparency and zero investment required
               </p>
             </div>
           </div>
