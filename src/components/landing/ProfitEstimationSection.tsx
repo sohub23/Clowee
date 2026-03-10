@@ -30,7 +30,7 @@ const monthlyData = [
 ];
 
 const ProfitTable = ({ title, data, isWeekly }: { title: string; data: typeof weeklyData; isWeekly?: boolean }) => (
-  <div className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm max-w-lg mx-auto">
+  <div className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm w-full max-w-md mx-auto">
     <div className="bg-gray-50 px-3 py-2 border-b border-gray-200">
       <h3 className="text-center font-bold text-gray-800 text-sm">
         I3 Technologies Business Model(Use-Case)
@@ -102,7 +102,7 @@ const ProfitEstimationSection = () => (
         </h2>
       </motion.div>
 
-      <div className="grid lg:grid-cols-2 gap-8">
+      <div className="grid lg:grid-cols-2 gap-4">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
