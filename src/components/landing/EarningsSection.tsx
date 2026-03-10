@@ -39,8 +39,8 @@ const ProfitTable = ({ title, data, isDaily }: { title: string; data: typeof dai
         (Daily/Monthly Report)
       </p>
     </div>
-    <div className="bg-purple-100 px-3 py-1 text-center">
-      <h4 className="font-semibold text-gray-800 text-sm">I3 Technologies & ABC Company</h4>
+    <div className="bg-[#E291BE] px-3 py-1 text-center">
+      <h4 className="font-semibold text-white text-sm">I3 Technologies & ABC Company</h4>
     </div>
     <div className="overflow-x-auto">
       <table className="w-full text-xs">
@@ -55,15 +55,15 @@ const ProfitTable = ({ title, data, isDaily }: { title: string; data: typeof dai
         <tbody>
           {data.map((row, index) => {
             let bgColor = 'bg-white';
-            if (row.clowee) bgColor = 'bg-purple-100';
-            if (row.franchise) bgColor = 'bg-green-200';
+            if (row.clowee) bgColor = 'bg-[#E291BE]';
+            if (row.franchise) bgColor = 'bg-green-400';
             
             return (
               <tr key={index} className={`border-b border-gray-200 ${bgColor}`}>
-                <td className="px-3 py-1 font-medium text-gray-800 border-r border-gray-300 text-xs">
+                <td className="px-3 py-1 font-medium text-gray-800 border-r border-gray-300 text-xs group-hover:text-white">
                   {row.item}
                 </td>
-                <td className="px-3 py-1 text-center font-semibold text-gray-800 text-xs">
+                <td className="px-3 py-1 text-center font-semibold text-gray-800 text-xs group-hover:text-white">
                   {row.value}
                 </td>
               </tr>
