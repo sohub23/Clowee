@@ -12,6 +12,8 @@ const weeklyData = [
   { item: "Profit After Maintenance", value: "৳9,450", highlight: true },
   { item: "Clowee Profit Share (50%)", value: "৳4,725", clowee: true },
   { item: "Franchise Profit Share (50%)", value: "৳4,725", franchise: true },
+  { item: "Payable To I3 Technologies", value: "16,275", payable: true },
+
 ];
 
 const monthlyData = [
@@ -37,7 +39,6 @@ const ProfitTable = ({ title, data, isWeekly }: { title: string; data: typeof we
         I3 Technologies Business Model(Use-Case)
       </h3>
       <p className="text-sm text-gray-600">
-        Sohub<br />
         (Weekly Report)
       </p>
     </div>
@@ -61,16 +62,16 @@ const ProfitTable = ({ title, data, isWeekly }: { title: string; data: typeof we
         let textColor = 'text-gray-800';
         
         if (row.clowee) {
-          bgColor = 'bg-gradient-to-r from-pink-400 to-pink-500';
-          textColor = 'text-white font-semibold';
+          bgColor = 'bg-white hover:bg-gray-50';
+          textColor = 'text-gray-800 font-semibold';
         }
         if (row.franchise) {
           bgColor = 'bg-gradient-to-r from-green-400 to-green-500';
           textColor = 'text-white font-semibold';
         }
         if (row.payable) {
-          bgColor = 'bg-gradient-to-r from-gray-200 to-gray-300';
-          textColor = 'text-gray-800 font-semibold';
+          bgColor = 'bg-gradient-to-r from-pink-400 to-pink-500';
+          textColor = 'text-white font-semibold';
         }
         
         return (

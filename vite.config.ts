@@ -13,6 +13,11 @@ export default defineConfig(({ mode }) => ({
       port: 5173,
       overlay: false,
     },
+    watch: {
+      usePolling: false,
+      interval: 3000,
+      ignored: ['**/node_modules/**', '**/.git/**'],
+    },
   },
   plugins: [react()],
   resolve: {

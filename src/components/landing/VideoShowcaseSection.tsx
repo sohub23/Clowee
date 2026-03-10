@@ -12,6 +12,37 @@ interface YouTubeVideo {
   };
 }
 
+// Static video data with the provided YouTube URLs
+const staticVideos = [
+  {
+    id: { videoId: "iorKosbaUPs" },
+    snippet: {
+      title: "Clowee Machine Demo - Restaurant Setup",
+      description: "See how Clowee claw machine works in restaurant environment",
+      publishedAt: "2024-01-01",
+      thumbnails: { medium: { url: `https://img.youtube.com/vi/iorKosbaUPs/hqdefault.jpg` } }
+    }
+  },
+  {
+    id: { videoId: "aOnyKBfwKrE" },
+    snippet: {
+      title: "Clowee Customer Success Story",
+      description: "Partner shares their experience with Clowee machine",
+      publishedAt: "2024-01-02",
+      thumbnails: { medium: { url: `https://img.youtube.com/vi/aOnyKBfwKrE/hqdefault.jpg` } }
+    }
+  },
+  {
+    id: { videoId: "3V-3oOpi5Hc" },
+    snippet: {
+      title: "How Clowee Works - Complete Guide",
+      description: "Complete tutorial on how Clowee claw machine operates",
+      publishedAt: "2024-01-03",
+      thumbnails: { medium: { url: `https://img.youtube.com/vi/3V-3oOpi5Hc/hqdefault.jpg` } }
+    }
+  }
+];
+
 const filters = ["All", "Product Demo", "Customer Stories", "How It Works"];
 
 // Decode HTML entities from YouTube API titles
@@ -58,21 +89,8 @@ const VideoShowcaseSection = () => {
   }, [selectedVideo]);
 
   useEffect(() => {
-    const fetchVideos = async () => {
-      try {
-        const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
-        const CHANNEL_ID = import.meta.env.VITE_YOUTUBE_CHANNEL_ID;
-        const response = await fetch(
-          `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=50`
-        );
-        const data = await response.json();
-        const videoItems = data.items?.filter((item: any) => item.id.kind === 'youtube#video') || [];
-        setVideos(videoItems);
-      } catch (error) {
-        console.error("Error fetching videos:", error);
-      }
-    };
-    fetchVideos();
+    // Use static videos instead of API call
+    setVideos(staticVideos);
   }, []);
 
   const filtered = active === "All"

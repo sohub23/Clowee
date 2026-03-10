@@ -1,128 +1,98 @@
 import { motion } from "framer-motion";
-import { Play, MapPin, X } from "lucide-react";
+import { Play, MapPin } from "lucide-react";
 import { useState } from "react";
-import chnImg from "@/assets/chn.jpg";
-import pbgulsanImg from "@/assets/pbgulsan.jpg";
-import chikcliImg from "@/assets/Chikcli.jpg";
-import diningWariImg from "@/assets/dininglounge-wari.webp";
-import pizzaburgMirpurImg from "@/assets/pizzaburg-mirpur1.jpg";
-import caferioMohammadpurImg from "@/assets/caferio-mohammadpur.jpg";
-import caferioUttaraImg from "@/assets/caferio-uttara.jpg";
-import foodplexImg from "@/assets/foodplex.dhan.jpg";
-import diningNarayanganjImg from "@/assets/dininglounge-narayanganj.webp";
-import diningKhilgaonImg from "@/assets/d_l.jpg";
-import bailyDeliImg from "@/assets/baily-deli3 copy.jpg";
-import chjImg from "@/assets/chj.jpg";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const partners = [
   {
     name: "Chillox Nasirabad",
     location: "Chattogram",
-    image: chnImg,
+    image: "/src/assets/chn.jpg",
   },
   {
     name: "Pizzaburg Gulshan",
     location: "Gulshan-1, Dhaka",
-    image: pbgulsanImg,
+    image: "/src/assets/pbgulsan.jpg",
   },
   {
     name: "Chickli, Rangpur",
     location: "Rangpur",
-    image: chikcliImg,
+    image: "/src/assets/Chikcli.jpg",
   },
   {
     name: "The Dinning Lounge Wari",
     location: "Wari, Dhaka",
-    image: diningWariImg,
+    image: "/src/assets/dininglounge-wari.webp",
   },
   {
     name: "Pizzaburg Dhanmondi",
     location: "Satmasjid Road, Dhaka",
-    image: pizzaburgMirpurImg,
+    image: "/src/assets/pizzaburg-mirpur1.jpg",
   },
   {
     name: "Waffle Wala",
-    location: "Dhanmondi Dhaka",
-    image: caferioMohammadpurImg,
+    location: "Dhanmondi, Dhaka",
+    image: "/src/assets/caferio-mohammadpur.jpg",
   },
   {
     name: "Cafe Rio Uttara",
     location: "Uttara, Dhaka",
-    image: caferioUttaraImg,
+    image: "/src/assets/caferio-uttara.jpg",
+  },
+  {
+    name: "Pizzaburg Dhanmondi",
+    location: "Dhanmondi, Dhaka",
+    image: "/src/assets/pbdhanmondi.jpg",
   },
   {
     name: "FoodPlex",
     location: "Khan ABC Tradeplex,Dhaka",
-    image: foodplexImg,
+    image: "/src/assets/foodplex.dhan.jpg",
   },
   {
     name: "The Dinning Lounge Narayanganj",
-    location: "Narayanganj, Dhaka",
-    image: diningNarayanganjImg,
+    location: "Narayanganj, Dhaka ",
+    image: "/src/assets/dininglounge-narayanganj.webp",
   },
-  {
-    name: "The Dinning Lounge Khilgaon",
-    location: "Shotodol Rose Heights, Dhaka",
-    image: diningKhilgaonImg,
+  {name: "The Dinning Lounge Khilgaon",
+    location: "Shotodol Rose Heights, Dhaka ",
+    image: "/src/assets/d_l.jpg",
   },
   {
     name: "Baily Deli",
     location: "Baily Road, Dhaka",
-    image: bailyDeliImg,
+    image: "/src/assets/baily-deli3 copy.jpg",
   },
   {
     name: "Chillox Jamal Khan",
     location: "Jamal Khan, Chattogram",
-    image: chjImg,
+    image: "/src/assets/chj.jpg",
   },
 ];
 
 const videos = [
   {
-    title: "Clowee | Game On | Amusement Games | Theme Park | Made In Bangladesh",
-    thumbnail: "https://img.youtube.com/vi/iorKosbaUPs/maxresdefault.jpg",
-    videoUrl: "https://www.youtube.com/embed/iorKosbaUPs",
+    title: "Clowee Machine in Action - Chillox ",
+    thumbnail: "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=340&fit=crop",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
   {
-    title: "Tolpar Claw Games Machine",
-    thumbnail: "https://img.youtube.com/vi/aOnyKBfwKrE/maxresdefault.jpg",
-    videoUrl: "https://www.youtube.com/embed/aOnyKBfwKrE",
-  },
-  {
-    title: "Clowee Claw Machine Experience",
-    thumbnail: "https://img.youtube.com/vi/3V-3oOpi5Hc/maxresdefault.jpg",
-    videoUrl: "https://www.youtube.com/embed/3V-3oOpi5Hc",
+    title: "Kids Love Clowee! — Takeout",
+    thumbnail: "https://images.unsplash.com/photo-1560807707-8cc77767d783?w=600&h=340&fit=crop",
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
 ];
 
 const PartnersSection = () => {
-  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [videoOpen, setVideoOpen] = useState(false);
+  const [activeVideo, setActiveVideo] = useState("");
+
+  const openVideo = (url: string) => {
+    setActiveVideo(url);
+    setVideoOpen(true);
+  };
 
   return (
-    <>
-      {/* Video Modal */}
-      {selectedVideo && (
-        <div 
-          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
-          onClick={() => setSelectedVideo(null)}
-        >
-          <div className="relative w-full max-w-4xl aspect-video" onClick={(e) => e.stopPropagation()}>
-            <button
-              onClick={() => setSelectedVideo(null)}
-              className="absolute -top-10 right-0 text-white hover:text-primary transition-colors"
-            >
-              <X className="w-8 h-8" />
-            </button>
-            <iframe
-              src={selectedVideo + "?autoplay=1"}
-              className="w-full h-full rounded-lg"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </div>
-      )}
-
     <section className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
@@ -145,28 +115,28 @@ const PartnersSection = () => {
         </motion.div>
 
         {/* Partner Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
           {partners.map((partner, index) => (
             <motion.div
               key={partner.name}
-              className="group rounded-xl overflow-hidden border border-border bg-card shadow-lg hover:shadow-xl transition-all duration-300 hover:border-[#E291BE]/40"
+              className="group rounded-xl overflow-hidden border border-border bg-card shadow-sm hover:shadow-md transition-shadow"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden bg-muted">
                 <img
                   src={partner.image}
                   alt={`${partner.name} — Clowee Partner Restaurant`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
-              <div className="p-3 bg-white border-t border-[#E291BE]/20">
-                <h3 className="font-semibold text-foreground text-sm">{partner.name}</h3>
-                <p className="text-xs text-muted-foreground flex items-center gap-1 mt-1">
-                  <MapPin className="w-3 h-3 text-[#E291BE]" />
+              <div className="p-4">
+                <h3 className="font-semibold text-foreground">{partner.name}</h3>
+                <p className="text-sm text-muted-foreground flex items-center gap-1 mt-1">
+                  <MapPin className="w-3.5 h-3.5" />
                   {partner.location}
                 </p>
               </div>
@@ -188,39 +158,53 @@ const PartnersSection = () => {
           <p className="text-muted-foreground">Watch how Clowee brings joy to customers and profit to partners.</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {videos.map((video, index) => (
             <motion.div
               key={video.title}
-              className="rounded-xl overflow-hidden bg-[#E291BE] shadow-lg cursor-pointer group hover:shadow-xl transition-all duration-300"
+              className="rounded-xl overflow-hidden border border-border bg-card shadow-sm cursor-pointer group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.15 }}
-              onClick={() => setSelectedVideo(video.videoUrl)}
+              onClick={() => openVideo(video.videoUrl)}
             >
-              <div className="aspect-video relative overflow-hidden bg-black">
+              <div className="aspect-video relative overflow-hidden">
                 <img
                   src={video.thumbnail}
                   alt={video.title}
-                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-foreground/20 flex items-center justify-center group-hover:bg-foreground/30 transition-colors">
-                  <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:bg-white group-hover:scale-110 transition-all duration-300">
-                    <Play className="w-6 h-6 text-[#E291BE] ml-1 fill-[#E291BE]" />
+                  <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg">
+                    <Play className="w-6 h-6 text-primary-foreground ml-1" />
                   </div>
                 </div>
               </div>
               <div className="p-4">
-                <h4 className="font-semibold text-white">{video.title}</h4>
+                <h4 className="font-semibold text-foreground">{video.title}</h4>
               </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Video Dialog */}
+        <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
+          <DialogContent className="max-w-3xl p-0 overflow-hidden">
+            <div className="aspect-video">
+              <iframe
+                src={activeVideo}
+                title="Clowee Video"
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
-    </>
   );
 };
 
