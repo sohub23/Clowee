@@ -6,11 +6,11 @@ import path from "path";
 export default defineConfig(({ mode }) => ({
   server: {
     host: "0.0.0.0",
-    port: 8082,
+    port: 5173,
     strictPort: true,
     hmr: {
       host: "192.168.0.167",
-      port: 8082,
+      port: 5173,
       overlay: false,
     },
   },
