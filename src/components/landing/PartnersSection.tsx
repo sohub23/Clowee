@@ -149,13 +149,13 @@ const PartnersSection = () => {
           {partners.map((partner, index) => (
             <motion.div
               key={partner.name}
-              className="group rounded-xl overflow-hidden border border-border bg-card shadow-sm hover:shadow-md transition-shadow"
+              className="group rounded-xl overflow-hidden border border-border bg-card shadow-lg hover:shadow-xl transition-all duration-300 hover:border-[#E291BE]/40"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <div className="aspect-[4/3] overflow-hidden bg-pink-100">
+              <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={partner.image}
                   alt={`${partner.name} — Clowee Partner Restaurant`}
@@ -163,10 +163,10 @@ const PartnersSection = () => {
                   loading="lazy"
                 />
               </div>
-              <div className="p-4 bg-pink-100">
-                <h3 className="font-semibold text-foreground">{partner.name}</h3>
-                <p className="text-sm text-muted-foreground flex items-center gap-1 mt-1">
-                  <MapPin className="w-3.5 h-3.5" />
+              <div className="p-4 bg-white">
+                <h3 className="font-semibold text-foreground text-sm">{partner.name}</h3>
+                <p className="text-xs text-muted-foreground flex items-center gap-1 mt-1">
+                  <MapPin className="w-3 h-3 text-[#E291BE]" />
                   {partner.location}
                 </p>
               </div>
@@ -192,7 +192,7 @@ const PartnersSection = () => {
           {videos.map((video, index) => (
             <motion.div
               key={video.title}
-              className="rounded-xl overflow-hidden bg-primary shadow-lg cursor-pointer group"
+              className="rounded-xl overflow-hidden bg-[#E291BE] shadow-lg cursor-pointer group hover:shadow-xl transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -207,8 +207,8 @@ const PartnersSection = () => {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-foreground/20 flex items-center justify-center group-hover:bg-foreground/30 transition-colors">
-                  <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg">
-                    <Play className="w-6 h-6 text-primary-foreground ml-1" />
+                  <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:bg-white group-hover:scale-110 transition-all duration-300">
+                    <Play className="w-6 h-6 text-[#E291BE] ml-1 fill-[#E291BE]" />
                   </div>
                 </div>
               </div>
