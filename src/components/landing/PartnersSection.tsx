@@ -163,7 +163,7 @@ const PartnersSection = () => {
                   loading="lazy"
                 />
               </div>
-              <div className="p-4 bg-white">
+              <div className="p-3 bg-white border-t border-[#E291BE]/20">
                 <h3 className="font-semibold text-foreground text-sm">{partner.name}</h3>
                 <p className="text-xs text-muted-foreground flex items-center gap-1 mt-1">
                   <MapPin className="w-3 h-3 text-[#E291BE]" />

@@ -37,7 +37,7 @@ const ProfitTable = ({ title, data, isWeekly }: { title: string; data: typeof we
       </h3>
       <p className="text-center text-xs text-gray-600 mt-1">
         Sohub<br />
-        (Weekly/Monthly Report)
+        (Weekly Report)
       </p>
     </div>
     <div className="bg-[#E189A6] px-3 py-1 text-center">
