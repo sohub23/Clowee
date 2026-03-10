@@ -90,7 +90,7 @@ const ProfitTable = ({ title, data, isWeekly }: { title: string; data: typeof we
 
 const ProfitEstimationSection = () => (
   <section className="section-padding">
-    <div className="container max-w-7xl">
+    <div className="container max-w-5xl">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
