@@ -155,7 +155,7 @@ const PartnersSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
-              <div className="aspect-[4/3] overflow-hidden bg-muted">
+              <div className="aspect-[4/3] overflow-hidden bg-pink-100">
                 <img
                   src={partner.image}
                   alt={`${partner.name} — Clowee Partner Restaurant`}
@@ -163,7 +163,7 @@ const PartnersSection = () => {
                   loading="lazy"
                 />
               </div>
-              <div className="p-4">
+              <div className="p-4 bg-pink-100">
                 <h3 className="font-semibold text-foreground">{partner.name}</h3>
                 <p className="text-sm text-muted-foreground flex items-center gap-1 mt-1">
                   <MapPin className="w-3.5 h-3.5" />
