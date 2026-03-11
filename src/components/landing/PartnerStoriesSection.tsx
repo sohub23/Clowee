@@ -1,7 +1,6 @@
 // Import partner logos
 import chilloxLogo from "@/assets/chillox-logo-png_seeklogo-647089.png";
 import pizzaBurgLogo from "@/assets/pizza Burag logo.jpg";
-import diningLoungeLogo from "@/assets/The-Dining-Lounge.logo.jpg";
 import foodplexLogo from "@/assets/foodplex.jpeg";
 import kolapataLogo from "@/assets/Kolapata.png";
 import logo6 from "@/components/landing/6.jpeg";
@@ -17,7 +16,6 @@ import filmic3 from "@/assets/filmic-3.jpeg";
 const partnerLogos = [
   { src: chilloxLogo, name: "Chillox" },
   { src: pizzaBurgLogo, name: "PizzaBurg" },
-  { src: diningLoungeLogo, name: "The Dining Lounge" },
   { src: foodplexLogo, name: "FoodPlex" },
   { src: kolapataLogo, name: "Kolapata" },
   { src: logo6, name: "Keedee" },
@@ -51,9 +49,7 @@ const PartnerStoriesSection = () => (
               <img
                 src={logo.src}
                 alt={logo.name}
-                className={`max-w-[110px] max-h-[70px] object-contain ${
-                  logo.name === "The Dining Lounge" ? "bg-white p-2 rounded" : ""
-                }`}
+                className="max-w-[110px] max-h-[70px] object-contain"
               />
             </div>
           ))}
