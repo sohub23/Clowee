@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
+
+// Import all images
 import chnImg from "@/assets/chn.jpg";
 import pbgulsanImg from "@/assets/pbgulsan.jpg";
 import chikcliImg from "@/assets/Chikcli.jpg";
@@ -65,7 +67,8 @@ const partners = [
     location: "Narayanganj, Dhaka ",
     image: diningNarayanganjImg,
   },
-  {name: "The Dinning Lounge Khilgaon",
+  {
+    name: "The Dinning Lounge Khilgaon",
     location: "Shotodol Rose Heights, Dhaka ",
     image: dLImg,
   },

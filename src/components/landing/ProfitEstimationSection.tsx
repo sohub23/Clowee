@@ -12,23 +12,22 @@ const weeklyData = [
   { item: "Profit After Maintenance", value: "BDT 9,450", highlight: true },
   { item: "Clowee Profit Share (50%)", value: "BDT 4,725", clowee: true },
   { item: "Franchise Profit Share (50%)", value: "BDT 4,725", franchise: true },
-  { item: "Payable To I3 Technologies", value: "16,275", payable: true },
-
+  { item: "Payable To I3 Technologies", value: "BDT 16,275", payable: true },
 ];
 
 const monthlyData = [
   { item: "Coin Count", value: "3600" },
-  { item: "Coin Rate", value: "25" },
-  { item: "Total Sales (TK)", value: "90,000" },
+  { item: "Coin Rate", value: "BDT 25" },
+  { item: "Total Sales", value: "BDT 90,000" },
   { item: "Prize out Ratio", value: "300" },
-  { item: "Doll Rate", value: "150" },
-  { item: "Total Doll Cost", value: "45,000" },
-  { item: "Total Profit (Total Sales-Doll Cost)", value: "45,000", highlight: true },
-  { item: "10% Maintenance Charge", value: "4500" },
-  { item: "Total Profit after 10% Maintenance Charge", value: "40,500", highlight: true },
-  { item: "Profit Share(50%)- Clowee", value: "20,250", clowee: true },
-  { item: "Profit Share(50%)- Franchise", value: "20,250", franchise: true },
-  { item: "Payable To I3 Technologies", value: "69,750", payable: true },
+  { item: "Doll Rate", value: "BDT 150" },
+  { item: "Total Doll Cost", value: "BDT 45,000" },
+  { item: "Total Profit (Total Sales-Doll Cost)", value: "BDT 45,000", highlight: true },
+  { item: "10% Maintenance Charge", value: "BDT 4,500" },
+  { item: "Total Profit after 10% Maintenance Charge", value: "BDT 40,500", highlight: true },
+  { item: "Profit Share(50%)- Clowee", value: "BDT 20,250", clowee: true },
+  { item: "Profit Share(50%)- Franchise", value: "BDT 20,250", franchise: true },
+  { item: "Payable To I3 Technologies", value: "BDT 69,750", payable: true },
 ];
 
 const ProfitTable = ({ title, data, isWeekly }: { title: string; data: typeof weeklyData; isWeekly?: boolean }) => (
