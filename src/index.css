@@ -117,4 +117,18 @@
   .section-alt-bg {
     background-color: hsl(var(--section-alt));
   }
+
+  /* Partner Logo Scrolling Animation */
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 }

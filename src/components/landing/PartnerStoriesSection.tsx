@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 // Import partner logos
 import chilloxLogo from "@/assets/chillox-logo-png_seeklogo-647089.png";
 import pizzaBurgLogo from "@/assets/pizza Burag logo.jpg";
@@ -28,70 +26,30 @@ const partnerLogos = [
 ];
 
 const PartnerStoriesSection = () => (
-  <section className="section-padding bg-gray-50">
-    <div className="container max-w-6xl">
-      {/* Header with blue background like reference */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-16"
-      >
-        <div className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg mb-6">
-          <h2 className="text-2xl md:text-3xl font-bold">Ours Partner</h2>
-        </div>
-        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+  <section className="py-16 bg-white">
+    <div className="container mx-auto px-4">
+      {/* Header */}
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold text-gray-900 mb-4">Ours Partner</h2>
+        <p className="text-gray-600 max-w-2xl mx-auto">
           Trusted by leading restaurants and businesses across Bangladesh
         </p>
-      </motion.div>
+      </div>
 
-      {/* Logo Grid - 2 Lines with Animation */}
-      <div className="space-y-16">
-        {/* First Line - 6 logos */}
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 items-center justify-items-center">
-          {partnerLogos.slice(0, 6).map((logo, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8, y: 30 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ 
-                delay: index * 0.2,
-                duration: 0.6,
-                ease: "easeOut"
-              }}
-              className="flex items-center justify-center p-4 hover:scale-110 transition-transform duration-300"
-            >
+      {/* Logo Grid - Single Line with Scrolling Animation */}
+      <div className="overflow-hidden py-8">
+        <div className="flex animate-scroll gap-12 items-center">
+          {/* Duplicate logos for seamless scrolling */}
+          {[...partnerLogos, ...partnerLogos].map((logo, index) => (
+            <div key={index} className="flex-shrink-0">
               <img
                 src={logo.src}
                 alt={logo.name}
-                className="max-w-[120px] max-h-[80px] object-contain filter drop-shadow-lg"
+                className={`max-w-[100px] max-h-[60px] object-contain ${
+                  logo.name === "The Dining Lounge" ? "bg-white p-2 rounded" : ""
+                }`}
               />
-            </motion.div>
-          ))}
-        </div>
-        
-        {/* Second Line - 5 logos */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center max-w-4xl mx-auto">
-          {partnerLogos.slice(6, 11).map((logo, index) => (
-            <motion.div
-              key={index + 6}
-              initial={{ opacity: 0, scale: 0.8, y: 30 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ 
-                delay: (index + 6) * 0.2,
-                duration: 0.6,
-                ease: "easeOut"
-              }}
-              className="flex items-center justify-center p-4 hover:scale-110 transition-transform duration-300"
-            >
-              <img
-                src={logo.src}
-                alt={logo.name}
-                className="max-w-[120px] max-h-[80px] object-contain filter drop-shadow-lg"
-              />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
