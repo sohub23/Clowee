@@ -1,86 +1,71 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 
-// Import all images
-import chnImg from "@/assets/chn.jpg";
-import pbgulsanImg from "@/assets/pbgulsan.jpg";
-import chikcliImg from "@/assets/Chikcli.jpg";
-import diningWariImg from "@/assets/dininglounge-wari.webp";
-import pbMirpur1Img from "@/assets/pizzaburg-mirpur1.jpg";
-import caferioMohammadpurImg from "@/assets/caferio-mohammadpur.jpg";
-import caferioUttaraImg from "@/assets/caferio-uttara.jpg";
-import pbDhanmondiImg from "@/assets/pbdhanmondi.jpg";
-import foodplexImg from "@/assets/foodplex.dhan.jpg";
-import diningNarayanganjImg from "@/assets/dininglounge-narayanganj.webp";
-import dLImg from "@/assets/d_l.jpg";
-import bailyDeliImg from "@/assets/baily-deli3 copy.jpg";
-import chjImg from "@/assets/chj.jpg";
-
 const partners = [
   {
     name: "Chillox Nasirabad",
     location: "Chattogram",
-    image: chnImg,
+    image: "/assets/chn.jpg",
   },
   {
     name: "Pizzaburg Gulshan",
     location: "Gulshan-1, Dhaka",
-    image: pbgulsanImg,
+    image: "/assets/pbgulsan.jpg",
   },
   {
     name: "Chickli, Rangpur",
     location: "Rangpur",
-    image: chikcliImg,
+    image: "/assets/Chikcli.jpg",
   },
   {
     name: "The Dinning Lounge Wari",
     location: "Wari, Dhaka",
-    image: diningWariImg,
+    image: "/assets/dininglounge-wari.webp",
   },
   {
     name: "Pizzaburg Dhanmondi",
     location: "Satmasjid Road, Dhaka",
-    image: pbMirpur1Img,
+    image: "/assets/pizzaburg-mirpur1.jpg",
   },
   {
     name: "Waffle Wala",
     location: "Dhanmondi, Dhaka",
-    image: caferioMohammadpurImg,
+    image: "/assets/caferio-mohammadpur.jpg",
   },
   {
     name: "Cafe Rio Uttara",
     location: "Uttara, Dhaka",
-    image: caferioUttaraImg,
+    image: "/assets/caferio-uttara.jpg",
   },
   {
     name: "Pizzaburg Dhanmondi",
     location: "Dhanmondi, Dhaka",
-    image: pbDhanmondiImg,
+    image: "/assets/pbdhanmondi.jpg",
   },
   {
     name: "FoodPlex",
     location: "Khan ABC Tradeplex,Dhaka",
-    image: foodplexImg,
+    image: "/assets/foodplex.dhan.jpg",
   },
   {
     name: "The Dinning Lounge Narayanganj",
     location: "Narayanganj, Dhaka ",
-    image: diningNarayanganjImg,
+    image: "/assets/dininglounge-narayanganj.webp",
   },
   {
     name: "The Dinning Lounge Khilgaon",
     location: "Shotodol Rose Heights, Dhaka ",
-    image: dLImg,
+    image: "/assets/d_l.jpg",
   },
   {
     name: "Baily Deli",
     location: "Baily Road, Dhaka",
-    image: bailyDeliImg,
+    image: "/assets/baily-deli3.jpg",
   },
   {
     name: "Chillox Jamal Khan",
     location: "Jamal Khan, Chattogram",
-    image: chjImg,
+    image: "/assets/chj.jpg",
   },
 ];
 
@@ -145,9 +130,9 @@ const PartnersSection = () => {
                   }}
                 />
               </div>
-              <div className="p-2 bg-card">
-                <h3 className="font-semibold text-[#E291BE] text-xs">{partner.name}</h3>
-                <p className="text-[10px] text-[#E291BE] flex items-center gap-1 mt-1">
+              <div className="p-2 bg-[#E291BE]">
+                <h3 className="font-semibold text-white text-xs">{partner.name}</h3>
+                <p className="text-[10px] text-white/90 flex items-center gap-1 mt-1">
                   <MapPin className="w-2.5 h-2.5" />
                   {partner.location}
                 </p>

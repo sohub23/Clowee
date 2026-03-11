@@ -181,61 +181,32 @@ const VideoShowcaseSection = () => {
           </div>
         )}
 
-        {/* Video Carousel */}
-        <div className="relative max-w-md mx-auto">
-          {/* Carousel Container */}
-          <div className="overflow-hidden">
-            <motion.div
-              className="flex transition-transform duration-500 ease-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-              {filtered.map((video, i) => (
-                <div key={video.id.videoId} className="min-w-full px-1">
-                  {renderVideoCard(video, i)}
-                </div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Navigation Buttons */}
-          {filtered.length > 1 && (
-            <>
-              {currentIndex > 0 && (
+        {/* Video Grid - Show all 3 videos with larger cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {filtered.slice(0, 2).map((video, i) => renderVideoCard(video, i))}
+          
+          {/* Third video with carousel */}
+          {filtered.length > 2 && (
+            <div className="relative">
+              {renderVideoCard(filtered[2], 2)}
+              
+              {/* Carousel buttons for 3rd video */}
+              {filtered.length > 3 && (
                 <button
                   onClick={prevSlide}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full bg-[#E291BE] text-white flex items-center justify-center shadow-lg hover:bg-[#d17aaa] transition-all z-10"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#E291BE]/90 text-white flex items-center justify-center shadow-lg hover:bg-[#E291BE] transition-all z-20"
                   aria-label="Previous video"
                 >
-                  <ChevronLeft className="w-6 h-6" />
+                  <ChevronLeft className="w-5 h-5" />
                 </button>
               )}
-              {currentIndex < filtered.length - 1 && (
-                <button
-                  onClick={nextSlide}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full bg-[#E291BE] text-white flex items-center justify-center shadow-lg hover:bg-[#d17aaa] transition-all z-10"
-                  aria-label="Next video"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
-              )}
-            </>
-          )}
-
-          {/* Dots Indicator */}
-          {filtered.length > 1 && (
-            <div className="flex justify-center gap-2 mt-6">
-              {filtered.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentIndex
-                      ? "bg-[#E291BE] w-8"
-                      : "bg-gray-300 hover:bg-gray-400"
-                  }`}
-                  aria-label={`Go to video ${index + 1}`}
-                />
-              ))}
+              <button
+                onClick={nextSlide}
+                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#E291BE]/90 text-white flex items-center justify-center shadow-lg hover:bg-[#E291BE] transition-all z-20"
+                aria-label="Next video"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
             </div>
           )}
         </div>
