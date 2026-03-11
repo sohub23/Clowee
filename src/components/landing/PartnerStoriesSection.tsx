@@ -3,7 +3,6 @@ import chilloxLogo from "@/assets/chillox-logo-png_seeklogo-647089.png";
 import pizzaBurgLogo from "@/assets/pizza Burag logo.jpg";
 import diningLoungeLogo from "@/assets/The-Dining-Lounge.logo.jpg";
 import foodplexLogo from "@/assets/foodplex.jpeg";
-import kolapataLogo from "@/assets/Kolapata.png";
 import logo6 from "@/components/landing/6.jpeg";
 import logo7 from "@/components/landing/7.jpeg";
 import logo8 from "@/components/landing/8.jpeg";
@@ -16,7 +15,6 @@ const partnerLogos = [
   { src: pizzaBurgLogo, name: "PizzaBurg" },
   { src: diningLoungeLogo, name: "The Dining Lounge" },
   { src: foodplexLogo, name: "FoodPlex" },
-  { src: kolapataLogo, name: "Kolapata" },
   { src: logo6, name: "Keedee" },
   { src: logo7, name: "Baily Deli" },
   { src: logo8, name: "Cafe Rio" },
@@ -36,18 +34,31 @@ const PartnerStoriesSection = () => (
         </p>
       </div>
 
-      {/* Logo Grid - Single Line with Scrolling Animation */}
-      <div className="overflow-hidden py-8">
-        <div className="flex animate-scroll gap-12 items-center">
-          {/* Duplicate logos for seamless scrolling */}
-          {[...partnerLogos, ...partnerLogos].map((logo, index) => (
-            <div key={index} className="flex-shrink-0">
+      {/* Logo Grid - 2 Lines with Bigger Logos */}
+      <div className="space-y-12">
+        {/* First Line - 5 logos */}
+        <div className="flex flex-wrap justify-center items-center gap-12">
+          {partnerLogos.slice(0, 5).map((logo, index) => (
+            <div key={index} className="flex items-center justify-center">
               <img
                 src={logo.src}
                 alt={logo.name}
-                className={`max-w-[100px] max-h-[60px] object-contain ${
+                className={`max-w-[140px] max-h-[90px] object-contain ${
                   logo.name === "The Dining Lounge" ? "bg-white p-2 rounded" : ""
                 }`}
+              />
+            </div>
+          ))}
+        </div>
+        
+        {/* Second Line - 5 logos */}
+        <div className="flex flex-wrap justify-center items-center gap-12">
+          {partnerLogos.slice(5, 10).map((logo, index) => (
+            <div key={index + 5} className="flex items-center justify-center">
+              <img
+                src={logo.src}
+                alt={logo.name}
+                className="max-w-[140px] max-h-[90px] object-contain"
               />
             </div>
           ))}
