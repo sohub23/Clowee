@@ -1,7 +1,6 @@
 // Import partner logos
 import chilloxLogo from "@/assets/chillox-logo-png_seeklogo-647089.png";
 import pizzaBurgLogo from "@/assets/pizza Burag logo.jpg";
-import diningLoungeLogo from "@/assets/The-Dining-Lounge.logo.jpg";
 import foodplexLogo from "@/assets/foodplex.jpeg";
 import kolapataLogo from "@/assets/Kolapata.png";
 import logo6 from "@/components/landing/6.jpeg";
@@ -14,7 +13,6 @@ import logo10 from "@/components/landing/10.jpeg";
 const partnerLogos = [
   { src: chilloxLogo, name: "Chillox" },
   { src: pizzaBurgLogo, name: "PizzaBurg" },
-  { src: diningLoungeLogo, name: "The Dining Lounge" },
   { src: foodplexLogo, name: "FoodPlex" },
   { src: kolapataLogo, name: "Kolapata" },
   { src: logo6, name: "Keedee" },
@@ -38,16 +36,14 @@ const PartnerStoriesSection = () => (
 
       {/* Logo Grid - 2 Lines with Smaller Logos */}
       <div className="space-y-10">
-        {/* First Line - 6 logos */}
+        {/* First Line - 5 logos */}
         <div className="flex flex-wrap justify-center items-center gap-8">
-          {partnerLogos.slice(0, 6).map((logo, index) => (
+          {partnerLogos.slice(0, 5).map((logo, index) => (
             <div key={index} className="flex items-center justify-center">
               <img
                 src={logo.src}
                 alt={logo.name}
-                className={`max-w-[110px] max-h-[70px] object-contain ${
-                  logo.name === "The Dining Lounge" ? "bg-white p-2 rounded" : ""
-                }`}
+                className="max-w-[110px] max-h-[70px] object-contain"
               />
             </div>
           ))}
@@ -55,8 +51,8 @@ const PartnerStoriesSection = () => (
         
         {/* Second Line - 5 logos */}
         <div className="flex flex-wrap justify-center items-center gap-8">
-          {partnerLogos.slice(6, 11).map((logo, index) => (
-            <div key={index + 6} className="flex items-center justify-center">
+          {partnerLogos.slice(5, 10).map((logo, index) => (
+            <div key={index + 5} className="flex items-center justify-center">
               <img
                 src={logo.src}
                 alt={logo.name}
