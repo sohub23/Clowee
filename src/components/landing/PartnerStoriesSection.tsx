@@ -45,63 +45,51 @@ const PartnerStoriesSection = () => (
         </p>
       </motion.div>
 
-      {/* Logo Grid - 3 rows like reference */}
-      <div className="space-y-12">
-        {/* First Row - 4 logos */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-          {partnerLogos.slice(0, 4).map((logo, index) => (
+      {/* Logo Grid - 2 Lines with Animation */}
+      <div className="space-y-16">
+        {/* First Line - 6 logos */}
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 items-center justify-items-center">
+          {partnerLogos.slice(0, 6).map((logo, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.8, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="flex items-center justify-center p-4"
+              transition={{ 
+                delay: index * 0.2,
+                duration: 0.6,
+                ease: "easeOut"
+              }}
+              className="flex items-center justify-center p-4 hover:scale-110 transition-transform duration-300"
             >
               <img
                 src={logo.src}
                 alt={logo.name}
-                className="max-w-[120px] max-h-[80px] object-contain hover:scale-105 transition-transform duration-300"
+                className="max-w-[120px] max-h-[80px] object-contain filter drop-shadow-lg"
               />
             </motion.div>
           ))}
         </div>
         
-        {/* Second Row - 4 logos */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
-          {partnerLogos.slice(4, 8).map((logo, index) => (
+        {/* Second Line - 5 logos */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center max-w-4xl mx-auto">
+          {partnerLogos.slice(6, 11).map((logo, index) => (
             <motion.div
-              key={index + 4}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              key={index + 6}
+              initial={{ opacity: 0, scale: 0.8, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: (index + 4) * 0.1 }}
-              className="flex items-center justify-center p-4"
+              transition={{ 
+                delay: (index + 6) * 0.2,
+                duration: 0.6,
+                ease: "easeOut"
+              }}
+              className="flex items-center justify-center p-4 hover:scale-110 transition-transform duration-300"
             >
               <img
                 src={logo.src}
                 alt={logo.name}
-                className="max-w-[120px] max-h-[80px] object-contain hover:scale-105 transition-transform duration-300"
-              />
-            </motion.div>
-          ))}
-        </div>
-        
-        {/* Third Row - 3 logos centered */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-items-center max-w-2xl mx-auto">
-          {partnerLogos.slice(8, 11).map((logo, index) => (
-            <motion.div
-              key={index + 8}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: (index + 8) * 0.1 }}
-              className="flex items-center justify-center p-4"
-            >
-              <img
-                src={logo.src}
-                alt={logo.name}
-                className="max-w-[120px] max-h-[80px] object-contain hover:scale-105 transition-transform duration-300"
+                className="max-w-[120px] max-h-[80px] object-contain filter drop-shadow-lg"
               />
             </motion.div>
           ))}
