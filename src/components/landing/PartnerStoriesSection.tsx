@@ -6,7 +6,6 @@ import kolapataLogo from "@/assets/Kolapata.png";
 import logo6 from "@/components/landing/6.jpeg";
 import logo7 from "@/components/landing/7.jpeg";
 import logo8 from "@/components/landing/8.jpeg";
-import logo33 from "@/components/landing/33.jpeg";
 import logo66 from "@/components/landing/66.jpeg";
 import logo10 from "@/components/landing/10.jpeg";
 import filmic1 from "@/assets/filmic-1.jpeg";
@@ -21,7 +20,6 @@ const partnerLogos = [
   { src: logo6, name: "Keedee" },
   { src: logo7, name: "Baily Deli" },
   { src: logo8, name: "Cafe Rio" },
-  { src: logo33, name: "Partner 9" },
   { src: logo66, name: "Partner 10" },
   { src: logo10, name: "Fusion Lounge" },
   { src: filmic1, name: "Filmic 1" },
@@ -55,9 +53,9 @@ const PartnerStoriesSection = () => (
           ))}
         </div>
         
-        {/* Second Line - 7 logos */}
+        {/* Second Line - 6 logos */}
         <div className="flex flex-wrap justify-center items-center gap-8">
-          {partnerLogos.slice(7, 14).map((logo, index) => (
+          {partnerLogos.slice(7, 12).map((logo, index) => (
             <div key={index + 7} className="flex items-center justify-center">
               <img
                 src={logo.src}
