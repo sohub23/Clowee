@@ -181,34 +181,30 @@ const VideoShowcaseSection = () => {
           </div>
         )}
 
-        {/* Video Grid - Show all 3 videos with larger cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {filtered.slice(0, 2).map((video, i) => renderVideoCard(video, i))}
+        {/* Video Grid with External Carousel Buttons */}
+        <div className="relative max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {filtered.slice(0, 2).map((video, i) => renderVideoCard(video, i))}
+            
+            {/* Third video */}
+            {filtered.length > 2 && renderVideoCard(filtered[2], 2)}
+          </div>
           
-          {/* Third video with carousel */}
-          {filtered.length > 2 && (
-            <div className="relative">
-              {renderVideoCard(filtered[2], 2)}
-              
-              {/* Carousel buttons for 3rd video */}
-              {filtered.length > 3 && (
-                <button
-                  onClick={prevSlide}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#E291BE]/90 text-white flex items-center justify-center shadow-lg hover:bg-[#E291BE] transition-all z-20"
-                  aria-label="Previous video"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-              )}
-              <button
-                onClick={nextSlide}
-                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#E291BE]/90 text-white flex items-center justify-center shadow-lg hover:bg-[#E291BE] transition-all z-20"
-                aria-label="Next video"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
-          )}
+          {/* External Carousel Buttons - Always visible */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 w-12 h-12 rounded-full bg-[#E291BE] text-white flex items-center justify-center shadow-lg hover:bg-[#d17aaa] transition-all z-20"
+            aria-label="Previous video"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 w-12 h-12 rounded-full bg-[#E291BE] text-white flex items-center justify-center shadow-lg hover:bg-[#d17aaa] transition-all z-20"
+            aria-label="Next video"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
         </div>
       </div>
 
