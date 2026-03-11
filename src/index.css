@@ -117,4 +117,42 @@
   .section-alt-bg {
     background-color: hsl(var(--section-alt));
   }
+
+  /* Partner Logo Scrolling Animations */
+  .scroll-right {
+    animation: scrollRight 20s linear infinite;
+  }
+
+  .scroll-left {
+    animation: scrollLeft 20s linear infinite;
+  }
+
+  @keyframes scrollRight {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .scroll-container {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .scroll-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 4rem;
+  }
 }
