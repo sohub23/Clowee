@@ -3,15 +3,15 @@ import { motion } from "framer-motion";
 const weeklyData = [
   { item: "Average Plays per Day", value: "120" },
   { item: "Total Plays (7 Days)", value: "840" },
-  { item: "Coin Rate (Per Play)", value: "৳25" },
-  { item: "Total Weekly Sales", value: "৳21,000" },
+  { item: "Coin Rate (Per Play)", value: "BDT 25" },
+  { item: "Total Weekly Sales", value: "BDT 21,000" },
   { item: "Estimated Prize Out (Dolls)", value: "70" },
-  { item: "Doll Cost (৳150 each)", value: "৳10,500" },
-  { item: "Total Profit", value: "৳10,500", highlight: true },
-  { item: "Maintenance Charge (10%)", value: "৳1,050" },
-  { item: "Profit After Maintenance", value: "৳9,450", highlight: true },
-  { item: "Clowee Profit Share (50%)", value: "৳4,725", clowee: true },
-  { item: "Franchise Profit Share (50%)", value: "৳4,725", franchise: true },
+  { item: "Doll Cost (BDT 150 each)", value: "BDT 10,500" },
+  { item: "Total Profit", value: "BDT 10,500", highlight: true },
+  { item: "Maintenance Charge (10%)", value: "BDT 1,050" },
+  { item: "Profit After Maintenance", value: "BDT 9,450", highlight: true },
+  { item: "Clowee Profit Share (50%)", value: "BDT 4,725", clowee: true },
+  { item: "Franchise Profit Share (50%)", value: "BDT 4,725", franchise: true },
   { item: "Payable To I3 Technologies", value: "16,275", payable: true },
 
 ];

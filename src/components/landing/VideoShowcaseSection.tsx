@@ -17,28 +17,28 @@ const staticVideos = [
   {
     id: { videoId: "aOnyKBfwKrE" },
     snippet: {
-      title: "Clowee Customer Success Story",
-      description: "Partner shares their experience with Clowee machine",
-      publishedAt: "2024-01-02",
+      title: "Clowee | Game On | Amusement Games | Theme Park | Made In Bangladesh",
+      description: "Clowee claw machine in action at theme park",
+      publishedAt: "2024-01-01",
       thumbnails: { medium: { url: `https://img.youtube.com/vi/aOnyKBfwKrE/hqdefault.jpg` } }
-    }
-  },
-  {
-    id: { videoId: "3V-3oOpi5Hc" },
-    snippet: {
-      title: "How Clowee Works - Complete Guide",
-      description: "Complete tutorial on how Clowee claw machine operates",
-      publishedAt: "2024-01-03",
-      thumbnails: { medium: { url: `https://img.youtube.com/vi/3V-3oOpi5Hc/hqdefault.jpg` } }
     }
   },
   {
     id: { videoId: "iorKosbaUPs" },
     snippet: {
-      title: "Clowee Machine in Action - Chillox",
-      description: "Watch Clowee claw machine in action at Chillox restaurant",
-      publishedAt: "2024-01-04",
+      title: "Tolpar Claw Games Machine | Arcade Games | Amusement park games| Made In Bangladesh",
+      description: "Tolpar claw machine demonstration",
+      publishedAt: "2024-01-02",
       thumbnails: { medium: { url: `https://img.youtube.com/vi/iorKosbaUPs/hqdefault.jpg` } }
+    }
+  },
+  {
+    id: { videoId: "3V-3oOpi5Hc" },
+    snippet: {
+      title: "Claw Games Machine |Tolpar| Made In Bangladesh | Arcade Game | Kids zone",
+      description: "Claw machine for kids zone and indoor playground",
+      publishedAt: "2024-01-03",
+      thumbnails: { medium: { url: `https://img.youtube.com/vi/3V-3oOpi5Hc/hqdefault.jpg` } }
     }
   }
 ];

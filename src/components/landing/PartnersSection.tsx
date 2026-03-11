@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
-import { Play, MapPin } from "lucide-react";
-import { useState } from "react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { MapPin } from "lucide-react";
 
 const partners = [
   {
@@ -84,13 +82,6 @@ const videos = [
 ];
 
 const PartnersSection = () => {
-  const [videoOpen, setVideoOpen] = useState(false);
-  const [activeVideo, setActiveVideo] = useState("");
-
-  const openVideo = (url: string) => {
-    setActiveVideo(url);
-    setVideoOpen(true);
-  };
 
   return (
     <section className="py-20 bg-secondary/30">
@@ -119,7 +110,7 @@ const PartnersSection = () => {
           {partners.map((partner, index) => (
             <motion.div
               key={partner.name}
-              className="group rounded-xl overflow-hidden border border-border bg-card shadow-sm hover:shadow-md transition-shadow"
+              className="group rounded-lg overflow-hidden border border-primary/20 bg-card shadow-sm hover:shadow-md hover:border-primary/40 transition-all"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -129,80 +120,20 @@ const PartnersSection = () => {
                 <img
                   src={partner.image}
                   alt={`${partner.name} — Clowee Partner Restaurant`}
-                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
-              <div className="p-4">
-                <h3 className="font-semibold text-foreground">{partner.name}</h3>
-                <p className="text-sm text-muted-foreground flex items-center gap-1 mt-1">
-                  <MapPin className="w-3.5 h-3.5" />
+              <div className="p-2">
+                <h3 className="font-semibold text-foreground text-sm">{partner.name}</h3>
+                <p className="text-xs text-muted-foreground flex items-center gap-1 mt-1">
+                  <MapPin className="w-3 h-3" />
                   {partner.location}
                 </p>
               </div>
             </motion.div>
           ))}
         </div>
-
-        {/* Videos */}
-        <motion.div
-          className="text-center mb-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-            See Clowee in Action
-          </h3>
-          <p className="text-muted-foreground">Watch how Clowee brings joy to customers and profit to partners.</p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {videos.map((video, index) => (
-            <motion.div
-              key={video.title}
-              className="rounded-xl overflow-hidden border border-border bg-card shadow-sm cursor-pointer group"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.15 }}
-              onClick={() => openVideo(video.videoUrl)}
-            >
-              <div className="aspect-video relative overflow-hidden">
-                <img
-                  src={video.thumbnail}
-                  alt={video.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-foreground/20 flex items-center justify-center group-hover:bg-foreground/30 transition-colors">
-                  <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg">
-                    <Play className="w-6 h-6 text-primary-foreground ml-1" />
-                  </div>
-                </div>
-              </div>
-              <div className="p-4">
-                <h4 className="font-semibold text-foreground">{video.title}</h4>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Video Dialog */}
-        <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
-          <DialogContent className="max-w-3xl p-0 overflow-hidden">
-            <div className="aspect-video">
-              <iframe
-                src={activeVideo}
-                title="Clowee Video"
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-          </DialogContent>
-        </Dialog>
       </div>
     </section>
   );
