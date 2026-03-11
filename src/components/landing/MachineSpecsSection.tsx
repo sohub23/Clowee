@@ -11,70 +11,69 @@ const specs = [
 ];
 
 const MachineSpecsSection = () => (
-  <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
-    <div className="container max-w-7xl">
+  <section id="earnings" className="section-padding bg-gradient-to-br from-gray-50 to-white">
+    <div className="container max-w-sm mx-auto px-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-16"
+        className="text-center mb-8"
       >
-        <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
+        <h2 className="text-2xl font-heading font-bold text-foreground mb-4">
           Machine <span className="text-primary bg-gradient-to-r from-[#E291BE] to-[#D67BA8] bg-clip-text text-transparent">Specifications</span>
         </h2>
-        <p className="text-muted-foreground text-xl max-w-3xl mx-auto leading-relaxed">
-          Professional-grade claw machine built for reliability and performance with cutting-edge technology
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          Professional-grade claw machine built for reliability and performance
         </p>
       </motion.div>
 
-      <div className="flex flex-col lg:flex-row gap-0 items-start justify-center">
-        {/* Left Column - Image */}
+      <div className="space-y-6">
+        {/* Image */}
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="lg:w-1/2"
+          className="text-center"
         >
-          <div className="max-w-sm mx-auto">
+          <div className="max-w-xs mx-auto">
             <img
               src={machineImage}
               alt="Clowee Claw Machine"
-              className="w-full h-auto object-contain rounded-2xl shadow-lg"
+              className="w-full h-auto object-contain rounded-xl shadow-lg"
             />
           </div>
         </motion.div>
 
-        {/* Right Column - Specifications */}
+        {/* Specifications */}
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="lg:w-1/2"
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="bg-white rounded-2xl p-6 shadow-xl border-2 border-gray-100">
-            <h3 className="text-xl font-bold text-foreground mb-6 text-center">
+          <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100">
+            <h3 className="text-lg font-bold text-foreground mb-4 text-center">
               Technical Specifications
             </h3>
-            <div className="grid gap-3">
+            <div className="space-y-2">
               {specs.map((spec, index) => (
                 <motion.div
                   key={spec.label}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="group flex items-center gap-3 p-3 rounded-xl bg-gray-50 border-2 border-transparent hover:border-[#E291BE] hover:bg-gradient-to-r hover:from-[#E291BE] hover:to-[#D67BA8] hover:text-white transition-all duration-300 cursor-pointer hover:shadow-lg hover:scale-105"
+                  className="group flex items-center gap-3 p-2 rounded-lg bg-gray-50 border border-transparent hover:border-[#E291BE] hover:bg-gradient-to-r hover:from-[#E291BE] hover:to-[#D67BA8] hover:text-white transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#E291BE] to-[#D67BA8] flex items-center justify-center shrink-0 shadow-lg group-hover:bg-white/20">
-                    <spec.icon className="w-6 h-6 text-white" />
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#E291BE] to-[#D67BA8] flex items-center justify-center shrink-0">
+                    <spec.icon className="w-4 h-4 text-white" />
                   </div>
-                  <div className="flex-1">
-                    <div className="text-sm font-bold text-muted-foreground group-hover:text-white mb-1">
+                  <div className="flex-1 min-w-0">
+                    <div className="text-xs font-semibold text-muted-foreground group-hover:text-white truncate">
                       {spec.label}
                     </div>
-                    <div className="text-base font-black text-foreground group-hover:text-white">
+                    <div className="text-sm font-bold text-foreground group-hover:text-white">
                       {spec.value}
                     </div>
                   </div>
