@@ -34,7 +34,7 @@ const PartnerStoriesSection = () => (
     <div className="container mx-auto px-4">
       {/* Header */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">Ours Partner</h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Partners</h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
           Trusted by leading restaurants and businesses across Bangladesh
         </p>
