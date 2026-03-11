@@ -5,67 +5,67 @@ const partners = [
   {
     name: "Chillox Nasirabad",
     location: "Chattogram",
-    image: "/assets/chn.jpg",
+    image: "https://clowee.sohub.com.bd/assets/chn.jpg",
   },
   {
     name: "Pizzaburg Gulshan",
     location: "Gulshan-1, Dhaka",
-    image: "/assets/pbgulsan.jpg",
+    image: "https://clowee.sohub.com.bd/assets/pbgulsan.jpg",
   },
   {
     name: "Chickli, Rangpur",
     location: "Rangpur",
-    image: "/assets/Chikcli.jpg",
+    image: "https://clowee.sohub.com.bd/assets/Chikcli.jpg",
   },
   {
     name: "The Dinning Lounge Wari",
     location: "Wari, Dhaka",
-    image: "/assets/dininglounge-wari.webp",
+    image: "https://clowee.sohub.com.bd/assets/dininglounge-wari.webp",
   },
   {
     name: "Pizzaburg Dhanmondi",
     location: "Satmasjid Road, Dhaka",
-    image: "/assets/pizzaburg-mirpur1.jpg",
+    image: "https://clowee.sohub.com.bd/assets/pizzaburg-mirpur1.jpg",
   },
   {
     name: "Waffle Wala",
     location: "Dhanmondi, Dhaka",
-    image: "/assets/caferio-mohammadpur.jpg",
+    image: "https://clowee.sohub.com.bd/assets/caferio-mohammadpur.jpg",
   },
   {
     name: "Cafe Rio Uttara",
     location: "Uttara, Dhaka",
-    image: "/assets/caferio-uttara.jpg",
+    image: "https://clowee.sohub.com.bd/assets/caferio-uttara.jpg",
   },
   {
     name: "Pizzaburg Dhanmondi",
     location: "Dhanmondi, Dhaka",
-    image: "/assets/pbdhanmondi.jpg",
+    image: "https://clowee.sohub.com.bd/assets/pbdhanmondi.jpg",
   },
   {
     name: "FoodPlex",
     location: "Khan ABC Tradeplex,Dhaka",
-    image: "/assets/foodplex.dhan.jpg",
+    image: "https://clowee.sohub.com.bd/assets/foodplex.dhan.jpg",
   },
   {
     name: "The Dinning Lounge Narayanganj",
     location: "Narayanganj, Dhaka ",
-    image: "/assets/dininglounge-narayanganj.webp",
+    image: "https://clowee.sohub.com.bd/assets/dininglounge-narayanganj.webp",
   },
   {
     name: "The Dinning Lounge Khilgaon",
     location: "Shotodol Rose Heights, Dhaka ",
-    image: "/assets/d_l.jpg",
+    image: "https://clowee.sohub.com.bd/assets/d_l.jpg",
   },
   {
     name: "Baily Deli",
     location: "Baily Road, Dhaka",
-    image: "/assets/baily-deli3.jpg",
+    image: "https://clowee.sohub.com.bd/assets/baily-deli3.jpg",
   },
   {
     name: "Chillox Jamal Khan",
     location: "Jamal Khan, Chattogram",
-    image: "/assets/chj.jpg",
+    image: "https://clowee.sohub.com.bd/assets/chj.jpg",
   },
 ];
 
