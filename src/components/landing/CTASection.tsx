@@ -22,16 +22,40 @@ const CTASection = () => {
     phone: "",
     dailyCustomer: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = formSchema.safeParse(form);
     if (!result.success) {
       toast.error("Please fill in all required fields.");
       return;
     }
-    toast.success("Application submitted! We'll contact you soon.");
-    setForm({ restaurantName: "", ownerName: "", location: "", phone: "", dailyCustomer: "" });
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/send-email.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast.success("Application submitted! We'll contact you soon.");
+        setForm({ restaurantName: "", ownerName: "", location: "", phone: "", dailyCustomer: "" });
+      } else {
+        toast.error(data.message || "Failed to submit. Please try again.");
+      }
+    } catch (error) {
+      toast.error("Network error. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const update = (field: string, value: string) => setForm((p) => ({ ...p, [field]: value }));
@@ -107,8 +131,8 @@ const CTASection = () => {
                 ))}
               </div>
             </div>
-            <Button variant="hero" size="lg" type="submit" className="w-full">
-              Submit Application
+            <Button variant="hero" size="lg" type="submit" className="w-full" disabled={isSubmitting}>
+              {isSubmitting ? "Submitting..." : "Submit Application"}
             </Button>
           </motion.form>
         </div>
