@@ -18,6 +18,14 @@ dist-ssr
 .env.production
 public/.env
 
+# PHP dependencies
+public/vendor/
+public/composer.phar
+
+# Build artifacts
+public/assets/
+public/index.html
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
