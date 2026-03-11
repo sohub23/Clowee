@@ -18,11 +18,6 @@ import chjImg from "@/assets/chj.jpg";
 
 const partners = [
   {
-    name: "Chillox Nasirabad",
-    location: "Chattogram",
-    image: chnImg,
-  },
-  {
     name: "Pizzaburg Gulshan",
     location: "Gulshan-1, Dhaka",
     image: pbgulsanImg,
@@ -58,11 +53,6 @@ const partners = [
     image: pbDhanmondiImg,
   },
   {
-    name: "FoodPlex",
-    location: "Khan ABC Tradeplex,Dhaka",
-    image: foodplexImg,
-  },
-  {
     name: "The Dinning Lounge Narayanganj",
     location: "Narayanganj, Dhaka ",
     image: diningNarayanganjImg,
@@ -76,11 +66,6 @@ const partners = [
     name: "Baily Deli",
     location: "Baily Road, Dhaka",
     image: bailyDeliImg,
-  },
-  {
-    name: "Chillox Jamal Khan",
-    location: "Jamal Khan, Chattogram",
-    image: chjImg,
   },
 ];
 

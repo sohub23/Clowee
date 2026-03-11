@@ -42,29 +42,34 @@ const PartnerStoriesSection = () => (
         </p>
       </div>
 
-      {/* Logo Grid - 2 Lines with Smaller Logos */}
-      <div className="space-y-10">
-        {/* First Line - 7 logos */}
-        <div className="flex flex-wrap justify-center items-center gap-8">
-          {partnerLogos.slice(0, 7).map((logo, index) => (
-            <div key={index} className="flex items-center justify-center">
+      {/* Logo Grid - Single Line with Seamless Scrolling */}
+      <div className="overflow-hidden py-8">
+        <div className="scroll-content scroll-right">
+          {/* All logos in one line */}
+          {partnerLogos.map((logo, index) => (
+            <div
+              key={`logo-${index}`}
+              className="flex items-center justify-center flex-shrink-0"
+            >
               <img
                 src={logo.src}
                 alt={logo.name}
-                className="max-w-[110px] max-h-[70px] object-contain"
+                className={`w-[120px] h-[80px] object-contain ${
+                  logo.name === "The Dining Lounge" ? "bg-white p-2 rounded" : ""
+                }`}
               />
             </div>
           ))}
-        </div>
-        
-        {/* Second Line - 7 logos */}
-        <div className="flex flex-wrap justify-center items-center gap-8">
-          {partnerLogos.slice(7, 14).map((logo, index) => (
-            <div key={index + 7} className="flex items-center justify-center">
+          {/* Duplicate for seamless loop */}
+          {partnerLogos.map((logo, index) => (
+            <div
+              key={`logo-duplicate-${index}`}
+              className="flex items-center justify-center flex-shrink-0"
+            >
               <img
                 src={logo.src}
                 alt={logo.name}
-                className={`max-w-[110px] max-h-[70px] object-contain ${
+                className={`w-[120px] h-[80px] object-contain ${
                   logo.name === "The Dining Lounge" ? "bg-white p-2 rounded" : ""
                 }`}
               />
