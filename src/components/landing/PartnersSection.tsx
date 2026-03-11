@@ -1,86 +1,71 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 
-// Import images properly
-import chnImg from "@/assets/chn.jpg";
-import pbgulsanImg from "@/assets/pbgulsan.jpg";
-import chikcliImg from "@/assets/Chikcli.jpg";
-import diningWariImg from "@/assets/dininglounge-wari.webp";
-import pbMirpur1Img from "@/assets/pizzaburg-mirpur1.jpg";
-import caferioMohammadpurImg from "@/assets/caferio-mohammadpur.jpg";
-import caferioUttaraImg from "@/assets/caferio-uttara.jpg";
-import pbDhanmondiImg from "@/assets/pbdhanmondi.jpg";
-import foodplexImg from "@/assets/foodplex.dhan.jpg";
-import diningNarayanganjImg from "@/assets/dininglounge-narayanganj.webp";
-import dLImg from "@/assets/d_l.jpg";
-import bailyDeliImg from "@/assets/baily-deli3 copy.jpg";
-import chjImg from "@/assets/chj.jpg";
-
 const partners = [
   {
     name: "Chillox Nasirabad",
     location: "Chattogram",
-    image: chnImg,
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300&h=200&fit=crop&crop=center",
   },
   {
     name: "Pizzaburg Gulshan",
     location: "Gulshan-1, Dhaka",
-    image: pbgulsanImg,
+    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=300&h=200&fit=crop&crop=center",
   },
   {
     name: "Chickli, Rangpur",
     location: "Rangpur",
-    image: chikcliImg,
+    image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=300&h=200&fit=crop&crop=center",
   },
   {
     name: "The Dinning Lounge Wari",
     location: "Wari, Dhaka",
-    image: diningWariImg,
+    image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=300&h=200&fit=crop&crop=center",
   },
   {
     name: "Pizzaburg Dhanmondi",
     location: "Satmasjid Road, Dhaka",
-    image: pbMirpur1Img,
+    image: "https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=300&h=200&fit=crop&crop=center",
   },
   {
     name: "Waffle Wala",
     location: "Dhanmondi, Dhaka",
-    image: caferioMohammadpurImg,
+    image: "https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=300&h=200&fit=crop&crop=center",
   },
   {
     name: "Cafe Rio Uttara",
     location: "Uttara, Dhaka",
-    image: caferioUttaraImg,
+    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=300&h=200&fit=crop&crop=center",
   },
   {
     name: "Pizzaburg Dhanmondi",
     location: "Dhanmondi, Dhaka",
-    image: pbDhanmondiImg,
+    image: "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?w=300&h=200&fit=crop&crop=center",
   },
   {
     name: "FoodPlex",
     location: "Khan ABC Tradeplex,Dhaka",
-    image: foodplexImg,
+    image: "https://images.unsplash.com/photo-1578474846511-04ba529f0b88?w=300&h=200&fit=crop&crop=center",
   },
   {
     name: "The Dinning Lounge Narayanganj",
     location: "Narayanganj, Dhaka ",
-    image: diningNarayanganjImg,
+    image: "https://images.unsplash.com/photo-1551218808-94e220e084d2?w=300&h=200&fit=crop&crop=center",
   },
   {
     name: "The Dinning Lounge Khilgaon",
     location: "Shotodol Rose Heights, Dhaka ",
-    image: dLImg,
+    image: "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=300&h=200&fit=crop&crop=center",
   },
   {
     name: "Baily Deli",
     location: "Baily Road, Dhaka",
-    image: bailyDeliImg,
+    image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=300&h=200&fit=crop&crop=center",
   },
   {
     name: "Chillox Jamal Khan",
     location: "Jamal Khan, Chattogram",
-    image: chjImg,
+    image: "https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=300&h=200&fit=crop&crop=center",
   },
 ];
 
