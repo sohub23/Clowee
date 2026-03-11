@@ -27,7 +27,7 @@ const MachineSpecsSection = () => (
         </p>
       </motion.div>
 
-      <div className="flex flex-col lg:flex-row gap-8 items-start justify-center">
+      <div className="flex flex-col lg:flex-row gap-0 items-start justify-center">
         {/* Left Column - Image */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -53,11 +53,11 @@ const MachineSpecsSection = () => (
           transition={{ duration: 0.6 }}
           className="lg:w-1/2"
         >
-          <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-gray-100 h-full">
-            <h3 className="text-2xl font-bold text-foreground mb-8 text-center">
+          <div className="bg-white rounded-2xl p-6 shadow-xl border-2 border-gray-100">
+            <h3 className="text-xl font-bold text-foreground mb-6 text-center">
               Technical Specifications
             </h3>
-            <div className="grid gap-4">
+            <div className="grid gap-3">
               {specs.map((spec, index) => (
                 <motion.div
                   key={spec.label}
@@ -65,16 +65,16 @@ const MachineSpecsSection = () => (
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="group flex items-center gap-4 p-4 rounded-xl bg-gray-50 border-2 border-transparent hover:border-[#E291BE] hover:bg-gradient-to-r hover:from-[#E291BE] hover:to-[#D67BA8] hover:text-white transition-all duration-300 cursor-pointer hover:shadow-lg hover:scale-105"
+                  className="group flex items-center gap-3 p-3 rounded-xl bg-gray-50 border-2 border-transparent hover:border-[#E291BE] hover:bg-gradient-to-r hover:from-[#E291BE] hover:to-[#D67BA8] hover:text-white transition-all duration-300 cursor-pointer hover:shadow-lg hover:scale-105"
                 >
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#E291BE] to-[#D67BA8] flex items-center justify-center shrink-0 shadow-lg group-hover:bg-white/20">
-                    <spec.icon className="w-7 h-7 text-white" />
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#E291BE] to-[#D67BA8] flex items-center justify-center shrink-0 shadow-lg group-hover:bg-white/20">
+                    <spec.icon className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <div className="text-base font-bold text-muted-foreground group-hover:text-white mb-1">
+                    <div className="text-sm font-bold text-muted-foreground group-hover:text-white mb-1">
                       {spec.label}
                     </div>
-                    <div className="text-lg font-black text-foreground group-hover:text-white">
+                    <div className="text-base font-black text-foreground group-hover:text-white">
                       {spec.value}
                     </div>
                   </div>
