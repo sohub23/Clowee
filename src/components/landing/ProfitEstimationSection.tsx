@@ -16,17 +16,17 @@ const weeklyData = [
 ];
 
 const monthlyData = [
-  { item: "Coin Count", value: "3600" },
-  { item: "Coin Rate", value: "BDT 25" },
+  { item: "Average Plays per Day", value: "120" },
+  { item: "Total Plays (30 Days)", value: "3,600" },
+  { item: "Coin Rate (Per Play)", value: "BDT 25" },
   { item: "Total Sales", value: "BDT 90,000" },
-  { item: "Prize out Ratio", value: "300" },
-  { item: "Doll Rate", value: "BDT 150" },
-  { item: "Total Doll Cost", value: "BDT 45,000" },
-  { item: "Total Profit (Total Sales-Doll Cost)", value: "BDT 45,000", highlight: true },
-  { item: "10% Maintenance Charge", value: "BDT 4,500" },
-  { item: "Total Profit after 10% Maintenance Charge", value: "BDT 40,500", highlight: true },
-  { item: "Profit Share(50%)- Clowee", value: "BDT 20,250", clowee: true },
-  { item: "Profit Share(50%)- Franchise", value: "BDT 20,250", franchise: true },
+  { item: "Estimated Prize Out (Dolls)", value: "300" },
+  { item: "Doll Cost (BDT 150 each)", value: "BDT 45,000" },
+  { item: "Total Profit", value: "BDT 45,000", highlight: true },
+  { item: "Maintenance Charge (10%)", value: "BDT 4,500" },
+  { item: "Profit After Maintenance", value: "BDT 40,500", highlight: true },
+  { item: "Clowee Profit Share (50%)", value: "BDT 20,250", clowee: true },
+  { item: "Franchise Profit Share (50%)", value: "BDT 20,250", franchise: true },
   { item: "Payable To I3 Technologies", value: "BDT 69,750", payable: true },
 ];
 
