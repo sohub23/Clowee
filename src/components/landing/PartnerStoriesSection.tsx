@@ -45,44 +45,54 @@ const PartnerStoriesSection = () => (
         </p>
       </motion.div>
 
-      {/* Logo Grid - 2 Lines with Scrolling Animation */}
-      <div className="space-y-12">
-        {/* First Line - Scrolls Right */}
-        <div className="scroll-container py-4">
-          <div className="scroll-content scroll-right">
-            {/* Duplicate logos for seamless scrolling */}
-            {[...partnerLogos.slice(0, 6), ...partnerLogos.slice(0, 6)].map((logo, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-center p-4 flex-shrink-0"
-              >
-                <img
-                  src={logo.src}
-                  alt={logo.name}
-                  className="max-w-[120px] max-h-[80px] object-contain filter drop-shadow-lg"
-                />
-              </div>
-            ))}
-          </div>
+      {/* Logo Grid - 2 Lines with Animation */}
+      <div className="space-y-16">
+        {/* First Line - 6 logos */}
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 items-center justify-items-center">
+          {partnerLogos.slice(0, 6).map((logo, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.8, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ 
+                delay: index * 0.2,
+                duration: 0.6,
+                ease: "easeOut"
+              }}
+              className="flex items-center justify-center p-4 hover:scale-110 transition-transform duration-300"
+            >
+              <img
+                src={logo.src}
+                alt={logo.name}
+                className="max-w-[120px] max-h-[80px] object-contain filter drop-shadow-lg"
+              />
+            </motion.div>
+          ))}
         </div>
         
-        {/* Second Line - Scrolls Left */}
-        <div className="scroll-container py-4">
-          <div className="scroll-content scroll-left">
-            {/* Duplicate logos for seamless scrolling */}
-            {[...partnerLogos.slice(6, 11), ...partnerLogos.slice(6, 11)].map((logo, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-center p-4 flex-shrink-0"
-              >
-                <img
-                  src={logo.src}
-                  alt={logo.name}
-                  className="max-w-[120px] max-h-[80px] object-contain filter drop-shadow-lg"
-                />
-              </div>
-            ))}
-          </div>
+        {/* Second Line - 5 logos */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center max-w-4xl mx-auto">
+          {partnerLogos.slice(6, 11).map((logo, index) => (
+            <motion.div
+              key={index + 6}
+              initial={{ opacity: 0, scale: 0.8, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ 
+                delay: (index + 6) * 0.2,
+                duration: 0.6,
+                ease: "easeOut"
+              }}
+              className="flex items-center justify-center p-4 hover:scale-110 transition-transform duration-300"
+            >
+              <img
+                src={logo.src}
+                alt={logo.name}
+                className="max-w-[120px] max-h-[80px] object-contain filter drop-shadow-lg"
+              />
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>
