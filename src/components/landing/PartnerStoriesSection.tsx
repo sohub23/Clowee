@@ -36,16 +36,16 @@ const PartnerStoriesSection = () => (
         </p>
       </div>
 
-      {/* Logo Grid - 2 Lines with Bigger Logos */}
-      <div className="space-y-12">
+      {/* Logo Grid - 2 Lines with Smaller Logos */}
+      <div className="space-y-10">
         {/* First Line - 6 logos */}
-        <div className="flex flex-wrap justify-center items-center gap-12">
+        <div className="flex flex-wrap justify-center items-center gap-8">
           {partnerLogos.slice(0, 6).map((logo, index) => (
             <div key={index} className="flex items-center justify-center">
               <img
                 src={logo.src}
                 alt={logo.name}
-                className={`max-w-[140px] max-h-[90px] object-contain ${
+                className={`max-w-[110px] max-h-[70px] object-contain ${
                   logo.name === "The Dining Lounge" ? "bg-white p-2 rounded" : ""
                 }`}
               />
@@ -54,13 +54,13 @@ const PartnerStoriesSection = () => (
         </div>
         
         {/* Second Line - 5 logos */}
-        <div className="flex flex-wrap justify-center items-center gap-12">
+        <div className="flex flex-wrap justify-center items-center gap-8">
           {partnerLogos.slice(6, 11).map((logo, index) => (
             <div key={index + 6} className="flex items-center justify-center">
               <img
                 src={logo.src}
                 alt={logo.name}
-                className="max-w-[140px] max-h-[90px] object-contain"
+                className="max-w-[110px] max-h-[70px] object-contain"
               />
             </div>
           ))}
