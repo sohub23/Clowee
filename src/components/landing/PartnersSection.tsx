@@ -106,39 +106,59 @@ const PartnersSection = () => {
           </p>
         </motion.div>
 
-        {/* Partner Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
-          {partners.map((partner, index) => (
-            <motion.div
-              key={partner.name}
-              className="group rounded-lg overflow-hidden border border-primary/3 bg-card shadow-sm hover:shadow-md hover:border-primary/8 transition-all"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-            >
-              <div className="aspect-[4/3] overflow-hidden bg-muted">
-                <img
-                  src={partner.image}
-                  alt={`${partner.name} — Clowee Partner Restaurant`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="eager"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    console.error(`Failed to load image for ${partner.name}`);
-                  }}
-                />
+        {/* Partner Grid with Animation */}
+        <div className="relative overflow-hidden mb-16">
+          {/* First Row - Moving Right */}
+          <div className="flex animate-scroll-right mb-6 whitespace-nowrap">
+            {[...partners, ...partners].map((partner, index) => (
+              <div
+                key={`row1-${index}`}
+                className="group rounded-lg overflow-hidden border border-primary/3 bg-card shadow-sm hover:shadow-md hover:border-primary/8 transition-all inline-block w-64 mx-3"
+              >
+                <div className="aspect-[4/3] overflow-hidden bg-muted">
+                  <img
+                    src={partner.image}
+                    alt={`${partner.name} — Clowee Partner Restaurant`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="eager"
+                  />
+                </div>
+                <div className="p-2 bg-[#E291BE]">
+                  <h3 className="font-semibold text-white text-xs whitespace-normal">{partner.name}</h3>
+                  <p className="text-[10px] text-white/90 flex items-center gap-1 mt-1 whitespace-normal">
+                    <MapPin className="w-2.5 h-2.5" />
+                    {partner.location}
+                  </p>
+                </div>
               </div>
-              <div className="p-2 bg-[#E291BE]">
-                <h3 className="font-semibold text-white text-xs">{partner.name}</h3>
-                <p className="text-[10px] text-white/90 flex items-center gap-1 mt-1">
-                  <MapPin className="w-2.5 h-2.5" />
-                  {partner.location}
-                </p>
+            ))}
+          </div>
+          
+          {/* Second Row - Moving Left */}
+          <div className="flex animate-scroll-left whitespace-nowrap">
+            {[...partners, ...partners].reverse().map((partner, index) => (
+              <div
+                key={`row2-${index}`}
+                className="group rounded-lg overflow-hidden border border-primary/3 bg-card shadow-sm hover:shadow-md hover:border-primary/8 transition-all inline-block w-64 mx-3"
+              >
+                <div className="aspect-[4/3] overflow-hidden bg-muted">
+                  <img
+                    src={partner.image}
+                    alt={`${partner.name} — Clowee Partner Restaurant`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="eager"
+                  />
+                </div>
+                <div className="p-2 bg-[#E291BE]">
+                  <h3 className="font-semibold text-white text-xs whitespace-normal">{partner.name}</h3>
+                  <p className="text-[10px] text-white/90 flex items-center gap-1 mt-1 whitespace-normal">
+                    <MapPin className="w-2.5 h-2.5" />
+                    {partner.location}
+                  </p>
+                </div>
               </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
