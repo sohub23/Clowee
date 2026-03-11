@@ -3,6 +3,10 @@ import { motion } from "framer-motion";
 
 const faqs = [
   {
+    q: "Do you sell the claw machine?",
+    a: "No. Clowee machines are not for sale. We operate strictly on a partnership model where i3 Technologies owns, installs, and manages the machine, and partners earn through revenue sharing.",
+  },
+  {
     q: "Do I need to invest any money?",
     a: "No investment required. i3 Technologies covers 100% of the machine, installation, and maintenance costs.",
   },

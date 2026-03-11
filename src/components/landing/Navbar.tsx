@@ -4,7 +4,10 @@ import logoImage from "@/assets/clowee logo.png";
 
 const Navbar = () => {
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -17,6 +20,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
           <button onClick={() => scrollToSection("how-it-works")} className="hover:text-foreground transition-colors">How It Works</button>
           <button onClick={() => scrollToSection("earnings")} className="hover:text-foreground transition-colors">Earnings</button>
+          <button onClick={() => scrollToSection("our-partners")} className="hover:text-foreground transition-colors">Ours Partner</button>
           <button onClick={() => scrollToSection("faq")} className="hover:text-foreground transition-colors">FAQ</button>
         </div>
         <div className="flex items-center gap-4">

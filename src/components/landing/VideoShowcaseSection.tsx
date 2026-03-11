@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Play, X } from "lucide-react";
+import { ChevronDown, Play, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
 interface YouTubeVideo {
@@ -77,6 +77,7 @@ const VideoShowcaseSection = () => {
   const [active, setActive] = useState("All");
   const [expanded, setExpanded] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState<YouTubeVideo | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   // Lock body scroll when modal is open
   useEffect(() => {
@@ -100,6 +101,14 @@ const VideoShowcaseSection = () => {
   const visibleItems = expanded ? filtered : filtered.slice(0, 8);
   const hasMore = filtered.length > 8;
 
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % filtered.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + filtered.length) % filtered.length);
+  };
+
   // Video card component
   const renderVideoCard = (video: YouTubeVideo, i: number) => (
     <motion.div
@@ -121,16 +130,16 @@ const VideoShowcaseSection = () => {
         />
         {/* Play button */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#E291BE]/85 backdrop-blur-sm flex items-center justify-center group-hover:bg-[#E291BE] group-hover:scale-110 transition-all duration-300 shadow-lg">
-            <Play className="w-5 h-5 md:w-6 md:h-6 text-white fill-white ml-0.5" />
+          <div className="w-10 h-10 rounded-full bg-[#E291BE]/85 backdrop-blur-sm flex items-center justify-center group-hover:bg-[#E291BE] group-hover:scale-110 transition-all duration-300 shadow-lg">
+            <Play className="w-4 h-4 text-white fill-white ml-0.5" />
           </div>
         </div>
       </div>
 
       {/* Title strip at bottom */}
-      <div className="px-4 py-2.5 bg-[#E291BE]">
+      <div className="px-3 py-2 bg-[#E291BE]">
         <p
-          className="text-xs md:text-sm text-white font-medium truncate"
+          className="text-xs text-white font-medium truncate"
           title={decodeHtml(video.snippet.title)}
         >
           {decodeHtml(video.snippet.title)}
@@ -147,7 +156,7 @@ const VideoShowcaseSection = () => {
             Video Gallery
           </p>
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-3 text-foreground">
-            See Clowee in Action
+            Clowee Stories
           </h2>
           <p className="text-muted-foreground text-base">
             Watch how our smart claw machines work and see success stories from our partners
@@ -172,22 +181,61 @@ const VideoShowcaseSection = () => {
           </div>
         )}
 
-        {/* Video Grid */}
-        <div className="space-y-6">
-          <div className="flex justify-center">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl">
-              {visibleItems.map((video, i) => renderVideoCard(video, i))}
-            </div>
+        {/* Video Carousel */}
+        <div className="relative max-w-md mx-auto">
+          {/* Carousel Container */}
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            >
+              {filtered.map((video, i) => (
+                <div key={video.id.videoId} className="min-w-full px-1">
+                  {renderVideoCard(video, i)}
+                </div>
+              ))}
+            </motion.div>
           </div>
-          {hasMore && !expanded && (
-            <div className="text-center">
-              <button
-                onClick={() => setExpanded(true)}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-card rounded-full shadow-lg hover:shadow-xl transition-all text-sm font-medium text-foreground"
-              >
-                View More Videos
-                <ChevronDown className="w-4 h-4" />
-              </button>
+
+          {/* Navigation Buttons */}
+          {filtered.length > 1 && (
+            <>
+              {currentIndex > 0 && (
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full bg-[#E291BE] text-white flex items-center justify-center shadow-lg hover:bg-[#d17aaa] transition-all z-10"
+                  aria-label="Previous video"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+              )}
+              {currentIndex < filtered.length - 1 && (
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full bg-[#E291BE] text-white flex items-center justify-center shadow-lg hover:bg-[#d17aaa] transition-all z-10"
+                  aria-label="Next video"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+              )}
+            </>
+          )}
+
+          {/* Dots Indicator */}
+          {filtered.length > 1 && (
+            <div className="flex justify-center gap-2 mt-6">
+              {filtered.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    index === currentIndex
+                      ? "bg-[#E291BE] w-8"
+                      : "bg-gray-300 hover:bg-gray-400"
+                  }`}
+                  aria-label={`Go to video ${index + 1}`}
+                />
+              ))}
             </div>
           )}
         </div>

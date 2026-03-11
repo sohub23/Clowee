@@ -34,18 +34,18 @@ const monthlyData = [
 const ProfitTable = ({ title, data, isWeekly }: { title: string; data: typeof weeklyData; isWeekly?: boolean }) => (
   <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
     {/* Header Section */}
-    <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-6 py-4 text-center border-b">
-      <h3 className="font-bold text-gray-800 text-lg mb-1">
+    <div className="bg-gradient-to-r from-pink-400 to-pink-500 px-6 py-4 text-center border-b">
+      <h3 className="font-bold text-white text-lg mb-1">
         I3 Technologies Business Model(Use-Case)
       </h3>
-      <p className="text-sm text-gray-600">
-        (Weekly Report)
+      <p className="text-sm text-white">
+        ({isWeekly ? 'Weekly Report' : 'Monthly Report'})
       </p>
     </div>
     
     {/* Company Header */}
-    <div className="bg-gradient-to-r from-pink-400 to-pink-500 px-6 py-3 text-center">
-      <h4 className="font-semibold text-white text-base">I3 Technologies & ABC Company</h4>
+    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 px-6 py-3 text-center border-b">
+      <h4 className="font-semibold text-gray-700 text-base">I3 Technologies & ABC Company</h4>
     </div>
     
     {/* Table Header */}
@@ -66,8 +66,8 @@ const ProfitTable = ({ title, data, isWeekly }: { title: string; data: typeof we
           textColor = 'text-gray-800 font-semibold';
         }
         if (row.franchise) {
-          bgColor = 'bg-gradient-to-r from-green-400 to-green-500';
-          textColor = 'text-white font-semibold';
+          bgColor = 'bg-gradient-to-r from-green-50 to-emerald-50';
+          textColor = 'text-gray-800 font-semibold';
         }
         if (row.payable) {
           bgColor = 'bg-gradient-to-r from-pink-400 to-pink-500';

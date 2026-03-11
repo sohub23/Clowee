@@ -86,22 +86,23 @@ const CTASection = () => {
             </div>
             <div>
               <Label className="text-foreground mb-3 block">Daily Customer *</Label>
-              <div className="space-y-2">
-                {["50", "80", "100"].map((value) => (
+              <div className="grid grid-cols-3 gap-3">
+                {[
+                  { label: "50-100", value: "50-100" },
+                  { label: "100-150", value: "100-150" },
+                  { label: "150-200", value: "150-200" }
+                ].map((option) => (
                   <button
-                    key={value}
+                    key={option.value}
                     type="button"
-                    onClick={() => update("dailyCustomer", value)}
-                    className="w-full flex items-center gap-3 text-left"
+                    onClick={() => update("dailyCustomer", option.value)}
+                    className={`px-3 py-4 rounded-lg border-2 text-center font-semibold text-sm transition-all ${
+                      form.dailyCustomer === option.value
+                        ? "border-primary bg-primary text-white"
+                        : "border-border bg-card text-foreground hover:border-primary/50"
+                    }`}
                   >
-                    <div className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all ${
-                      form.dailyCustomer === value
-                        ? "border-primary bg-primary"
-                        : "border-border bg-card"
-                    }`}>
-                      {form.dailyCustomer === value && <span className="text-white text-xs">✔</span>}
-                    </div>
-                    <span className="font-semibold text-foreground">{value}</span>
+                    {option.label}
                   </button>
                 ))}
               </div>

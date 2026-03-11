@@ -33,7 +33,7 @@ const HeroSection = () => {
                 Calculate Your Earnings
               </Button>
             </div>
-            <p className="text-sm font-semibold text-muted-foreground">
+            <p className="text-sm font-bold text-muted-foreground">
               ⚠️ We operate only through partnership.
             </p>
           </motion.div>

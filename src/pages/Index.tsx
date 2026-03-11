@@ -30,8 +30,8 @@ const Index = () => {
       <BenefitsSection />
       <MonthlyProfitSection />
       <PartnerStoriesSection />
-      <PartnersSection />
       <VideoShowcaseSection />
+      <PartnersSection />
       <HowItWorksSection />
       <FAQSection />
       <CTASection />

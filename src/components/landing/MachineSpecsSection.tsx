@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
 import { Package, Zap, Ruler, ArrowUpDown, ArrowLeftRight, Layers } from "lucide-react";
-import machineImage from "@/assets/sohub-clowee-DUY35_tt.png";
+import machineImage from "@/assets/clowee-pic.jpeg";
 
 const specs = [
-  { icon: ArrowUpDown, label: "Height", value: "6 Feet" },
-  { icon: ArrowLeftRight, label: "Width", value: "31 Inches" },
-  { icon: Layers, label: "Depth", value: "24 Inches" },
-  { icon: Zap, label: "Power Supply", value: "220V AC" },
-  { icon: Package, label: "Operating Time", value: "15-16 hours/day" },
-  { icon: Zap, label: "Power Consumption", value: "1.5 kW" },
+  { icon: Package, label: "Machine Type", value: "Doll Catcher Machine" },
+  { icon: ArrowLeftRight, label: "Size", value: "W 30 x H 72 x D 24 Inch" },
+  { icon: Layers, label: "Material", value: "Metal, Glass & Acrylic" },
+  { icon: Zap, label: "Voltage", value: "220V (2 Pin Plug)" },
+  { icon: Zap, label: "Electricity Bill", value: "650-670 BDT (15 hours/day)" },
 ];
 
 const MachineSpecsSection = () => (
@@ -28,16 +27,15 @@ const MachineSpecsSection = () => (
         </p>
       </motion.div>
 
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="flex flex-col lg:flex-row gap-4 items-center justify-center">
         {/* Left Column - Image */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex justify-center"
         >
-          <div className="rounded-2xl p-1 shadow-lg h-full flex items-center justify-center">
+          <div className="rounded-2xl p-1 shadow-lg max-w-[280px]">
             <img
               src={machineImage}
               alt="Clowee Claw Machine"
@@ -53,8 +51,8 @@ const MachineSpecsSection = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="bg-card rounded-2xl p-3 shadow-lg">
-            <h3 className="text-base font-bold text-foreground mb-3 text-center">Technical Specifications</h3>
+          <div className="bg-card rounded-2xl p-3 shadow-lg w-full max-w-xl">
+            <h3 className="text-base font-semibold text-foreground mb-3 text-center">Technical Specifications</h3>
             <div className="grid gap-2">
               {specs.map((spec, index) => (
                 <motion.div

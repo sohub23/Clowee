@@ -1,9 +1,10 @@
-import { Facebook, Youtube, Globe } from "lucide-react";
+import { Facebook, Youtube, MessageCircle, Instagram } from "lucide-react";
+import qrScanner from "@/assets/clowee_hotscan.png";
 
 const Footer = () => (
-  <footer className="py-12 px-4" style={{ backgroundColor: '#E291BE' }}>
+  <footer className="py-8 px-4" style={{ backgroundColor: '#E291BE' }}>
     <div className="container">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-6">
         {/* Company Info */}
         <div>
           <div className="flex items-center gap-2 mb-4">
@@ -19,6 +20,7 @@ const Footer = () => (
           <ul className="space-y-2 text-sm">
             <li><a href="#how-it-works" className="text-white/90 hover:text-white transition-colors">How It Works</a></li>
             <li><a href="#earnings" className="text-white/90 hover:text-white transition-colors">Earnings</a></li>
+            <li><a href="#our-partners" className="text-white/90 hover:text-white transition-colors">Ours Partner</a></li>
             <li><a href="#faq" className="text-white/90 hover:text-white transition-colors">FAQ</a></li>
             <li><a href="#apply" className="text-white/90 hover:text-white transition-colors">Apply Now</a></li>
           </ul>
@@ -37,11 +39,6 @@ const Footer = () => (
         {/* Contact */}
         <div>
           <h3 className="font-heading font-bold text-white mb-4">Follow Us</h3>
-          <div className="mb-4">
-            <a href="mailto:support@i3technologies.com.bd" className="text-white/90 hover:text-white transition-colors text-sm">
-              support@i3technologies.com.bd
-            </a>
-          </div>
           <ul className="space-y-3 text-sm">
             <li>
               <a href="https://www.youtube.com/@i3technologies" target="_blank" rel="noopener noreferrer" 
@@ -58,18 +55,38 @@ const Footer = () => (
               </a>
             </li>
             <li>
-              <a href="https://i3technologies.com.bd/" target="_blank" rel="noopener noreferrer" 
+              <a href="https://www.instagram.com/i3clowee/" target="_blank" rel="noopener noreferrer" 
                  className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
-                <Globe className="w-4 h-4" />
-                <span>Website</span>
+                <Instagram className="w-4 h-4" />
+                <span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/8801325886868" target="_blank" rel="noopener noreferrer" 
+                 className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                <MessageCircle className="w-4 h-4" />
+                <span>WhatsApp</span>
+              </a>
+            </li>
+            <li className="pt-2">
+              <a href="mailto:support@i3technologies.com.bd" className="text-white/90 hover:text-white transition-colors text-sm">
+                support@i3technologies.com.bd
               </a>
             </li>
           </ul>
         </div>
+
+        {/* Scanner */}
+        <div className="flex flex-col items-center justify-start">
+          <h3 className="font-heading font-bold text-white mb-4">Scan to Connect</h3>
+          <div className="bg-white p-2 rounded-lg">
+            <img src={qrScanner} alt="QR Scanner" className="w-24 h-24 object-contain" />
+          </div>
+        </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/20 pt-6 text-center text-sm text-white/90">
+      <div className="border-t border-white/10 pt-6 text-center text-sm text-white/90">
         <p>© {new Date().getFullYear()} i3 Technologies. Built for Bangladesh. All rights reserved.</p>
       </div>
     </div>
