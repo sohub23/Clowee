@@ -1,71 +1,86 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 
+// Import images properly
+import chnImg from "@/assets/chn.jpg";
+import pbgulsanImg from "@/assets/pbgulsan.jpg";
+import chikcliImg from "@/assets/Chikcli.jpg";
+import diningWariImg from "@/assets/dininglounge-wari.webp";
+import pbMirpur1Img from "@/assets/pizzaburg-mirpur1.jpg";
+import caferioMohammadpurImg from "@/assets/caferio-mohammadpur.jpg";
+import caferioUttaraImg from "@/assets/caferio-uttara.jpg";
+import pbDhanmondiImg from "@/assets/pbdhanmondi.jpg";
+import foodplexImg from "@/assets/foodplex.dhan.jpg";
+import diningNarayanganjImg from "@/assets/dininglounge-narayanganj.webp";
+import dLImg from "@/assets/d_l.jpg";
+import bailyDeliImg from "@/assets/baily-deli3 copy.jpg";
+import chjImg from "@/assets/chj.jpg";
+
 const partners = [
   {
     name: "Chillox Nasirabad",
     location: "Chattogram",
-    image: "https://clowee.sohub.com.bd/assets/chn.jpg",
+    image: chnImg,
   },
   {
     name: "Pizzaburg Gulshan",
     location: "Gulshan-1, Dhaka",
-    image: "https://clowee.sohub.com.bd/assets/pbgulsan.jpg",
+    image: pbgulsanImg,
   },
   {
     name: "Chickli, Rangpur",
     location: "Rangpur",
-    image: "https://clowee.sohub.com.bd/assets/Chikcli.jpg",
+    image: chikcliImg,
   },
   {
     name: "The Dinning Lounge Wari",
     location: "Wari, Dhaka",
-    image: "https://clowee.sohub.com.bd/assets/dininglounge-wari.webp",
+    image: diningWariImg,
   },
   {
     name: "Pizzaburg Dhanmondi",
     location: "Satmasjid Road, Dhaka",
-    image: "https://clowee.sohub.com.bd/assets/pizzaburg-mirpur1.jpg",
+    image: pbMirpur1Img,
   },
   {
     name: "Waffle Wala",
     location: "Dhanmondi, Dhaka",
-    image: "https://clowee.sohub.com.bd/assets/caferio-mohammadpur.jpg",
+    image: caferioMohammadpurImg,
   },
   {
     name: "Cafe Rio Uttara",
     location: "Uttara, Dhaka",
-    image: "https://clowee.sohub.com.bd/assets/caferio-uttara.jpg",
+    image: caferioUttaraImg,
   },
   {
     name: "Pizzaburg Dhanmondi",
     location: "Dhanmondi, Dhaka",
-    image: "https://clowee.sohub.com.bd/assets/pbdhanmondi.jpg",
+    image: pbDhanmondiImg,
   },
   {
     name: "FoodPlex",
     location: "Khan ABC Tradeplex,Dhaka",
-    image: "https://clowee.sohub.com.bd/assets/foodplex.dhan.jpg",
+    image: foodplexImg,
   },
   {
     name: "The Dinning Lounge Narayanganj",
     location: "Narayanganj, Dhaka ",
-    image: "https://clowee.sohub.com.bd/assets/dininglounge-narayanganj.webp",
+    image: diningNarayanganjImg,
   },
   {
     name: "The Dinning Lounge Khilgaon",
     location: "Shotodol Rose Heights, Dhaka ",
-    image: "https://clowee.sohub.com.bd/assets/d_l.jpg",
+    image: dLImg,
   },
   {
     name: "Baily Deli",
     location: "Baily Road, Dhaka",
-    image: "https://clowee.sohub.com.bd/assets/baily-deli3.jpg",
+    image: bailyDeliImg,
   },
   {
     name: "Chillox Jamal Khan",
     location: "Jamal Khan, Chattogram",
-    image: "https://clowee.sohub.com.bd/assets/chj.jpg",
+    image: chjImg,
   },
 ];
 
