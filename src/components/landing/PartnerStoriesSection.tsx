@@ -1,6 +1,7 @@
 // Import partner logos
 import chilloxLogo from "@/assets/chillox-logo-png_seeklogo-647089.png";
 import pizzaBurgLogo from "@/assets/pizza Burag logo.jpg";
+import diningLoungeLogo from "@/assets/The-Dining-Lounge.logo.jpg";
 import foodplexLogo from "@/assets/foodplex.jpeg";
 import kolapataLogo from "@/assets/Kolapata.png";
 import logo6 from "@/components/landing/6.jpeg";
@@ -9,10 +10,14 @@ import logo8 from "@/components/landing/8.jpeg";
 import logo33 from "@/components/landing/33.jpeg";
 import logo66 from "@/components/landing/66.jpeg";
 import logo10 from "@/components/landing/10.jpeg";
+import filmic1 from "@/assets/filmic-1.jpeg";
+import filmic2 from "@/assets/filmic-2.jpeg";
+import filmic3 from "@/assets/filmic-3.jpeg";
 
 const partnerLogos = [
   { src: chilloxLogo, name: "Chillox" },
   { src: pizzaBurgLogo, name: "PizzaBurg" },
+  { src: diningLoungeLogo, name: "The Dining Lounge" },
   { src: foodplexLogo, name: "FoodPlex" },
   { src: kolapataLogo, name: "Kolapata" },
   { src: logo6, name: "Keedee" },
@@ -20,7 +25,10 @@ const partnerLogos = [
   { src: logo8, name: "Cafe Rio" },
   { src: logo33, name: "Partner 9" },
   { src: logo66, name: "Partner 10" },
-  { src: logo10, name: "Fusion Lounge" }
+  { src: logo10, name: "Fusion Lounge" },
+  { src: filmic1, name: "Filmic 1" },
+  { src: filmic2, name: "Filmic 2" },
+  { src: filmic3, name: "Filmic 3" }
 ];
 
 const PartnerStoriesSection = () => (
@@ -36,23 +44,25 @@ const PartnerStoriesSection = () => (
 
       {/* Logo Grid - 2 Lines with Smaller Logos */}
       <div className="space-y-10">
-        {/* First Line - 5 logos */}
+        {/* First Line - 7 logos */}
         <div className="flex flex-wrap justify-center items-center gap-8">
-          {partnerLogos.slice(0, 5).map((logo, index) => (
+          {partnerLogos.slice(0, 7).map((logo, index) => (
             <div key={index} className="flex items-center justify-center">
               <img
                 src={logo.src}
                 alt={logo.name}
-                className="max-w-[110px] max-h-[70px] object-contain"
+                className={`max-w-[110px] max-h-[70px] object-contain ${
+                  logo.name === "The Dining Lounge" ? "bg-white p-2 rounded" : ""
+                }`}
               />
             </div>
           ))}
         </div>
         
-        {/* Second Line - 5 logos */}
+        {/* Second Line - 7 logos */}
         <div className="flex flex-wrap justify-center items-center gap-8">
-          {partnerLogos.slice(5, 10).map((logo, index) => (
-            <div key={index + 5} className="flex items-center justify-center">
+          {partnerLogos.slice(7, 14).map((logo, index) => (
+            <div key={index + 7} className="flex items-center justify-center">
               <img
                 src={logo.src}
                 alt={logo.name}
