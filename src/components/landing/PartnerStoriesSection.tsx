@@ -55,26 +55,30 @@ const PartnerStoriesSection = () => (
           {partnerLogos.map((logo, index) => (
             <div
               key={`logo-${index}`}
-              className="flex items-center justify-center flex-shrink-0"
+              className="flex items-center justify-center flex-shrink-0 mx-4"
             >
-              <img
-                src={logo.src}
-                alt={logo.name}
-                className="w-[120px] h-[80px] object-contain bg-white p-2 rounded"
-              />
+              <div className="w-[140px] h-[100px] bg-white p-3 rounded-lg shadow-sm flex items-center justify-center">
+                <img
+                  src={logo.src}
+                  alt={logo.name}
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
             </div>
           ))}
           {/* Duplicate for seamless loop */}
           {partnerLogos.map((logo, index) => (
             <div
               key={`logo-duplicate-${index}`}
-              className="flex items-center justify-center flex-shrink-0"
+              className="flex items-center justify-center flex-shrink-0 mx-4"
             >
-              <img
-                src={logo.src}
-                alt={logo.name}
-                className="w-[120px] h-[80px] object-contain bg-white p-2 rounded"
-              />
+              <div className="w-[140px] h-[100px] bg-white p-3 rounded-lg shadow-sm flex items-center justify-center">
+                <img
+                  src={logo.src}
+                  alt={logo.name}
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
             </div>
           ))}
         </div>
