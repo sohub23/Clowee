@@ -18,7 +18,7 @@ const HowItWorksSection = () => (
         className="text-center mb-12"
       >
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-          How It Works
+          How It <span className="text-primary">Works</span>
         </h2>
       </motion.div>
 

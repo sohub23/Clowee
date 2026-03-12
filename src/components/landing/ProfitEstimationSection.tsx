@@ -100,7 +100,7 @@ const ProfitEstimationSection = () => (
         className="text-center mb-12"
       >
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-           <span className="text-primary">Profit Calculation</span>
+           Profit <span className="text-primary">Breakdown</span>
         </h2>
       </motion.div>
 

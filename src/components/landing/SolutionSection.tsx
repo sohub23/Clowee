@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Gamepad2, Timer, Heart, Wallet, Ruler, Coins, Trophy, Cpu } from "lucide-react";
+import { Gamepad2, Timer, Heart, Wallet, Ruler, Coins, Trophy, RotateCcw } from "lucide-react";
 
 const features = [
   { icon: Gamepad2, text: "Increases engagement" },
@@ -12,7 +12,7 @@ const specs = [
   { icon: Ruler, label: "Space Required", value: "Small Space Needed" },
   { icon: Coins, label: "Coin Price", value: "Just Insert Coin & Play" },
   { icon: Trophy, label: "Prize Cost", value: "Win Exciting Prizes" },
-  { icon: Cpu, label: "Avg Plays/Day", value: "~120 plays" },
+  { icon: RotateCcw, label: "Repeat Visits", value: "Boosts Customer Return" },
 ];
 
 const SolutionSection = () => (

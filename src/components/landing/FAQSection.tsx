@@ -38,7 +38,7 @@ const FAQSection = () => (
         className="text-center mb-12"
       >
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-          Frequently Asked Questions
+          Frequently Asked <span className="text-primary">Questions</span>
         </h2>
       </motion.div>
 
