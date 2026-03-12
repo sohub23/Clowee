@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Package, Zap, Ruler, ArrowUpDown, ArrowLeftRight, Layers } from "lucide-react";
-import machineImage from "@/assets/clowee-pic.jpeg";
+import machineImage from "@/assets/clowee.p.jpeg";
 
 const specs = [
   { icon: Package, label: "Machine Type", value: "Doll Catcher Machine" },
