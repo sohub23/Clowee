@@ -83,61 +83,61 @@ const ProfitCalculationAISection = () => {
             viewport={{ once: true }}
             className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200"
           >
-            <div className="text-center py-4 border-b">
-              <h3 className="text-xl font-bold text-gray-900">I3 Technologies Business Model(Use-Case)</h3>
-              <p className="text-sm text-gray-600">Sohub</p>
-              <p className="text-xs text-gray-500">(Weekly Report)</p>
+            <div className="text-center py-0.5 border-b border-gray-100">
+              <h3 className="text-[10px] font-medium text-gray-900">I3 Technologies Business Model(Use-Case)</h3>
+              <p className="text-[9px] text-gray-600">Sohub</p>
+              <p className="text-[9px] text-gray-500">(Weekly Report)</p>
             </div>
             
-            <div className="bg-[#E291BE] text-white text-center py-3 font-semibold">
+            <div className="bg-[#E291BE] text-white text-center py-0.5 font-medium text-[10px]">
               I3 Technologies & ABC Company
             </div>
             
-            <div className="bg-blue-100 text-center py-2 font-semibold text-sm">
+            <div className="bg-blue-100 text-center py-0.5 font-medium text-[10px]">
               Per Week (approx.)
             </div>
             
             <table className="w-full">
-              <tbody className="text-sm">
+              <tbody className="text-xs">
                 <tr className="border-b">
-                  <td className="px-4 py-3 text-gray-700">Average Plays per Day</td>
-                  <td className="px-4 py-3 text-right font-semibold">120</td>
+                  <td className="px-2 py-1.5 text-gray-700">Average Plays per Day</td>
+                  <td className="px-2 py-1.5 text-right font-semibold">120</td>
                 </tr>
                 <tr className="border-b bg-gray-50">
-                  <td className="px-4 py-3 text-gray-700">Total Plays (7 Days)</td>
-                  <td className="px-4 py-3 text-right font-semibold">840</td>
+                  <td className="px-2 py-1.5 text-gray-700">Total Plays (7 Days)</td>
+                  <td className="px-2 py-1.5 text-right font-semibold">840</td>
                 </tr>
                 <tr className="border-b">
-                  <td className="px-4 py-3 text-gray-700">Coin Rate (Per Play)</td>
-                  <td className="px-4 py-3 text-right font-semibold">৳25</td>
+                  <td className="px-2 py-1.5 text-gray-700">Coin Rate (Per Play)</td>
+                  <td className="px-2 py-1.5 text-right font-semibold">25 BDT</td>
                 </tr>
                 <tr className="border-b bg-gray-50">
-                  <td className="px-4 py-3 text-gray-700">Total Weekly Sales</td>
-                  <td className="px-4 py-3 text-right font-semibold">৳21,000</td>
+                  <td className="px-2 py-1.5 text-gray-700">Total Weekly Sales</td>
+                  <td className="px-2 py-1.5 text-right font-semibold">21,000 BDT</td>
                 </tr>
                 <tr className="border-b">
-                  <td className="px-4 py-3 text-gray-700">Estimated Prize Out (Dolls)</td>
-                  <td className="px-4 py-3 text-right font-semibold">70</td>
+                  <td className="px-2 py-1.5 text-gray-700">Estimated Prize Out (Dolls)</td>
+                  <td className="px-2 py-1.5 text-right font-semibold">70</td>
                 </tr>
                 <tr className="border-b bg-gray-50">
-                  <td className="px-4 py-3 text-gray-700">Doll Cost (৳150 each)</td>
-                  <td className="px-4 py-3 text-right font-semibold">৳10,500</td>
+                  <td className="px-2 py-1.5 text-gray-700">Doll Cost (150 BDT each)</td>
+                  <td className="px-2 py-1.5 text-right font-semibold">10,500 BDT</td>
                 </tr>
                 <tr className="border-b">
-                  <td className="px-4 py-3 text-gray-700 font-semibold">Total Profit</td>
-                  <td className="px-4 py-3 text-right font-bold text-green-600">৳10,500</td>
+                  <td className="px-2 py-1.5 text-gray-700 font-semibold">Total Profit</td>
+                  <td className="px-2 py-1.5 text-right font-bold text-green-600">10,500 BDT</td>
                 </tr>
                 <tr className="border-b bg-gray-50">
-                  <td className="px-4 py-3 text-gray-700">Maintenance Charge (10%)</td>
-                  <td className="px-4 py-3 text-right font-semibold">৳1,050</td>
+                  <td className="px-2 py-1.5 text-gray-700">Maintenance Charge (10%)</td>
+                  <td className="px-2 py-1.5 text-right font-semibold">1,050 BDT</td>
                 </tr>
                 <tr className="border-b">
-                  <td className="px-4 py-3 text-gray-700 font-semibold">Net Profit</td>
-                  <td className="px-4 py-3 text-right font-bold text-blue-600">৳9,450</td>
+                  <td className="px-2 py-1.5 text-gray-700 font-semibold">Net Profit</td>
+                  <td className="px-2 py-1.5 text-right font-bold text-blue-600">9,450 BDT</td>
                 </tr>
                 <tr className="bg-[#E291BE] text-white">
-                  <td className="px-4 py-3 font-bold">Restaurant Share (50%)</td>
-                  <td className="px-4 py-3 text-right font-bold text-lg">৳4,725</td>
+                  <td className="px-2 py-1.5 font-bold">Restaurant Share (50%)</td>
+                  <td className="px-2 py-1.5 text-right font-bold">4,725 BDT</td>
                 </tr>
               </tbody>
             </table>
@@ -150,61 +150,61 @@ const ProfitCalculationAISection = () => {
             viewport={{ once: true }}
             className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200"
           >
-            <div className="text-center py-4 border-b">
-              <h3 className="text-xl font-bold text-gray-900">I3 Technologies Business Model(Use-Case)</h3>
-              <p className="text-sm text-gray-600">Sohub</p>
-              <p className="text-xs text-gray-500">(Weekly Report)</p>
+            <div className="text-center py-0.5 border-b border-gray-100">
+              <h3 className="text-[10px] font-medium text-gray-900">I3 Technologies Business Model(Use-Case)</h3>
+              <p className="text-[9px] text-gray-600">Sohub</p>
+              <p className="text-[9px] text-gray-500">(Weekly Report)</p>
             </div>
             
-            <div className="bg-[#E291BE] text-white text-center py-3 font-semibold">
+            <div className="bg-[#E291BE] text-white text-center py-0.5 font-medium text-[10px]">
               I3 Technologies & ABC Company
             </div>
             
-            <div className="bg-blue-100 text-center py-2 font-semibold text-sm">
+            <div className="bg-blue-100 text-center py-0.5 font-medium text-[10px]">
               Coin Details
             </div>
             
             <table className="w-full">
-              <tbody className="text-sm">
+              <tbody className="text-xs">
                 <tr className="border-b">
-                  <td className="px-4 py-3 text-gray-700">Coin Count</td>
-                  <td className="px-4 py-3 text-right font-semibold">840</td>
+                  <td className="px-2 py-1.5 text-gray-700">Coin Count</td>
+                  <td className="px-2 py-1.5 text-right font-semibold">840</td>
                 </tr>
                 <tr className="border-b bg-gray-50">
-                  <td className="px-4 py-3 text-gray-700">Coin Rate</td>
-                  <td className="px-4 py-3 text-right font-semibold">৳25</td>
+                  <td className="px-2 py-1.5 text-gray-700">Coin Rate</td>
+                  <td className="px-2 py-1.5 text-right font-semibold">25 BDT</td>
                 </tr>
                 <tr className="border-b">
-                  <td className="px-4 py-3 text-gray-700">Total Sales (TK)</td>
-                  <td className="px-4 py-3 text-right font-semibold">৳21,000</td>
+                  <td className="px-2 py-1.5 text-gray-700">Total Sales (TK)</td>
+                  <td className="px-2 py-1.5 text-right font-semibold">21,000 BDT</td>
                 </tr>
                 <tr className="border-b bg-gray-50">
-                  <td className="px-4 py-3 text-gray-700">Prize out Ratio</td>
-                  <td className="px-4 py-3 text-right font-semibold">8.3%</td>
+                  <td className="px-2 py-1.5 text-gray-700">Prize out Ratio</td>
+                  <td className="px-2 py-1.5 text-right font-semibold">8.3%</td>
                 </tr>
                 <tr className="border-b">
-                  <td className="px-4 py-3 text-gray-700">Doll Rate</td>
-                  <td className="px-4 py-3 text-right font-semibold">৳150</td>
+                  <td className="px-2 py-1.5 text-gray-700">Doll Rate</td>
+                  <td className="px-2 py-1.5 text-right font-semibold">150 BDT</td>
                 </tr>
                 <tr className="border-b bg-gray-50">
-                  <td className="px-4 py-3 text-gray-700">Total Doll Cost</td>
-                  <td className="px-4 py-3 text-right font-semibold">৳10,500</td>
+                  <td className="px-2 py-1.5 text-gray-700">Total Doll Cost</td>
+                  <td className="px-2 py-1.5 text-right font-semibold">10,500 BDT</td>
                 </tr>
                 <tr className="border-b">
-                  <td className="px-4 py-3 text-gray-700 font-semibold">Total Profit (Total Sales-Doll Cost)</td>
-                  <td className="px-4 py-3 text-right font-bold text-green-600">৳10,500</td>
+                  <td className="px-2 py-1.5 text-gray-700 font-semibold">Total Profit (Total Sales-Doll Cost)</td>
+                  <td className="px-2 py-1.5 text-right font-bold text-green-600">10,500 BDT</td>
                 </tr>
                 <tr className="border-b bg-gray-50">
-                  <td className="px-4 py-3 text-gray-700">10% Maintenance Charge</td>
-                  <td className="px-4 py-3 text-right font-semibold">৳1,050</td>
+                  <td className="px-2 py-1.5 text-gray-700">10% Maintenance Charge</td>
+                  <td className="px-2 py-1.5 text-right font-semibold">1,050 BDT</td>
                 </tr>
                 <tr className="border-b">
-                  <td className="px-4 py-3 text-gray-700 font-semibold">Net Profit</td>
-                  <td className="px-4 py-3 text-right font-bold text-blue-600">৳9,450</td>
+                  <td className="px-2 py-1.5 text-gray-700 font-semibold">Net Profit</td>
+                  <td className="px-2 py-1.5 text-right font-bold text-blue-600">9,450 BDT</td>
                 </tr>
                 <tr className="bg-[#E291BE] text-white">
-                  <td className="px-4 py-3 font-bold">Restaurant Share (50%)</td>
-                  <td className="px-4 py-3 text-right font-bold text-lg">৳4,725</td>
+                  <td className="px-2 py-1.5 font-bold">Restaurant Share (50%)</td>
+                  <td className="px-2 py-1.5 text-right font-bold">4,725 BDT</td>
                 </tr>
               </tbody>
             </table>

@@ -31,7 +31,7 @@ const partners = [
     image: pbMirpur1Img,
   },
   {
-    name: "Waffle Wala",
+    name: "Cafe Rio",
     location: "Dhanmondi, Dhaka",
     image: caferioMohammadpurImg,
   },
@@ -51,7 +51,7 @@ const partners = [
     image: bailyDeliImg,
   },
   {
-    name: "Chillox",
+    name: "Chilox",
     location: "Dhaka",
     image: cheezImg,
   },

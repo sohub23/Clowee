@@ -17,18 +17,18 @@ const ClarificationSection = () => (
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
+        <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-3">
           Partnership <span className="text-primary">Model</span>
         </h2>
-        <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+        <p className="text-muted-foreground text-base mb-6 leading-relaxed">
           Clowee does not sell claw machines. We invest, install, maintain, and operate the machines ourselves.
           Restaurant partners simply provide space and earn <strong className="text-foreground">50% of net profit</strong>.
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-2xl mx-auto">
           {points.map((p) => (
-            <div key={p.text} className="bg-card rounded-xl p-4 border border-border">
-              <p.icon className="w-6 h-6 text-primary mx-auto mb-2" />
-              <p className="text-sm font-medium text-foreground">{p.text}</p>
+            <div key={p.text} className="bg-card rounded-lg p-3 border border-border">
+              <p.icon className="w-5 h-5 text-primary mx-auto mb-1.5" />
+              <p className="text-xs font-medium text-foreground">{p.text}</p>
             </div>
           ))}
         </div>

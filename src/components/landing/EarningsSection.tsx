@@ -2,39 +2,39 @@ import { motion } from "framer-motion";
 
 const dailyData = [
   { item: "Coin Count", value: "120" },
-  { item: "Coin Rate", value: "25" },
-  { item: "Total Sales (TK)", value: "3,000" },
+  { item: "Coin Rate", value: "25 BDT" },
+  { item: "Total Sales (TK)", value: "3,000 BDT" },
   { item: "Prize out Ratio", value: "10" },
-  { item: "Doll Rate", value: "150" },
-  { item: "Total Doll Cost", value: "1,500" },
-  { item: "Total Profit (Total Sales-Doll Cost)", value: "1,500", highlight: true },
-  { item: "10% Maintenance Charge", value: "150" },
-  { item: "Total Profit after 10% Maintenance Charge", value: "1,350", highlight: true },
-  { item: "Profit Share(50%)- Clowee", value: "675", clowee: true },
-  { item: "Profit Share(50%)- Franchise", value: "675", franchise: true },
+  { item: "Doll Rate", value: "150 BDT" },
+  { item: "Total Doll Cost", value: "1,500 BDT" },
+  { item: "Total Profit (Total Sales-Doll Cost)", value: "1,500 BDT", highlight: true },
+  { item: "10% Maintenance Charge", value: "150 BDT" },
+  { item: "Total Profit after 10% Maintenance Charge", value: "1,350 BDT", highlight: true },
+  { item: "Profit Share(50%)- Clowee", value: "675 BDT", clowee: true },
+  { item: "Profit Share(50%)- Franchise", value: "675 BDT", franchise: true },
 ];
 
 const monthlyData = [
   { item: "Coin Count", value: "3600" },
-  { item: "Coin Rate", value: "25" },
-  { item: "Total Sales (TK)", value: "90,000" },
+  { item: "Coin Rate", value: "25 BDT" },
+  { item: "Total Sales (TK)", value: "90,000 BDT" },
   { item: "Prize out Ratio", value: "300" },
-  { item: "Doll Rate", value: "150" },
-  { item: "Total Doll Cost", value: "45,000" },
-  { item: "Total Profit (Total Sales-Doll Cost)", value: "45,000", highlight: true },
-  { item: "10% Maintenance Charge", value: "4500" },
-  { item: "Total Profit after 10% Maintenance Charge", value: "40,500", highlight: true },
-  { item: "Profit Share(50%)- Clowee", value: "20,250", clowee: true },
-  { item: "Profit Share(50%)- Franchise", value: "20,250", franchise: true },
+  { item: "Doll Rate", value: "150 BDT" },
+  { item: "Total Doll Cost", value: "45,000 BDT" },
+  { item: "Total Profit (Total Sales-Doll Cost)", value: "45,000 BDT", highlight: true },
+  { item: "10% Maintenance Charge", value: "4,500 BDT" },
+  { item: "Total Profit after 10% Maintenance Charge", value: "40,500 BDT", highlight: true },
+  { item: "Profit Share(50%)- Clowee", value: "20,250 BDT", clowee: true },
+  { item: "Profit Share(50%)- Franchise", value: "20,250 BDT", franchise: true },
 ];
 
 const ProfitTable = ({ title, data, isDaily }: { title: string; data: typeof dailyData; isDaily?: boolean }) => (
   <div className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm max-w-md mx-auto">
-    <div className="bg-gray-50 px-3 py-2 border-b border-gray-200">
-      <h3 className="text-center font-bold text-gray-800 text-sm">
+    <div className="bg-gray-50 px-2 py-1.5 border-b border-gray-200">
+      <h3 className="text-center font-bold text-gray-800 text-xs">
         I3 Technologies Business Model(Use-Case)
       </h3>
-      <p className="text-center text-xs text-gray-600 mt-1">
+      <p className="text-center text-[10px] text-gray-600 mt-0.5">
         ABC Company<br />
         (Daily/Monthly Report)
       </p>
