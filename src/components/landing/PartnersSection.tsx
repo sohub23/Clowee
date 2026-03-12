@@ -21,7 +21,7 @@ const partners = [
     image: pbgulsanImg,
   },
   {
-    name: "Pizzaburg Dhanmondi",
+    name: "Pizzaburg Mirpur",
     location: "Satmasjid Road, Dhaka",
     image: pbMirpur1Img,
   },
@@ -79,7 +79,7 @@ const PartnersSection = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Trusted by Leading <span className="text-[#E291BE]">Restaurants in Dhaka</span>
+            Trusted by Leading <span className="text-[#e289a6]">Restaurants in Dhaka</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             These restaurants are already earning passive income with Clowee machines.
@@ -90,12 +90,12 @@ const PartnersSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
           {partners.map((partner, index) => (
             <motion.div
-              key={partner.name}
+              key={`${partner.name}-${index}`}
               className="group rounded-lg overflow-hidden border border-primary/3 bg-card shadow-sm hover:shadow-md hover:border-primary/8 transition-all"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
             >
               <div className="aspect-[4/3] overflow-hidden bg-muted">
                 <img
@@ -105,11 +105,11 @@ const PartnersSection = () => {
                   loading="eager"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.src = 'https://via.placeholder.com/300x200/E291BE/FFFFFF?text=' + encodeURIComponent(partner.name);
+                    target.src = 'https://via.placeholder.com/300x200/e289a6/FFFFFF?text=' + encodeURIComponent(partner.name);
                   }}
                 />
               </div>
-              <div className="p-2 bg-[#E291BE]">
+              <div className="p-2 bg-[#e289a6]">
                 <h3 className="font-semibold text-white text-xs">{partner.name}</h3>
                 <p className="text-[10px] text-white/90 flex items-center gap-1 mt-1">
                   <MapPin className="w-2.5 h-2.5" />

@@ -42,9 +42,9 @@ const PartnerStoriesSection = () => (
     <div className="container mx-auto px-4">
       {/* Header */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Partner <span className="text-[#E291BE]">Stories</span></h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Partners</h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Trusted by Leading Restaurants in Dhaka
+          Trusted by leading restaurants and businesses across Bangladesh
         </p>
       </div>
 
@@ -55,13 +55,12 @@ const PartnerStoriesSection = () => (
           {partnerLogos.map((logo, index) => (
             <div
               key={`logo-${index}`}
-              className="flex items-center justify-center flex-shrink-0 mx-3"
+              className="flex items-center justify-center flex-shrink-0"
             >
               <img
                 src={logo.src}
                 alt={logo.name}
-                className="w-[130px] h-[90px] object-contain bg-white p-4 rounded"
-                style={{ backgroundColor: '#ffffff' }}
+                className="w-[120px] h-[80px] object-contain bg-white p-2 rounded"
               />
             </div>
           ))}
@@ -69,13 +68,12 @@ const PartnerStoriesSection = () => (
           {partnerLogos.map((logo, index) => (
             <div
               key={`logo-duplicate-${index}`}
-              className="flex items-center justify-center flex-shrink-0 mx-3"
+              className="flex items-center justify-center flex-shrink-0"
             >
               <img
                 src={logo.src}
                 alt={logo.name}
-                className="w-[130px] h-[90px] object-contain bg-white p-4 rounded"
-                style={{ backgroundColor: '#ffffff' }}
+                className="w-[120px] h-[80px] object-contain bg-white p-2 rounded"
               />
             </div>
           ))}

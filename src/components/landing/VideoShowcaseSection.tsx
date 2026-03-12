@@ -90,7 +90,6 @@ const VideoShowcaseSection = () => {
   }, [selectedVideo]);
 
   useEffect(() => {
-    // Use static videos instead of API call
     setVideos(staticVideos);
   }, []);
 
@@ -111,14 +110,13 @@ const VideoShowcaseSection = () => {
 
   // Video card component
   const renderVideoCard = (video: YouTubeVideo, i: number) => (
-    <motion.div
+    <div
       key={video.id.videoId}
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: i * 0.06 }}
-      onClick={() => setSelectedVideo(video)}
-      className="block rounded-2xl overflow-hidden border-2 border-border/60 hover:border-[#E291BE]/40 shadow-lg hover:shadow-xl transition-all group cursor-pointer"
+      className="block rounded-2xl overflow-hidden border-2 border-border/60 hover:border-[#e289a6]/40 shadow-lg hover:shadow-xl transition-all group cursor-pointer"
+      onClick={(e) => {
+        e.stopPropagation();
+        setSelectedVideo(video);
+      }}
     >
       {/* Thumbnail + Play button overlay */}
       <div className="aspect-video relative overflow-hidden bg-secondary">
@@ -126,33 +124,29 @@ const VideoShowcaseSection = () => {
           src={`https://img.youtube.com/vi/${video.id.videoId}/hqdefault.jpg`}
           alt={decodeHtml(video.snippet.title)}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          loading="lazy"
         />
         {/* Play button */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-10 h-10 rounded-full bg-[#E291BE]/85 backdrop-blur-sm flex items-center justify-center group-hover:bg-[#E291BE] group-hover:scale-110 transition-all duration-300 shadow-lg">
+          <div className="w-10 h-10 rounded-full bg-[#e289a6]/85 backdrop-blur-sm flex items-center justify-center group-hover:bg-[#e289a6] group-hover:scale-110 transition-all duration-300 shadow-lg">
             <Play className="w-4 h-4 text-white fill-white ml-0.5" />
           </div>
         </div>
       </div>
 
       {/* Title strip at bottom */}
-      <div className="px-3 py-2 bg-[#E291BE]">
-        <p
-          className="text-xs text-white font-medium truncate"
-          title={decodeHtml(video.snippet.title)}
-        >
+      <div className="px-3 py-2 bg-[#e289a6]">
+        <p className="text-xs text-white font-medium truncate">
           {decodeHtml(video.snippet.title)}
         </p>
       </div>
-    </motion.div>
+    </div>
   );
 
   return (
     <section className="section-padding">
       <div className="container max-w-6xl">
         <div className="text-center mb-10">
-          <p className="text-[#E291BE] text-sm font-semibold uppercase tracking-widest mb-3">
+          <p className="text-[#e289a6] text-sm font-semibold uppercase tracking-widest mb-3">
             Video Gallery
           </p>
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-3 text-foreground">
@@ -171,7 +165,7 @@ const VideoShowcaseSection = () => {
                 key={f}
                 onClick={() => { setActive(f); setExpanded(false); }}
                 className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${active === f
-                  ? "bg-[#E291BE] text-white shadow-lg"
+                  ? "bg-[#e289a6] text-white shadow-lg"
                   : "bg-card text-foreground hover:bg-secondary shadow-sm"
                   }`}
               >
@@ -181,89 +175,127 @@ const VideoShowcaseSection = () => {
           </div>
         )}
 
-        {/* Video Grid with External Carousel Buttons */}
+        {/* Video Grid - Desktop unchanged, Mobile carousel */}
         <div className="relative max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Desktop View - unchanged */}
+          <div className="hidden md:grid md:grid-cols-3 gap-6">
             {filtered.slice(0, 2).map((video, i) => renderVideoCard(video, i))}
             
             {/* Third video */}
             {filtered.length > 2 && renderVideoCard(filtered[2], 2)}
           </div>
           
-          {/* External Carousel Buttons - Always visible */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 w-12 h-12 rounded-full bg-[#E291BE] text-white flex items-center justify-center shadow-lg hover:bg-[#d17aaa] transition-all z-20"
-            aria-label="Previous video"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 w-12 h-12 rounded-full bg-[#E291BE] text-white flex items-center justify-center shadow-lg hover:bg-[#d17aaa] transition-all z-20"
-            aria-label="Next video"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
+          {/* Mobile View - Simple single card */}
+          <div className="md:hidden" onClick={(e) => e.stopPropagation()}>
+            {filtered[currentIndex] && (
+              <div className="relative">
+                {renderVideoCard(filtered[currentIndex], currentIndex)}
+                
+                {/* Arrow buttons */}
+                {currentIndex > 0 && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setCurrentIndex(prev => prev - 1);
+                    }}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#e289a6] text-white flex items-center justify-center shadow-lg z-20"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+                )}
+                
+                {currentIndex < filtered.length - 1 && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setCurrentIndex(prev => prev + 1);
+                    }}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#e289a6] text-white flex items-center justify-center shadow-lg z-20"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                )}
+                
+                {/* Dots */}
+                <div className="flex justify-center mt-4 gap-2">
+                  {filtered.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setCurrentIndex(i)}
+                      className={`w-2 h-2 rounded-full ${
+                        i === currentIndex ? 'bg-[#e289a6]' : 'bg-gray-300'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+          
+          {/* Desktop External Carousel Buttons - Only visible on desktop */}
+          <div className="hidden md:block">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                prevSlide();
+              }}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 w-12 h-12 rounded-full bg-[#e289a6] text-white flex items-center justify-center shadow-lg hover:bg-[#d17aaa] transition-all z-20"
+              aria-label="Previous video"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                nextSlide();
+              }}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 w-12 h-12 rounded-full bg-[#e289a6] text-white flex items-center justify-center shadow-lg hover:bg-[#d17aaa] transition-all z-20"
+              aria-label="Next video"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Video Modal */}
-      <AnimatePresence>
-        {selectedVideo && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
-            onClick={() => setSelectedVideo(null)}
+      {/* Simple Video Modal */}
+      {selectedVideo && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center p-4 z-50"
+          onClick={() => setSelectedVideo(null)}
+        >
+          <div
+            className="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
           >
-            {/* Backdrop */}
-            <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
-
-            {/* Modal content */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.92, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.92, y: 20 }}
-              transition={{ duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="relative w-full max-w-3xl z-10"
-              onClick={(e) => e.stopPropagation()}
+            <button
+              onClick={() => setSelectedVideo(null)}
+              className="absolute -top-12 right-0 w-10 h-10 rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 flex items-center justify-center text-white text-xl font-bold"
             >
-              {/* Close button */}
-              <button
-                onClick={() => setSelectedVideo(null)}
-                className="absolute -top-12 right-0 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-                aria-label="Close"
-              >
-                <X className="w-5 h-5 text-white" />
-              </button>
-
-              {/* Video player card */}
-              <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-border/30">
-                <div className="aspect-video bg-black">
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src={`https://www.youtube.com/embed/${selectedVideo.id.videoId}?autoplay=1&rel=0`}
-                    title={decodeHtml(selectedVideo.snippet.title)}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-                {/* Title strip */}
-                <div className="px-5 py-3 bg-[#E291BE]">
-                  <p className="text-sm md:text-base text-white font-medium">
-                    {decodeHtml(selectedVideo.snippet.title)}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              ×
+            </button>
+            
+            <div className="aspect-video w-full">
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${selectedVideo.id.videoId}?autoplay=1&rel=0`}
+                title={selectedVideo.snippet.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
+            
+            <div className="px-5 py-3 bg-[#e289a6]">
+              <p className="text-white text-sm font-medium">
+                {decodeHtml(selectedVideo.snippet.title)}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
