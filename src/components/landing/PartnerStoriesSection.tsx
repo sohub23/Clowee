@@ -44,7 +44,7 @@ const PartnerStoriesSection = () => (
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-4">Our <span className="text-[#E291BE]">Partners</span></h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Trusted by leading restaurants and businesses across Bangladesh
+          Trusted by Leading Restaurants in Dhaka
         </p>
       </div>
 
