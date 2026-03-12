@@ -69,6 +69,12 @@ try {
     $mail->addAddress($_ENV['ADMIN_EMAIL'] ?? 'hello@sohub.com.bd', 'Clowee Admin');
     $mail->addReplyTo($email, $restaurantName);
 
+    // Add PDF attachment
+    $pdfPath = __DIR__ . '/Clowee-Proposal.pdf';
+    if (file_exists($pdfPath)) {
+        $mail->addAttachment($pdfPath, 'Clowee-Partnership-Proposal.pdf');
+    }
+
     $mail->isHTML(true);
     $mail->Subject = 'New Partnership Application - ' . $restaurantName;
     
@@ -151,6 +157,12 @@ try {
 
     $customerMail->setFrom($_ENV['SMTP_USER'] ?? 'sohub.web@gmail.com', 'Clowee by i3 Technologies');
     $customerMail->addAddress($email, $restaurantName);
+    
+    // Add PDF attachment to customer email too
+    $pdfPath = __DIR__ . '/Clowee-Proposal.pdf';
+    if (file_exists($pdfPath)) {
+        $customerMail->addAttachment($pdfPath, 'Clowee-Partnership-Proposal.pdf');
+    }
     $customerMail->isHTML(true);
     $customerMail->Subject = 'Thank You for Your Partnership Application - Clowee';
     
