@@ -12,6 +12,20 @@ dist
 dist-ssr
 *.local
 
+# Environment variables
+.env
+.env.local
+.env.production
+public/.env
+
+# PHP dependencies
+public/vendor/
+public/composer.phar
+
+# Build artifacts
+public/assets/
+public/index.html
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
