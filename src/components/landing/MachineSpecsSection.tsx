@@ -27,20 +27,20 @@ const MachineSpecsSection = () => (
         </p>
       </motion.div>
 
-      <div className="flex flex-col lg:flex-row gap-0 items-start justify-center">
+      <div className="flex flex-col lg:flex-row items-stretch justify-center">
         {/* Left Column - Image */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="lg:w-1/2"
+          className="lg:w-1/2 lg:pr-0 flex"
         >
-          <div className="max-w-xs mx-auto">
+          <div className="max-w-xs mx-auto lg:mx-0 lg:ml-auto flex items-center">
             <img
               src={machineImage}
               alt="Clowee Claw Machine"
-              className="w-full h-auto object-contain rounded-xl shadow-md"
+              className="w-full h-full object-cover rounded-l-xl shadow-md"
             />
           </div>
         </motion.div>
@@ -51,9 +51,9 @@ const MachineSpecsSection = () => (
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="lg:w-1/2"
+          className="lg:w-1/2 lg:pl-0 flex"
         >
-          <div className="bg-white rounded-xl p-5 shadow-lg border border-gray-200">
+          <div className="bg-white rounded-r-xl p-5 shadow-lg border border-gray-200 flex flex-col justify-center w-full">
             <h3 className="text-lg font-bold text-foreground mb-4 text-center">
               Technical Specifications
             </h3>

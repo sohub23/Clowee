@@ -5,16 +5,14 @@ import { MapPin } from "lucide-react";
 import chnImg from "@/assets/chn.jpg";
 import pbgulsanImg from "@/assets/pbgulsan.jpg";
 import chikcliImg from "@/assets/Chikcli.jpg";
-import diningWariImg from "@/assets/dininglounge-wari.webp";
 import pbMirpur1Img from "@/assets/pizzaburg-mirpur1.jpg";
 import caferioMohammadpurImg from "@/assets/caferio-mohammadpur.jpg";
 import caferioUttaraImg from "@/assets/caferio-uttara.jpg";
 import pbDhanmondiImg from "@/assets/pbdhanmondi.jpg";
 import foodplexImg from "@/assets/foodplex.dhan.jpg";
-import diningNarayanganjImg from "@/assets/dininglounge-narayanganj.webp";
-import dLImg from "@/assets/d_l.jpg";
 import bailyDeliImg from "@/assets/baily-deli3 copy.jpg";
 import chjImg from "@/assets/chj.jpg";
+import cheezImg from "@/assets/cheez.jpeg";
 
 const partners = [
   {
@@ -26,11 +24,6 @@ const partners = [
     name: "Chickli, Rangpur",
     location: "Rangpur",
     image: chikcliImg,
-  },
-  {
-    name: "The Dinning Lounge Wari",
-    location: "Wari, Dhaka",
-    image: diningWariImg,
   },
   {
     name: "Pizzaburg Dhanmondi",
@@ -53,19 +46,14 @@ const partners = [
     image: pbDhanmondiImg,
   },
   {
-    name: "The Dinning Lounge Narayanganj",
-    location: "Narayanganj, Dhaka ",
-    image: diningNarayanganjImg,
-  },
-  {
-    name: "The Dinning Lounge Khilgaon",
-    location: "Shotodol Rose Heights, Dhaka ",
-    image: dLImg,
-  },
-  {
     name: "Baily Deli",
     location: "Baily Road, Dhaka",
     image: bailyDeliImg,
+  },
+  {
+    name: "Cheez",
+    location: "Dhaka",
+    image: cheezImg,
   },
 ];
 
@@ -96,10 +84,10 @@ const PartnersSection = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Trusted by Leading Restaurants in Dhaka
+            Our Partners
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            These restaurants are already earning passive income with Clowee machines.
+            Trusted by Leading Restaurants in Dhaka
           </p>
         </motion.div>
 
