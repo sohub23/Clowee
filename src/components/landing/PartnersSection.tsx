@@ -51,7 +51,7 @@ const partners = [
     image: bailyDeliImg,
   },
   {
-    name: "Cheez",
+    name: "Chillox",
     location: "Dhaka",
     image: cheezImg,
   },
