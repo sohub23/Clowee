@@ -60,9 +60,7 @@ const PartnerStoriesSection = () => (
               <img
                 src={logo.src}
                 alt={logo.name}
-                className={`w-[120px] h-[80px] object-contain ${
-                  logo.name === "The Dining Lounge" ? "bg-white p-2 rounded" : ""
-                }`}
+                className="w-[120px] h-[80px] object-contain bg-white p-2 rounded"
               />
             </div>
           ))}
@@ -75,9 +73,7 @@ const PartnerStoriesSection = () => (
               <img
                 src={logo.src}
                 alt={logo.name}
-                className={`w-[120px] h-[80px] object-contain ${
-                  logo.name === "The Dining Lounge" ? "bg-white p-2 rounded" : ""
-                }`}
+                className="w-[120px] h-[80px] object-contain bg-white p-2 rounded"
               />
             </div>
           ))}
