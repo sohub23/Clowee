@@ -2,53 +2,63 @@ import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 
 // Import original restaurant images
-import chnImg from "@/assets/chn.jpg";
-import pbgulsanImg from "@/assets/pbgulsan.jpg";
-import chikcliImg from "@/assets/Chikcli.jpg";
-import pbMirpur1Img from "@/assets/pizzaburg-mirpur1.jpg";
-import caferioMohammadpurImg from "@/assets/caferio-mohammadpur.jpg";
-import caferioUttaraImg from "@/assets/caferio-uttara.jpg";
-import pbDhanmondiImg from "@/assets/pbdhanmondi.jpg";
-import foodplexImg from "@/assets/foodplex.dhan.jpg";
-import bailyDeliImg from "@/assets/baily-deli3 copy.jpg";
-import chjImg from "@/assets/chj.jpg";
-import cheezImg from "@/assets/cheez.jpeg";
+import pizzaburg from "@/assets/1. Pizzaburg dhanmondi.jpg";
+import cafeRio from "@/assets/2. Cafe RIo.png";
+import diningLounge from "@/assets/3. Dining Lounge NArayanagonj.jpg";
+import chefMateLounge from "@/assets/4. Chef mate lounge.jpg";
+import crushstation from "@/assets/5. Crush Station.jpeg";
+import bailyDeliImg from "@/assets/6. baily deli.jpg";
+import kolapata from "@/assets/7. Kolapata.png";
+import chillox from "@/assets/chillox.jpg";
+import daininglounge from "@/assets/dininglounge.jpg";  
+import madChef from "@/assets/madchef.jpeg";
+
 
 const partners = [
   {
-    name: "Pizzaburg Gulshan",
-    location: "Gulshan-1, Dhaka",
-    image: pbgulsanImg,
-  },
-  {
-    name: "Pizzaburg Mirpur",
-    location: "Satmasjid Road, Dhaka",
-    image: pbMirpur1Img,
+    name: "Pizzaburg Dhanmondi",
+    location: "Dhanmondi, Dhaka",
+    image: pizzaburg,
   },
   {
     name: "Cafe Rio",
-    location: "Mirpur, Dhaka",
-    image: caferioMohammadpurImg,
+    location: "Dhaka",
+    image: cafeRio,
   },
   {
-    name: "Cafe Rio Uttara",
-    location: "Uttara, Dhaka",
-    image: caferioUttaraImg,
+    name: "Dining Lounge",
+    location: " Narayangonj",
+    image: diningLounge,
   },
   {
-    name: "Pizzaburg Dhanmondi",
-    location: "Dhanmondi, Dhaka",
-    image: pbDhanmondiImg,
+    name: " Chef mate lounge",
+    location: " Dhaka",
+    image: chefMateLounge,
+  },
+  {
+    name: "Crush Station",
+    location: "Dhaka",
+    image:crushstation,
   },
   {
     name: "Baily Deli",
-    location: "Baily Road, Dhaka",
-    image: bailyDeliImg,
+    location: "Dhaka",
+    image: bailyDeliImg
+  },
+  {
+    name: "Kolapata",
+    location: "Dhaka",
+    image: kolapata,
   },
   {
     name: "Chilox",
     location: "Dhaka",
-    image: cheezImg,
+    image: chillox,
+  },
+    {
+    name: "Madchef",
+    location: "Dhaka",
+    image: madChef,
   },
 ];
 

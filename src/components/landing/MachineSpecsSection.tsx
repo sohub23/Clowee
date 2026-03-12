@@ -7,7 +7,7 @@ const specs = [
   { icon: ArrowLeftRight, label: "Size", value: "W 30 x H 72 x D 24 Inch" },
   { icon: Layers, label: "Material", value: "Metal, Glass & Acrylic" },
   { icon: Zap, label: "Voltage", value: "220V (2 Pin Plug)" },
-  { icon: Zap, label: "Electricity Bill", value: "650-670 BDT (15 hours/day)" },
+  { icon: Zap, label: "Electricity Bill (30 days)", value: "650-670 BDT (15 hours/ days)" },
 ];
 
 const MachineSpecsSection = () => (
