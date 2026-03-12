@@ -157,12 +157,6 @@ try {
 
     $customerMail->setFrom($_ENV['SMTP_USER'] ?? 'sohub.web@gmail.com', 'Clowee by i3 Technologies');
     $customerMail->addAddress($email, $restaurantName);
-    
-    // Add PDF attachment to customer email too
-    $pdfPath = __DIR__ . '/Clowee-Proposal.pdf';
-    if (file_exists($pdfPath)) {
-        $customerMail->addAttachment($pdfPath, 'Clowee-Partnership-Proposal.pdf');
-    }
     $customerMail->isHTML(true);
     $customerMail->Subject = 'Thank You for Your Partnership Application - Clowee';
     
