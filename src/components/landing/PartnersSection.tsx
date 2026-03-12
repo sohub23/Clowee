@@ -21,18 +21,13 @@ const partners = [
     image: pbgulsanImg,
   },
   {
-    name: "Chickli, Rangpur",
-    location: "Rangpur",
-    image: chikcliImg,
-  },
-  {
     name: "Pizzaburg Dhanmondi",
     location: "Satmasjid Road, Dhaka",
     image: pbMirpur1Img,
   },
   {
     name: "Cafe Rio",
-    location: "Dhanmondi, Dhaka",
+    location: "Mirpur, Dhaka",
     image: caferioMohammadpurImg,
   },
   {
