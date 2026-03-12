@@ -31,25 +31,25 @@ const monthlyData = [
 ];
 
 const ProfitTable = ({ title, data, isWeekly }: { title: string; data: typeof weeklyData; isWeekly?: boolean }) => (
-  <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100">
+  <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
     {/* Header Section */}
-    <div className="bg-gradient-to-r from-pink-400 to-pink-500 px-3 py-2 text-center border-b">
-      <h3 className="font-bold text-white text-sm mb-1">
-        I3 Technologies Business Model
+    <div className="bg-gradient-to-r from-pink-400 to-pink-500 px-6 py-4 text-center border-b">
+      <h3 className="font-bold text-white text-lg mb-1">
+        I3 Technologies Business Model(Use-Case)
       </h3>
-      <p className="text-xs text-white">
+      <p className="text-sm text-white">
         ({isWeekly ? 'Weekly Report' : 'Monthly Report'})
       </p>
     </div>
     
     {/* Company Header */}
-    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 px-3 py-2 text-center border-b">
-      <h4 className="font-semibold text-gray-700 text-sm">I3 Technologies & ABC Company</h4>
+    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 px-6 py-3 text-center border-b">
+      <h4 className="font-semibold text-gray-700 text-base">I3 Technologies & ABC Company</h4>
     </div>
     
     {/* Table Header */}
-    <div className="bg-gradient-to-r from-blue-50 to-blue-100 px-3 py-2 border-b">
-      <div className="text-center font-semibold text-gray-800 text-sm">
+    <div className="bg-gradient-to-r from-blue-50 to-blue-100 px-6 py-3 border-b">
+      <div className="text-center font-semibold text-gray-800">
         {isWeekly ? 'Per Week (approx.)' : 'Per Month (approx.)'}
       </div>
     </div>
@@ -75,11 +75,11 @@ const ProfitTable = ({ title, data, isWeekly }: { title: string; data: typeof we
         
         return (
           <div key={index} className={`${bgColor} transition-colors duration-200`}>
-            <div className="flex justify-between items-center px-3 py-2">
-              <span className={`font-medium ${textColor} text-xs flex-1 pr-2`}>
+            <div className="flex justify-between items-center px-6 py-4">
+              <span className={`font-medium ${textColor} text-sm flex-1`}>
                 {row.item}
               </span>
-              <span className={`font-bold ${textColor} text-xs text-right min-w-[80px]`}>
+              <span className={`font-bold ${textColor} text-sm text-right min-w-[100px]`}>
                 {row.value}
               </span>
             </div>
@@ -92,22 +92,22 @@ const ProfitTable = ({ title, data, isWeekly }: { title: string; data: typeof we
 
 const ProfitEstimationSection = () => (
   <section id="earnings" className="section-padding">
-    <div className="container max-w-sm mx-auto px-4">
+    <div className="container max-w-5xl">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-8"
+        className="text-center mb-12"
       >
-        <h2 className="text-2xl font-heading font-bold text-foreground mb-4">
+        <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
            <span className="text-primary">Profit Calculation</span>
         </h2>
       </motion.div>
 
-      <div className="space-y-6">
+      <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
@@ -115,8 +115,8 @@ const ProfitEstimationSection = () => (
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
