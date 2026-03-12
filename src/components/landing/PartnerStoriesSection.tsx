@@ -1,34 +1,40 @@
+
+
 // Import partner logos
 import chilloxLogo from "@/assets/chillox-logo-png_seeklogo-647089.png";
 import pizzaBurgLogo from "@/assets/pizza Burag logo.jpg";
 import diningLoungeLogo from "@/assets/The-Dining-Lounge.logo.jpg";
 import foodplexLogo from "@/assets/foodplex.jpeg";
 import kolapataLogo from "@/assets/Kolapata.png";
-import logo6 from "@/components/landing/6.jpeg";
-import logo7 from "@/components/landing/7.jpeg";
-import logo8 from "@/components/landing/8.jpeg";
-import logo66 from "@/components/landing/66.jpeg";
-import logo10 from "@/components/landing/10.jpeg";
+import finoLogo from "@/assets/fino.jpeg";
+import whatsappImage from "@/assets/WhatsApp Image 2026-03-10 at 11.43.42 PM.jpeg";
+import whatsappLogo from "@/assets/whatsapp-logo.jpeg";
 import filmic1 from "@/assets/filmic-1.jpeg";
 import filmic2 from "@/assets/filmic-2.jpeg";
 import filmic3 from "@/assets/filmic-3.jpeg";
-import whatsappLogo from "@/assets/whatsapp-logo.jpeg";
+import logo6 from "@/components/landing/6.jpeg";
+import logo7 from "@/components/landing/7.jpeg";
+import logo8 from "@/components/landing/8.jpeg";
+import logo33 from "@/components/landing/33.jpeg";
+import logo66 from "@/components/landing/66.jpeg";
 
 const partnerLogos = [
   { src: chilloxLogo, name: "Chillox" },
-  { src: pizzaBurgLogo, name: "PizzaBurg" },
+  { src: pizzaBurgLogo, name: "Pizza Burag" },
   { src: diningLoungeLogo, name: "The Dining Lounge" },
   { src: foodplexLogo, name: "FoodPlex" },
   { src: kolapataLogo, name: "Kolapata" },
-  { src: logo6, name: "Keedee" },
-  { src: logo7, name: "Baily Deli" },
-  { src: logo8, name: "Cafe Rio" },
-  { src: logo66, name: "Partner 10" },
-  { src: logo10, name: "Fusion Lounge" },
+  { src: finoLogo, name: "Fino" },
+  { src: whatsappImage, name: "WhatsApp Partner" },
+  { src: whatsappLogo, name: "WhatsApp" },
   { src: filmic1, name: "Filmic 1" },
   { src: filmic2, name: "Filmic 2" },
   { src: filmic3, name: "Filmic 3" },
-  { src: whatsappLogo, name: "WhatsApp Partner" }
+  { src: logo6, name: "Partner 6" },
+  { src: logo7, name: "Partner 7" },
+  { src: logo8, name: "Partner 8" },
+  { src: logo33, name: "Partner 33" },
+  { src: logo66, name: "Partner 66" }
 ];
 
 const PartnerStoriesSection = () => (
