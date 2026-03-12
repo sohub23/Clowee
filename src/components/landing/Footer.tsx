@@ -97,14 +97,14 @@ const Footer = () => (
           <h3 className="font-heading font-bold text-white mb-4">Follow Us</h3>
           <ul className="space-y-3 text-sm">
             <li>
-              <a href="https://www.youtube.com/@i3technologies" target="_blank" rel="noopener noreferrer" 
+              <a href="https://www.youtube.com/@i3clowee" target="_blank" rel="noopener noreferrer" 
                  className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
                 <Youtube className="w-4 h-4" />
                 <span>YouTube</span>
               </a>
             </li>
             <li>
-              <a href="https://www.facebook.com/i3technologiesbd" target="_blank" rel="noopener noreferrer" 
+              <a href="https://www.facebook.com/i3clowee" target="_blank" rel="noopener noreferrer" 
                  className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
                 <Facebook className="w-4 h-4" />
                 <span>Facebook</span>

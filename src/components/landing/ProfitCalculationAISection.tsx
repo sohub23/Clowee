@@ -60,7 +60,7 @@ const ProfitCalculationAISection = () => {
   const results = calculateProfits();
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Header */}
         <motion.div
@@ -69,190 +69,145 @@ const ProfitCalculationAISection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Calculator className="w-8 h-8 text-blue-600" />
-            <h2 className="text-4xl font-bold text-gray-900">
-              <span className="text-blue-600">Profit Calculator</span>
-            </h2>
-          </div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Calculate your potential profits with our interactive calculator
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <span className="text-[#E291BE]">Profit Calculation</span>
+          </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Interactive Controls */}
+        {/* Two Tables Side by Side */}
+        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {/* Left Table - Use Case */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
+            className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200"
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-              <BarChart3 className="w-6 h-6 text-blue-600" />
-              Customize Parameters
-            </h3>
+            <div className="text-center py-4 border-b">
+              <h3 className="text-xl font-bold text-gray-900">I3 Technologies Business Model(Use-Case)</h3>
+              <p className="text-sm text-gray-600">Sohub</p>
+              <p className="text-xs text-gray-500">(Weekly Report)</p>
+            </div>
             
-            <div className="space-y-6">
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Average Plays per Day
-                </label>
-                <input
-                  type="range"
-                  min="50"
-                  max="300"
-                  value={playsPerDay}
-                  onChange={(e) => setPlaysPerDay(Number(e.target.value))}
-                  className="w-full h-2 bg-blue-200 rounded-lg appearance-none cursor-pointer"
-                />
-                <div className="flex justify-between text-sm text-gray-500 mt-1">
-                  <span>50</span>
-                  <span className="font-bold text-blue-600">{playsPerDay}</span>
-                  <span>300</span>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Coin Rate (BDT per play)
-                </label>
-                <input
-                  type="range"
-                  min="10"
-                  max="50"
-                  value={coinRate}
-                  onChange={(e) => setCoinRate(Number(e.target.value))}
-                  className="w-full h-2 bg-green-200 rounded-lg appearance-none cursor-pointer"
-                />
-                <div className="flex justify-between text-sm text-gray-500 mt-1">
-                  <span>10</span>
-                  <span className="font-bold text-green-600">৳{coinRate}</span>
-                  <span>50</span>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Doll Cost (BDT each)
-                </label>
-                <input
-                  type="range"
-                  min="100"
-                  max="300"
-                  value={dollCost}
-                  onChange={(e) => setDollCost(Number(e.target.value))}
-                  className="w-full h-2 bg-purple-200 rounded-lg appearance-none cursor-pointer"
-                />
-                <div className="flex justify-between text-sm text-gray-500 mt-1">
-                  <span>100</span>
-                  <span className="font-bold text-purple-600">৳{dollCost}</span>
-                  <span>300</span>
-                </div>
-              </div>
+            <div className="bg-[#E291BE] text-white text-center py-3 font-semibold">
+              I3 Technologies & ABC Company
             </div>
-
-            {/* AI Insights */}
-            <div className="mt-8 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-100">
-              <h4 className="font-semibold text-gray-800 mb-2 flex items-center gap-2">
-                <TrendingUp className="w-4 h-4 text-blue-600" />
-                Business Insights
-              </h4>
-              <p className="text-sm text-gray-600">
-                Based on current parameters, your location shows {playsPerDay > 150 ? 'high' : playsPerDay > 100 ? 'medium' : 'low'} traffic potential. 
-                Optimal coin rate for your area is ৳{coinRate}.
-              </p>
+            
+            <div className="bg-blue-100 text-center py-2 font-semibold text-sm">
+              Per Week (approx.)
             </div>
+            
+            <table className="w-full">
+              <tbody className="text-sm">
+                <tr className="border-b">
+                  <td className="px-4 py-3 text-gray-700">Average Plays per Day</td>
+                  <td className="px-4 py-3 text-right font-semibold">120</td>
+                </tr>
+                <tr className="border-b bg-gray-50">
+                  <td className="px-4 py-3 text-gray-700">Total Plays (7 Days)</td>
+                  <td className="px-4 py-3 text-right font-semibold">840</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="px-4 py-3 text-gray-700">Coin Rate (Per Play)</td>
+                  <td className="px-4 py-3 text-right font-semibold">৳25</td>
+                </tr>
+                <tr className="border-b bg-gray-50">
+                  <td className="px-4 py-3 text-gray-700">Total Weekly Sales</td>
+                  <td className="px-4 py-3 text-right font-semibold">৳21,000</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="px-4 py-3 text-gray-700">Estimated Prize Out (Dolls)</td>
+                  <td className="px-4 py-3 text-right font-semibold">70</td>
+                </tr>
+                <tr className="border-b bg-gray-50">
+                  <td className="px-4 py-3 text-gray-700">Doll Cost (৳150 each)</td>
+                  <td className="px-4 py-3 text-right font-semibold">৳10,500</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="px-4 py-3 text-gray-700 font-semibold">Total Profit</td>
+                  <td className="px-4 py-3 text-right font-bold text-green-600">৳10,500</td>
+                </tr>
+                <tr className="border-b bg-gray-50">
+                  <td className="px-4 py-3 text-gray-700">Maintenance Charge (10%)</td>
+                  <td className="px-4 py-3 text-right font-semibold">৳1,050</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="px-4 py-3 text-gray-700 font-semibold">Net Profit</td>
+                  <td className="px-4 py-3 text-right font-bold text-blue-600">৳9,450</td>
+                </tr>
+                <tr className="bg-[#E291BE] text-white">
+                  <td className="px-4 py-3 font-bold">Restaurant Share (50%)</td>
+                  <td className="px-4 py-3 text-right font-bold text-lg">৳4,725</td>
+                </tr>
+              </tbody>
+            </table>
           </motion.div>
 
-          {/* Results Display - Side by Side Tables */}
+          {/* Right Table - Coin Count Details */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-6"
+            className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200"
           >
-            {/* Weekly Results */}
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-              <div className="bg-gradient-to-r from-green-500 to-emerald-600 px-6 py-4">
-                <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                  <DollarSign className="w-5 h-5" />
-                  Weekly Projection
-                </h3>
-              </div>
-              <div className="p-6 space-y-4">
-                <div className="grid grid-cols-1 gap-4">
-                  <div className="text-center p-4 bg-gray-50 rounded-lg">
-                    <div className="text-2xl font-bold text-green-600">৳{results.weekly.sales.toLocaleString()}</div>
-                    <div className="text-sm text-gray-600">Total Sales</div>
-                  </div>
-                  <div className="text-center p-4 bg-gray-50 rounded-lg">
-                    <div className="text-2xl font-bold text-blue-600">৳{results.weekly.franchiseShare.toLocaleString()}</div>
-                    <div className="text-sm text-gray-600">Your Share</div>
-                  </div>
-                </div>
-                <div className="text-xs text-gray-500 space-y-1">
-                  <div className="flex justify-between">
-                    <span>Plays: {results.weekly.plays}</span>
-                    <span>Dolls Out: {results.weekly.dollsOut}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Maintenance: ৳{results.weekly.maintenance.toLocaleString()}</span>
-                    <span>Net Profit: ৳{results.weekly.netProfit.toLocaleString()}</span>
-                  </div>
-                </div>
-              </div>
+            <div className="text-center py-4 border-b">
+              <h3 className="text-xl font-bold text-gray-900">I3 Technologies Business Model(Use-Case)</h3>
+              <p className="text-sm text-gray-600">Sohub</p>
+              <p className="text-xs text-gray-500">(Weekly Report)</p>
             </div>
-
-            {/* Monthly Results */}
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-              <div className="bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-4">
-                <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                  <DollarSign className="w-5 h-5" />
-                  Monthly Projection
-                </h3>
-              </div>
-              <div className="p-6 space-y-4">
-                <div className="grid grid-cols-1 gap-4">
-                  <div className="text-center p-4 bg-gray-50 rounded-lg">
-                    <div className="text-2xl font-bold text-green-600">৳{results.monthly.sales.toLocaleString()}</div>
-                    <div className="text-sm text-gray-600">Total Sales</div>
-                  </div>
-                  <div className="text-center p-4 bg-gray-50 rounded-lg">
-                    <div className="text-2xl font-bold text-blue-600">৳{results.monthly.franchiseShare.toLocaleString()}</div>
-                    <div className="text-sm text-gray-600">Your Share</div>
-                  </div>
-                </div>
-                <div className="text-xs text-gray-500 space-y-1">
-                  <div className="flex justify-between">
-                    <span>Plays: {results.monthly.plays.toLocaleString()}</span>
-                    <span>Dolls Out: {results.monthly.dollsOut}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Maintenance: ৳{results.monthly.maintenance.toLocaleString()}</span>
-                    <span>Net Profit: ৳{results.monthly.netProfit.toLocaleString()}</span>
-                  </div>
-                </div>
-              </div>
+            
+            <div className="bg-[#E291BE] text-white text-center py-3 font-semibold">
+              I3 Technologies & ABC Company
             </div>
-          </motion.div>
-
-          {/* ROI Indicator - Full Width Below Tables */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-6"
-          >
-            <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl p-6 text-white text-center">
-              <h4 className="font-bold text-lg mb-2">Return on Investment</h4>
-              <div className="text-3xl font-bold">
-                {Math.round((results.monthly.franchiseShare * 12) / 500000 * 100)}% Annual ROI
-              </div>
-              <p className="text-sm opacity-90 mt-2">
-                Based on ৳5,00,000 initial investment
-              </p>
+            
+            <div className="bg-blue-100 text-center py-2 font-semibold text-sm">
+              Coin Details
             </div>
+            
+            <table className="w-full">
+              <tbody className="text-sm">
+                <tr className="border-b">
+                  <td className="px-4 py-3 text-gray-700">Coin Count</td>
+                  <td className="px-4 py-3 text-right font-semibold">840</td>
+                </tr>
+                <tr className="border-b bg-gray-50">
+                  <td className="px-4 py-3 text-gray-700">Coin Rate</td>
+                  <td className="px-4 py-3 text-right font-semibold">৳25</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="px-4 py-3 text-gray-700">Total Sales (TK)</td>
+                  <td className="px-4 py-3 text-right font-semibold">৳21,000</td>
+                </tr>
+                <tr className="border-b bg-gray-50">
+                  <td className="px-4 py-3 text-gray-700">Prize out Ratio</td>
+                  <td className="px-4 py-3 text-right font-semibold">8.3%</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="px-4 py-3 text-gray-700">Doll Rate</td>
+                  <td className="px-4 py-3 text-right font-semibold">৳150</td>
+                </tr>
+                <tr className="border-b bg-gray-50">
+                  <td className="px-4 py-3 text-gray-700">Total Doll Cost</td>
+                  <td className="px-4 py-3 text-right font-semibold">৳10,500</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="px-4 py-3 text-gray-700 font-semibold">Total Profit (Total Sales-Doll Cost)</td>
+                  <td className="px-4 py-3 text-right font-bold text-green-600">৳10,500</td>
+                </tr>
+                <tr className="border-b bg-gray-50">
+                  <td className="px-4 py-3 text-gray-700">10% Maintenance Charge</td>
+                  <td className="px-4 py-3 text-right font-semibold">৳1,050</td>
+                </tr>
+                <tr className="border-b">
+                  <td className="px-4 py-3 text-gray-700 font-semibold">Net Profit</td>
+                  <td className="px-4 py-3 text-right font-bold text-blue-600">৳9,450</td>
+                </tr>
+                <tr className="bg-[#E291BE] text-white">
+                  <td className="px-4 py-3 font-bold">Restaurant Share (50%)</td>
+                  <td className="px-4 py-3 text-right font-bold text-lg">৳4,725</td>
+                </tr>
+              </tbody>
+            </table>
           </motion.div>
         </div>
       </div>
