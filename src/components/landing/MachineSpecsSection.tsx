@@ -11,19 +11,19 @@ const specs = [
 ];
 
 const MachineSpecsSection = () => (
-  <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
-    <div className="container max-w-7xl">
+  <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+    <div className="container max-w-6xl">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-16"
+        className="text-center mb-12"
       >
-        <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
+        <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
           Machine <span className="text-primary bg-gradient-to-r from-[#E291BE] to-[#D67BA8] bg-clip-text text-transparent">Specifications</span>
         </h2>
-        <p className="text-muted-foreground text-xl max-w-3xl mx-auto leading-relaxed">
-          Professional-grade claw machine built for reliability and performance with cutting-edge technology
+        <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          Professional-grade claw machine built for reliability and performance
         </p>
       </motion.div>
 
@@ -36,11 +36,11 @@ const MachineSpecsSection = () => (
           transition={{ duration: 0.6 }}
           className="lg:w-1/2"
         >
-          <div className="max-w-sm mx-auto">
+          <div className="max-w-xs mx-auto">
             <img
               src={machineImage}
               alt="Clowee Claw Machine"
-              className="w-full h-auto object-contain rounded-2xl shadow-lg"
+              className="w-full h-auto object-contain rounded-xl shadow-md"
             />
           </div>
         </motion.div>
@@ -53,11 +53,11 @@ const MachineSpecsSection = () => (
           transition={{ duration: 0.6 }}
           className="lg:w-1/2"
         >
-          <div className="bg-white rounded-2xl p-6 shadow-xl border-2 border-gray-100">
-            <h3 className="text-xl font-bold text-foreground mb-6 text-center">
+          <div className="bg-white rounded-xl p-5 shadow-lg border border-gray-200">
+            <h3 className="text-lg font-bold text-foreground mb-4 text-center">
               Technical Specifications
             </h3>
-            <div className="grid gap-3">
+            <div className="grid gap-2.5">
               {specs.map((spec, index) => (
                 <motion.div
                   key={spec.label}
@@ -65,16 +65,16 @@ const MachineSpecsSection = () => (
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="group flex items-center gap-3 p-3 rounded-xl bg-gray-50 border-2 border-transparent hover:border-[#E291BE] hover:bg-gradient-to-r hover:from-[#E291BE] hover:to-[#D67BA8] hover:text-white transition-all duration-300 cursor-pointer hover:shadow-lg hover:scale-105"
+                  className="group flex items-center gap-3 p-2.5 rounded-lg bg-gray-50 border border-transparent hover:border-[#E291BE] hover:bg-gradient-to-r hover:from-[#E291BE] hover:to-[#D67BA8] hover:text-white transition-all duration-300 cursor-pointer"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#E291BE] to-[#D67BA8] flex items-center justify-center shrink-0 shadow-lg group-hover:bg-white/20">
-                    <spec.icon className="w-6 h-6 text-white" />
+                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#E291BE] to-[#D67BA8] flex items-center justify-center shrink-0">
+                    <spec.icon className="w-5 h-5 text-white" />
                   </div>
                   <div className="flex-1">
-                    <div className="text-sm font-bold text-muted-foreground group-hover:text-white mb-1">
+                    <div className="text-xs font-semibold text-muted-foreground group-hover:text-white">
                       {spec.label}
                     </div>
-                    <div className="text-base font-black text-foreground group-hover:text-white">
+                    <div className="text-sm font-bold text-foreground group-hover:text-white">
                       {spec.value}
                     </div>
                   </div>

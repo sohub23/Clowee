@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Facebook, Youtube } from "lucide-react";
+import { Facebook, Youtube, MessageCircle } from "lucide-react";
 import logoImage from "@/assets/clowee logo.png";
 import { useState, useEffect } from "react";
 
@@ -54,6 +54,9 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
             <Facebook className="w-5 h-5" />
+          </a>
+          <a href="https://wa.me/8801325886868" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+            <MessageCircle className="w-5 h-5" />
           </a>
           <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
             <Youtube className="w-5 h-5" />
