@@ -42,7 +42,7 @@ const PartnerStoriesSection = () => (
     <div className="container mx-auto px-4">
       {/* Header */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Partners</h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-4">Our <span className="text-[#E291BE]">Partners</span></h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
           Trusted by leading restaurants and businesses across Bangladesh
         </p>
@@ -55,30 +55,28 @@ const PartnerStoriesSection = () => (
           {partnerLogos.map((logo, index) => (
             <div
               key={`logo-${index}`}
-              className="flex items-center justify-center flex-shrink-0 mx-4"
+              className="flex items-center justify-center flex-shrink-0 mx-3"
             >
-              <div className="w-[140px] h-[100px] bg-white p-3 rounded-lg shadow-sm flex items-center justify-center">
-                <img
-                  src={logo.src}
-                  alt={logo.name}
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
+              <img
+                src={logo.src}
+                alt={logo.name}
+                className="w-[130px] h-[90px] object-contain bg-white p-4 rounded"
+                style={{ backgroundColor: '#ffffff' }}
+              />
             </div>
           ))}
           {/* Duplicate for seamless loop */}
           {partnerLogos.map((logo, index) => (
             <div
               key={`logo-duplicate-${index}`}
-              className="flex items-center justify-center flex-shrink-0 mx-4"
+              className="flex items-center justify-center flex-shrink-0 mx-3"
             >
-              <div className="w-[140px] h-[100px] bg-white p-3 rounded-lg shadow-sm flex items-center justify-center">
-                <img
-                  src={logo.src}
-                  alt={logo.name}
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
+              <img
+                src={logo.src}
+                alt={logo.name}
+                className="w-[130px] h-[90px] object-contain bg-white p-4 rounded"
+                style={{ backgroundColor: '#ffffff' }}
+              />
             </div>
           ))}
         </div>
