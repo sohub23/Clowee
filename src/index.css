@@ -121,10 +121,12 @@
   /* Partner Logo Scrolling Animations */
   .scroll-right {
     animation: scrollRight 80s linear infinite;
+    animation-play-state: running !important;
   }
 
   .scroll-left {
     animation: scrollLeft 80s linear infinite;
+    animation-play-state: running !important;
   }
 
   @keyframes scrollRight {

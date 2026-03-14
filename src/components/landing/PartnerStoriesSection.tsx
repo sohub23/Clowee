@@ -5,36 +5,30 @@ import chilloxLogo from "@/assets/chillox-logo-png_seeklogo-647089.png";
 import pizzaBurgLogo from "@/assets/pizza Burag logo.jpg";
 import diningLoungeLogo from "@/assets/The-Dining-Lounge.logo.jpg";
 import foodplexLogo from "@/assets/foodplex.jpeg";
-import kolapataLogo from "@/assets/Kolapata.png";
 import finoLogo from "@/assets/fino.jpeg";
-import whatsappImage from "@/assets/WhatsApp Image 2026-03-10 at 11.43.42 PM.jpeg";
-import whatsappLogo from "@/assets/whatsapp-logo.jpeg";
 import filmic1 from "@/assets/filmic-1.jpeg";
 import filmic2 from "@/assets/filmic-2.jpeg";
-import filmic3 from "@/assets/filmic-3.jpeg";
-import logo6 from "@/components/landing/6.jpeg";
-import logo7 from "@/components/landing/7.jpeg";
-import logo8 from "@/components/landing/8.jpeg";
-import logo33 from "@/components/landing/33.jpeg";
-import logo66 from "@/components/landing/66.jpeg";
+import img6 from "./6.jpeg";
+import img7 from "./7.jpeg";
+import img8 from "./8.jpeg";
+import img11 from "./11.jpeg";
+import img33 from "./33.jpeg";
+import img66 from "./66.jpeg";
 
 const partnerLogos = [
   { src: chilloxLogo, name: "Chillox" },
   { src: pizzaBurgLogo, name: "Pizza Burag" },
   { src: diningLoungeLogo, name: "The Dining Lounge" },
   { src: foodplexLogo, name: "FoodPlex" },
-  { src: kolapataLogo, name: "Kolapata" },
   { src: finoLogo, name: "Fino" },
-  { src: whatsappImage, name: "WhatsApp Partner" },
-  { src: whatsappLogo, name: "WhatsApp" },
-  { src: filmic1, name: "Filmic 1" },
-  { src: filmic2, name: "Filmic 2" },
-  { src: filmic3, name: "Filmic 3" },
-  { src: logo6, name: "Partner 6" },
-  { src: logo7, name: "Partner 7" },
-  { src: logo8, name: "Partner 8" },
-  { src: logo33, name: "Partner 33" },
-  { src: logo66, name: "Partner 66" }
+  { src: filmic1, name: "Partner" },
+  { src: filmic2, name: "Partner" },
+  { src: img6, name: "Partner" },
+  { src: img7, name: "Partner" },
+  { src: img8, name: "Partner" },
+  { src: img11, name: "Partner" },
+  { src: img33, name: "Partner" },
+  { src: img66, name: "Partner" },
 ];
 
 const PartnerStoriesSection = () => (

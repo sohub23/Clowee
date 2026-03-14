@@ -33,23 +33,23 @@ const monthlyData = [
 const ProfitTable = ({ title, data, isWeekly }: { title: string; data: typeof weeklyData; isWeekly?: boolean }) => (
   <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
     {/* Header Section */}
-    <div className="bg-gradient-to-r from-pink-400 to-pink-500 px-6 py-4 text-center border-b">
-      <h3 className="font-bold text-white text-lg mb-1">
+    <div className="bg-gradient-to-r from-pink-400 to-pink-500 px-6 py-2 text-center border-b">
+      <h3 className="font-bold text-white text-base mb-1">
         I3 Technologies Business Model(Use-Case)
       </h3>
-      <p className="text-sm text-white">
+      <p className="text-xs text-white">
         ({isWeekly ? 'Weekly Report' : 'Monthly Report'})
       </p>
     </div>
     
     {/* Company Header */}
-    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 px-6 py-3 text-center border-b">
-      <h4 className="font-semibold text-gray-700 text-base">I3 Technologies & ABC Company</h4>
+    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 px-6 py-2 text-center border-b">
+      <h4 className="font-semibold text-gray-700 text-sm">I3 Technologies & ABC Company</h4>
     </div>
     
     {/* Table Header */}
-    <div className="bg-gradient-to-r from-blue-50 to-blue-100 px-6 py-3 border-b">
-      <div className="text-center font-semibold text-gray-800">
+    <div className="bg-gradient-to-r from-blue-50 to-blue-100 px-6 py-2 border-b">
+      <div className="text-center font-semibold text-gray-800 text-sm">
         {isWeekly ? 'Per Week (approx.)' : 'Per Month (approx.)'}
       </div>
     </div>
@@ -75,7 +75,7 @@ const ProfitTable = ({ title, data, isWeekly }: { title: string; data: typeof we
         
         return (
           <div key={index} className={`${bgColor} transition-colors duration-200`}>
-            <div className="flex justify-between items-center px-6 py-4">
+            <div className="flex justify-between items-center px-6 py-3">
               <span className={`font-medium ${textColor} text-sm flex-1`}>
                 {row.item}
               </span>
@@ -100,7 +100,7 @@ const ProfitEstimationSection = () => (
         className="text-center mb-12"
       >
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-           Profit <span className="text-primary">Breakdown</span>
+           Profit <span className="text-primary">Calculation</span>
         </h2>
       </motion.div>
 

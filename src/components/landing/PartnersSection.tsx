@@ -9,9 +9,10 @@ import chefMateLounge from "@/assets/4. Chef mate lounge.jpg";
 import crushstation from "@/assets/5. Crush Station.jpeg";
 import bailyDeliImg from "@/assets/6. baily deli.jpg";
 import kolapata from "@/assets/7. Kolapata.png";
-import chillox from "@/assets/chillox.jpg";
-import daininglounge from "@/assets/dininglounge.jpg";  
-import madChef from "@/assets/madchef.jpeg";
+import kolapataCard from "../landing/Kolapata.png";
+import chillox from "@/assets/Chillox.jpg";
+import daininglounge from "@/assets/Dining Lounge.jpg";  
+import madChef from "@/assets/Mad chef.png";
 
 
 const partners = [
@@ -48,7 +49,7 @@ const partners = [
   {
     name: "Kolapata",
     location: "Dhaka",
-    image: kolapata,
+    image: kolapataCard
   },
   {
     name: "Chilox",
@@ -78,7 +79,7 @@ const videos = [
 const PartnersSection = () => {
 
   return (
-    <section id="partners" className="py-20 bg-secondary/30 scroll-mt-20">
+    <section id="partners" className="py-20 bg-secondary/30 scroll-mt-20 md:hidden">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <motion.div
@@ -89,7 +90,7 @@ const PartnersSection = () => {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Trusted by Leading <span className="text-[#e289a6]">Restaurants in Dhaka</span>
+            <span className="text-primary">Trusted by Leading</span> <span className="text-[#e289a6]">Restaurants</span> in <span className="text-[#e289a6]">Dhaka</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             These restaurants are already earning passive income with Clowee machines.
@@ -97,17 +98,17 @@ const PartnersSection = () => {
         </motion.div>
 
         {/* Partner Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-3 gap-3 mb-16">
           {partners.map((partner, index) => (
             <motion.div
               key={`${partner.name}-${index}`}
-              className="group rounded-lg overflow-hidden border border-primary/3 bg-card shadow-sm hover:shadow-md hover:border-primary/8 transition-all"
+              className="group rounded-md overflow-hidden border border-primary/3 bg-card shadow-sm hover:shadow-md hover:border-primary/8 transition-all"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
             >
-              <div className="aspect-[4/3] overflow-hidden bg-muted">
+              <div className="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center">
                 <img
                   src={partner.image}
                   alt={`${partner.name} — Clowee Partner Restaurant`}
@@ -119,10 +120,10 @@ const PartnersSection = () => {
                   }}
                 />
               </div>
-              <div className="p-2 bg-[#e289a6]">
-                <h3 className="font-semibold text-white text-xs">{partner.name}</h3>
-                <p className="text-[10px] text-white/90 flex items-center gap-1 mt-1">
-                  <MapPin className="w-2.5 h-2.5" />
+              <div className="p-1.5 bg-[#e289a6]">
+                <h3 className="font-semibold text-white text-[10px] leading-tight">{partner.name}</h3>
+                <p className="text-[9px] text-white/90 flex items-center gap-0.5 mt-0.5">
+                  <MapPin className="w-2 h-2" />
                   {partner.location}
                 </p>
               </div>

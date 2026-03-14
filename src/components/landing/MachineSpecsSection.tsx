@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Package, Zap, Ruler, ArrowUpDown, ArrowLeftRight, Layers } from "lucide-react";
-import machineImage from "@/assets/clowee.p.jpeg";
+import machineSpecsImage from "@/assets/Machine Specifications.jpeg";
 
 const specs = [
   { icon: Package, label: "Machine Type", value: "Doll Catcher Machine" },
@@ -38,7 +38,7 @@ const MachineSpecsSection = () => (
         >
           <div className="max-w-xs mx-auto lg:mx-0 lg:ml-auto flex items-center">
             <img
-              src={machineImage}
+              src={machineSpecsImage}
               alt="Clowee Claw Machine"
               className="w-full h-full object-cover rounded-l-xl shadow-md"
             />
