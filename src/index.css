@@ -119,62 +119,28 @@
   }
 
   /* Partner Logo Scrolling Animations */
-  .scroll-right {
-    animation: scrollRight 80s linear infinite;
-    animation-play-state: running !important;
-  }
-
-  .scroll-left {
-    animation: scrollLeft 80s linear infinite;
-    animation-play-state: running !important;
-  }
-
-  @media (max-width: 768px) {
-    .scroll-right, .scroll-left {
-      animation-duration: 15s !important;
-    }
-  }
-
-  @keyframes scrollRight {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-
-  @keyframes scrollLeft {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0%);
-    }
-  }
-
-  .scroll-container {
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
   .scroll-content {
-    display: inline-flex;
-    align-items: center;
+    display: flex;
+    width: max-content;
     gap: 3rem;
-    width: 200%;
   }
 
-  .animate-scroll {
-    animation: scroll 30s linear infinite;
+  .scroll-right {
+    animation: scrollAnimate 40s linear infinite;
   }
 
-  @keyframes scroll {
+  @keyframes scrollAnimate {
     0% {
       transform: translateX(0);
     }
     100% {
       transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .scroll-right {
+      animation-duration: 10s !important;
     }
   }
 }

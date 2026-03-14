@@ -104,8 +104,9 @@ const ProfitEstimationSection = () => (
         </h2>
       </motion.div>
 
-      <div className="grid grid-cols-2 gap-2 md:gap-6">
+      <div className="flex flex-row gap-2 md:gap-6 overflow-x-hidden">
         <motion.div
+          className="w-1/2"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -115,6 +116,7 @@ const ProfitEstimationSection = () => (
         </motion.div>
 
         <motion.div
+          className="w-1/2"
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}

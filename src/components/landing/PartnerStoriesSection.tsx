@@ -4,7 +4,7 @@
 import chilloxLogo from "@/assets/chillox-logo-png_seeklogo-647089.png";
 import pizzaBurgLogo from "@/assets/pizza Burag logo.jpg";
 import diningLoungeLogo from "@/assets/The-Dining-Lounge.logo.jpg";
-import foodplexLogo from "@/assets/4. Chef mate lounge.jpg";
+import foodplexLogo from "@/assets/foodplex.jpeg";
 import finoLogo from "@/assets/fino.jpeg";
 import filmic1 from "@/assets/filmic-1.jpeg";
 import filmic2 from "@/assets/filmic-2.jpeg";
