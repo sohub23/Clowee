@@ -55,16 +55,20 @@ const Footer = () => (
         </div>
 
         {/* Contact Info Above Scanner */}
-        <div className="text-center mb-6">
-          <div className="bg-white/10 rounded-lg px-3 py-2 inline-block mb-4">
+        <div className="text-center mb-4">
+          <div className="bg-white/10 rounded-lg px-3 py-2 inline-block">
             <a href="mailto:support@i3technologies.com.bd" className="text-white text-xs font-medium hover:text-white/80 transition-colors">
               support@i3technologies.com.bd
             </a>
           </div>
-          <div className="flex justify-center">
-            <QRExpandable size="sm" />
-          </div>
         </div>
+
+        {/* QR Code Section - Mobile */}
+        <div className="flex justify-center mb-6">
+          <QRExpandable size="sm" />
+        </div>
+
+
       </div>
 
       {/* Desktop Layout */}
@@ -140,9 +144,9 @@ const Footer = () => (
             </ul>
           </div>
 
-          {/* QR Code Section */}
-          <div className="flex flex-col items-start md:items-end justify-start">
-            <h3 className="font-heading font-bold text-white mb-4">Hotscan</h3>
+          {/* QR Code Section - Desktop */}
+          <div className="flex flex-col items-start">
+            <h3 className="font-heading font-bold text-white mb-4">Support Scan</h3>
             <QRExpandable size="md" />
           </div>
 
