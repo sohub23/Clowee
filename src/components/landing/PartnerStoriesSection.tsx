@@ -32,7 +32,7 @@ const partnerLogos = [
 ];
 
 const PartnerStoriesSection = () => (
-  <section id="our-partners" className="py-16 bg-white">
+  <section className="py-16 bg-white">
     <div className="container mx-auto px-4">
       {/* Header */}
       <div className="text-center mb-12">

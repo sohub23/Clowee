@@ -62,7 +62,7 @@ const partners = [
 
 const PartnersSection = () => {
   return (
-    <section id="partners" className="py-20 bg-secondary/30 scroll-mt-20">
+    <section id="our-partners" className="py-20 bg-secondary/30 scroll-mt-20">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <motion.div

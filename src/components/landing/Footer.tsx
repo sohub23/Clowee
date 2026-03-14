@@ -82,7 +82,7 @@ const Footer = () => (
             <ul className="space-y-2 text-sm">
               <li><a href="#how-it-works" className="text-white/90 hover:text-white transition-colors">How It Works</a></li>
               <li><a href="#earnings" className="text-white/90 hover:text-white transition-colors">Earnings</a></li>
-              <li><a href="#our-partners" className="text-white/90 hover:text-white transition-colors">Ours Partner</a></li>
+              <li><a href="#our-partners" className="text-white/90 hover:text-white transition-colors">Our Partners</a></li>
               <li><a href="#faq" className="text-white/90 hover:text-white transition-colors">FAQ</a></li>
               <li><a href="#apply" className="text-white/90 hover:text-white transition-colors">Apply Now</a></li>
             </ul>

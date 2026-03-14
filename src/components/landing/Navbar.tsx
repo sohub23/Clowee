@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Instagram, Youtube, Facebook } from "lucide-react";
+import { Instagram, Youtube, Facebook, Menu, X } from "lucide-react";
 import logoImage from "@/assets/clowee logo.png";
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,36 +37,110 @@ const Navbar = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+    setIsMenuOpen(false);
   };
+
+  const navLinks = [
+    { id: "how-it-works", label: "How It Works" },
+    { id: "earnings", label: "Earnings" },
+    { id: "our-partners", label: "Our Partners" },
+    { id: "faq", label: "FAQ" },
+  ];
+
+  const socialLinks = [
+    { icon: Facebook, href: "https://www.facebook.com/i3clowee" },
+    { icon: Instagram, href: "https://www.instagram.com/i3clowee/" },
+    { icon: Youtube, href: "https://www.youtube.com/@i3clowee" },
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16">
         <div className="flex items-center gap-3">
-          <img src={logoImage} alt="Clowee Logo" className="w-20 h-20 object-contain" />
-          
+          <img src={logoImage} alt="Clowee Logo" className="w-20 h-20 object-contain cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} />
         </div>
+
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
-          <button onClick={() => scrollToSection("how-it-works")} className={`hover:text-foreground transition-colors ${activeSection === "how-it-works" ? "text-[#E291BE] font-semibold border-b-2 border-[#E291BE] pb-1" : ""}`}>How It Works</button>
-          <button onClick={() => scrollToSection("earnings")} className={`hover:text-foreground transition-colors ${activeSection === "earnings" ? "text-[#E291BE] font-semibold border-b-2 border-[#E291BE] pb-1" : ""}`}>Earnings</button>
-          <button onClick={() => scrollToSection("our-partners")} className={`hover:text-foreground transition-colors ${activeSection === "our-partners" ? "text-[#E291BE] font-semibold border-b-2 border-[#E291BE] pb-1" : ""}`}>Ours Partner</button>
-          <button onClick={() => scrollToSection("faq")} className={`hover:text-foreground transition-colors ${activeSection === "faq" ? "text-[#E291BE] font-semibold border-b-2 border-[#E291BE] pb-1" : ""}`}>FAQ</button>
+          {navLinks.map((link) => (
+            <button
+              key={link.id}
+              onClick={() => scrollToSection(link.id)}
+              className={`hover:text-foreground transition-colors ${
+                activeSection === link.id ? "text-[#E291BE] font-semibold border-b-2 border-[#E291BE] pb-1" : ""
+              }`}
+            >
+              {link.label}
+            </button>
+          ))}
         </div>
-        <div className="flex items-center gap-4">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-            <Facebook className="w-5 h-5" />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-            <Instagram className="w-5 h-5" />
-          </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-            <Youtube className="w-5 h-5" />
-          </a>
+
+        <div className="hidden md:flex items-center gap-4">
+          {socialLinks.map((social, index) => {
+            const Icon = social.icon;
+            return (
+              <a
+                key={index}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
+                aria-label={`Visit our ${Icon.name} page`}
+              >
+                <Icon className="w-5 h-5" />
+              </a>
+            );
+          })}
           <Button variant="hero" size="sm" onClick={() => scrollToSection("apply")}>
             Become a Partner
           </Button>
         </div>
+
+        {/* Mobile menu button */}
+        <div className="md:hidden flex items-center gap-4">
+          <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </Button>
+        </div>
       </div>
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-background border-b border-border animate-in slide-in-from-top duration-300">
+          <div className="container py-6 flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <button
+                key={link.id}
+                onClick={() => scrollToSection(link.id)}
+                className={`text-left text-lg font-medium transition-colors ${
+                  activeSection === link.id ? "text-[#E291BE]" : "text-muted-foreground"
+                }`}
+              >
+                {link.label}
+              </button>
+            ))}
+            <div className="flex items-center gap-6 py-4 border-t border-border mt-2">
+              {socialLinks.map((social, index) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <Icon className="w-6 h-6" />
+                  </a>
+                );
+              })}
+            </div>
+            <Button variant="hero" className="w-full" onClick={() => scrollToSection("apply")}>
+              Become a Partner
+            </Button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
