@@ -3,7 +3,7 @@ import logoImage from "@/components/landing/clowee-navbar.png";
 import QRExpandable from "./QRExpandable";
 
 const Footer = () => (
-  <footer className="py-8 px-4" style={{ backgroundColor: '#E291BE' }}>
+  <footer className="py-12 px-4" style={{ backgroundColor: '#E291BE' }}>
     <div className="container">
       {/* Mobile Layout */}
       <div className="block md:hidden">
@@ -36,20 +36,20 @@ const Footer = () => (
 
         {/* Social Icons Row */}
         <div className="flex justify-center items-center gap-4 mb-4">
-          <a href="https://www.facebook.com/i3clowee" target="_blank" rel="noopener noreferrer" 
-             className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+          <a href="https://www.facebook.com/i3clowee" target="_blank" rel="noopener noreferrer"
+            className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
             <Facebook className="w-4 h-4 text-white" />
           </a>
-          <a href="https://www.instagram.com/i3clowee/" target="_blank" rel="noopener noreferrer" 
-             className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+          <a href="https://www.instagram.com/i3clowee/" target="_blank" rel="noopener noreferrer"
+            className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
             <Instagram className="w-4 h-4 text-white" />
           </a>
-          <a href="https://www.youtube.com/@i3clowee" target="_blank" rel="noopener noreferrer" 
-             className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+          <a href="https://www.youtube.com/@i3clowee" target="_blank" rel="noopener noreferrer"
+            className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
             <Youtube className="w-4 h-4 text-white" />
           </a>
-          <a href="https://wa.me/8801325886868" target="_blank" rel="noopener noreferrer" 
-             className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+          <a href="https://wa.me/8801325886868" target="_blank" rel="noopener noreferrer"
+            className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
             <MessageCircle className="w-4 h-4 text-white" />
           </a>
         </div>
@@ -109,29 +109,29 @@ const Footer = () => (
             <h3 className="font-heading font-bold text-white mb-4">Follow Us</h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="https://www.youtube.com/@i3clowee" target="_blank" rel="noopener noreferrer" 
-                   className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                <a href="https://www.youtube.com/@i3clowee" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
                   <Youtube className="w-4 h-4" />
                   <span>YouTube</span>
                 </a>
               </li>
               <li>
-                <a href="https://www.facebook.com/i3clowee" target="_blank" rel="noopener noreferrer" 
-                   className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                <a href="https://www.facebook.com/i3clowee" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
                   <Facebook className="w-4 h-4" />
                   <span>Facebook</span>
                 </a>
               </li>
               <li>
-                <a href="https://www.instagram.com/i3clowee/" target="_blank" rel="noopener noreferrer" 
-                   className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                <a href="https://www.instagram.com/i3clowee/" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
                   <Instagram className="w-4 h-4" />
                   <span>Instagram</span>
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/8801325886868" target="_blank" rel="noopener noreferrer" 
-                   className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                <a href="https://wa.me/8801325886868" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
                   <MessageCircle className="w-4 h-4" />
                   <span>WhatsApp</span>
                 </a>
@@ -146,7 +146,7 @@ const Footer = () => (
 
           {/* QR Code Section - Desktop */}
           <div className="flex flex-col items-start">
-            <h3 className="font-heading font-bold text-white mb-4">Support Scan</h3>
+
             <QRExpandable size="md" />
           </div>
 

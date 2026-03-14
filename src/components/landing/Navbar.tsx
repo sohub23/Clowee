@@ -96,9 +96,24 @@ const Navbar = () => {
           </Button>
         </div>
 
-        {/* Mobile menu button */}
-        <div className="md:hidden flex items-center gap-4">
-          <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        {/* Mobile menu & social links */}
+        <div className="md:hidden flex items-center gap-1">
+          {socialLinks.map((social, index) => {
+            const Icon = social.icon;
+            return (
+              <a
+                key={index}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-1.5 text-muted-foreground hover:text-primary transition-colors"
+                aria-label={`Visit our ${Icon.name} page`}
+              >
+                <Icon className="w-5 h-5" />
+              </a>
+            );
+          })}
+          <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)} className="ml-1">
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </Button>
         </div>

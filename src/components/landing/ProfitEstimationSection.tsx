@@ -33,23 +33,23 @@ const monthlyData = [
 const ProfitTable = ({ title, data, isWeekly }: { title: string; data: typeof weeklyData; isWeekly?: boolean }) => (
   <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
     {/* Header Section */}
-    <div className="bg-gradient-to-r from-pink-400 to-pink-500 px-6 py-2 text-center border-b">
-      <h3 className="font-bold text-white text-base mb-1">
+    <div className="bg-[#E291BE] px-2 py-0.5 text-center border-b">
+      <h3 className="font-bold text-white text-[7px] md:text-[10px] leading-tight">
         I3 Technologies Business Model(Use-Case)
       </h3>
-      <p className="text-xs text-white">
+      <p className="text-[6px] md:text-[9px] text-white">
         ({isWeekly ? 'Weekly Report' : 'Monthly Report'})
       </p>
     </div>
     
     {/* Company Header */}
-    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 px-6 py-2 text-center border-b">
-      <h4 className="font-semibold text-gray-700 text-sm">I3 Technologies & ABC Company</h4>
+    <div className="bg-blue-50 px-2 py-0.5 text-center border-b">
+      <h4 className="font-semibold text-gray-700 text-[6px] md:text-[9px]">I3 Technologies & ABC Company</h4>
     </div>
     
     {/* Table Header */}
-    <div className="bg-gradient-to-r from-blue-50 to-blue-100 px-6 py-2 border-b">
-      <div className="text-center font-semibold text-gray-800 text-sm">
+    <div className="bg-blue-100 px-2 py-0.5 border-b">
+      <div className="text-center font-semibold text-gray-800 text-[7px] md:text-[10px]">
         {isWeekly ? 'Per Week (approx.)' : 'Per Month (approx.)'}
       </div>
     </div>
@@ -65,21 +65,21 @@ const ProfitTable = ({ title, data, isWeekly }: { title: string; data: typeof we
           textColor = 'text-gray-800 font-semibold';
         }
         if (row.franchise) {
-          bgColor = 'bg-gradient-to-r from-green-50 to-emerald-50';
+          bgColor = 'bg-green-50';
           textColor = 'text-gray-800 font-semibold';
         }
         if (row.payable) {
-          bgColor = 'bg-gradient-to-r from-pink-400 to-pink-500';
+          bgColor = 'bg-[#E291BE]';
           textColor = 'text-white font-semibold';
         }
         
         return (
           <div key={index} className={`${bgColor} transition-colors duration-200`}>
-            <div className="flex justify-between items-center px-6 py-3">
-              <span className={`font-medium ${textColor} text-sm flex-1`}>
+            <div className="flex justify-between items-center px-1.5 py-0.5 md:px-3 md:py-1.5">
+              <span className={`font-medium ${textColor} text-[6px] xs:text-[7px] sm:text-[9px] md:text-xs flex-1 truncate`}>
                 {row.item}
               </span>
-              <span className={`font-bold ${textColor} text-sm text-right min-w-[100px]`}>
+              <span className={`font-bold ${textColor} text-[6px] xs:text-[7px] sm:text-[9px] md:text-xs text-right truncate ml-1`}>
                 {row.value}
               </span>
             </div>
@@ -91,20 +91,20 @@ const ProfitTable = ({ title, data, isWeekly }: { title: string; data: typeof we
 );
 
 const ProfitEstimationSection = () => (
-  <section id="earnings" className="section-padding">
-    <div className="container max-w-5xl">
+  <section id="earnings" className="py-12 md:py-20 bg-white">
+    <div className="container px-4 mx-auto max-w-2xl">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center mb-12"
+        className="text-center mb-6 md:mb-12"
       >
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-           Profit <span className="text-primary">Calculation</span>
+        <h2 className="text-2xl md:text-4xl font-heading font-bold text-foreground mb-4">
+           Profit <span className="text-[#E291BE]">Calculation</span>
         </h2>
       </motion.div>
 
-      <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-2 gap-2 md:gap-6">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -120,7 +120,7 @@ const ProfitEstimationSection = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <ProfitTable title="Monthly Calculation" data={monthlyData} isDaily={false} />
+          <ProfitTable title="Monthly Calculation" data={monthlyData} isWeekly={false} />
         </motion.div>
       </div>
     </div>

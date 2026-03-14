@@ -56,6 +56,7 @@ export default {
           foreground: "hsl(var(--success-foreground))",
         },
         "surface-elevated": "hsl(var(--surface-elevated))",
+        "footer-text": "#ffffff",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

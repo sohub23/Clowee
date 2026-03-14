@@ -75,69 +75,68 @@ const ProfitCalculationAISection = () => {
         </motion.div>
 
         {/* Two Tables Side by Side */}
-        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 gap-2 md:gap-6 max-w-2xl mx-auto">
           {/* Left Table - Use Case */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200"
+            className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200"
           >
             <div className="text-center py-0.5 border-b border-gray-100">
-              <h3 className="text-[10px] font-medium text-gray-900">I3 Technologies Business Model(Use-Case)</h3>
-              <p className="text-[9px] text-gray-600">Sohub</p>
-              <p className="text-[9px] text-gray-500">(Weekly Report)</p>
+              <h3 className="text-[7px] md:text-[10px] font-medium text-gray-900 leading-tight">I3 Technologies(Use-Case)</h3>
+              <p className="text-[6px] md:text-[9px] text-gray-500">(Weekly Report)</p>
             </div>
             
-            <div className="bg-[#E291BE] text-white text-center py-0.5 font-medium text-[10px]">
-              I3 Technologies & ABC Company
+            <div className="bg-[#E291BE] text-white text-center py-0.5 font-medium text-[7px] md:text-[10px]">
+              I3 Technologies & ABC
             </div>
             
-            <div className="bg-blue-100 text-center py-0.5 font-medium text-[10px]">
+            <div className="bg-blue-100 text-center py-0.5 font-medium text-[7px] md:text-[10px]">
               Per Week (approx.)
             </div>
             
             <table className="w-full">
-              <tbody className="text-xs">
+              <tbody className="text-[6px] xs:text-[7px] sm:text-[9px] md:text-xs">
                 <tr className="border-b">
-                  <td className="px-2 py-1.5 text-gray-700">Average Plays per Day</td>
-                  <td className="px-2 py-1.5 text-right font-semibold">120</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-gray-700">Avg Plays/Day</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-right font-semibold">120</td>
                 </tr>
                 <tr className="border-b bg-gray-50">
-                  <td className="px-2 py-1.5 text-gray-700">Total Plays (7 Days)</td>
-                  <td className="px-2 py-1.5 text-right font-semibold">840</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-gray-700">Total Plays(7D)</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-right font-semibold">840</td>
                 </tr>
                 <tr className="border-b">
-                  <td className="px-2 py-1.5 text-gray-700">Coin Rate (Per Play)</td>
-                  <td className="px-2 py-1.5 text-right font-semibold">25 BDT</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-gray-700">Rate(Per Play)</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-right font-semibold">25 BDT</td>
                 </tr>
                 <tr className="border-b bg-gray-50">
-                  <td className="px-2 py-1.5 text-gray-700">Total Weekly Sales</td>
-                  <td className="px-2 py-1.5 text-right font-semibold">21,000 BDT</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-gray-700 font-semibold">Weekly Sales</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-right font-semibold">21,000</td>
                 </tr>
                 <tr className="border-b">
-                  <td className="px-2 py-1.5 text-gray-700">Estimated Prize Out (Dolls)</td>
-                  <td className="px-2 py-1.5 text-right font-semibold">70</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-gray-700">Prize Out(Dolls)</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-right font-semibold">70</td>
                 </tr>
                 <tr className="border-b bg-gray-50">
-                  <td className="px-2 py-1.5 text-gray-700">Doll Cost (150 BDT each)</td>
-                  <td className="px-2 py-1.5 text-right font-semibold">10,500 BDT</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-gray-700">Doll Cost</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-right font-semibold">10,500</td>
                 </tr>
-                <tr className="border-b">
-                  <td className="px-2 py-1.5 text-gray-700 font-semibold">Total Profit</td>
-                  <td className="px-2 py-1.5 text-right font-bold text-green-600">10,500 BDT</td>
+                <tr className="border-b font-bold text-green-600">
+                  <td className="px-1 py-0.5 md:px-2 md:py-1">Total Profit</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-right">10,500</td>
                 </tr>
                 <tr className="border-b bg-gray-50">
-                  <td className="px-2 py-1.5 text-gray-700">Maintenance Charge (10%)</td>
-                  <td className="px-2 py-1.5 text-right font-semibold">1,050 BDT</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-gray-700">Maintenance(10%)</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-right">1,050</td>
                 </tr>
-                <tr className="border-b">
-                  <td className="px-2 py-1.5 text-gray-700 font-semibold">Net Profit</td>
-                  <td className="px-2 py-1.5 text-right font-bold text-blue-600">9,450 BDT</td>
+                <tr className="border-b font-bold text-blue-600">
+                  <td className="px-1 py-0.5 md:px-2 md:py-1">Net Profit</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-right">9,450</td>
                 </tr>
-                <tr className="bg-[#E291BE] text-white">
-                  <td className="px-2 py-1.5 font-bold">Restaurant Share (50%)</td>
-                  <td className="px-2 py-1.5 text-right font-bold">4,725 BDT</td>
+                <tr className="bg-[#E291BE] text-white font-bold">
+                  <td className="px-1 py-0.5 md:px-2 md:py-1">Rest. Share(50%)</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-right">4,725</td>
                 </tr>
               </tbody>
             </table>
@@ -148,63 +147,62 @@ const ProfitCalculationAISection = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200"
+            className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200"
           >
             <div className="text-center py-0.5 border-b border-gray-100">
-              <h3 className="text-[10px] font-medium text-gray-900">I3 Technologies Business Model(Use-Case)</h3>
-              <p className="text-[9px] text-gray-600">Sohub</p>
-              <p className="text-[9px] text-gray-500">(Weekly Report)</p>
+              <h3 className="text-[7px] md:text-[10px] font-medium text-gray-900 leading-tight">I3 Technologies(Use-Case)</h3>
+              <p className="text-[6px] md:text-[9px] text-gray-500">(Weekly Report)</p>
             </div>
             
-            <div className="bg-[#E291BE] text-white text-center py-0.5 font-medium text-[10px]">
-              I3 Technologies & ABC Company
+            <div className="bg-[#E291BE] text-white text-center py-0.5 font-medium text-[7px] md:text-[10px]">
+              I3 Technologies & ABC
             </div>
             
-            <div className="bg-blue-100 text-center py-0.5 font-medium text-[10px]">
+            <div className="bg-blue-100 text-center py-0.5 font-medium text-[7px] md:text-[10px]">
               Coin Details
             </div>
             
             <table className="w-full">
-              <tbody className="text-xs">
+              <tbody className="text-[6px] xs:text-[7px] sm:text-[9px] md:text-xs">
                 <tr className="border-b">
-                  <td className="px-2 py-1.5 text-gray-700">Coin Count</td>
-                  <td className="px-2 py-1.5 text-right font-semibold">840</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-gray-700">Coin Count</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-right font-semibold">840</td>
                 </tr>
                 <tr className="border-b bg-gray-50">
-                  <td className="px-2 py-1.5 text-gray-700">Coin Rate</td>
-                  <td className="px-2 py-1.5 text-right font-semibold">25 BDT</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-gray-700">Coin Rate</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-right font-semibold">25 BDT</td>
                 </tr>
                 <tr className="border-b">
-                  <td className="px-2 py-1.5 text-gray-700">Total Sales (TK)</td>
-                  <td className="px-2 py-1.5 text-right font-semibold">21,000 BDT</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-gray-700 font-semibold">Total Sales TK</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-right font-semibold">21,000</td>
                 </tr>
                 <tr className="border-b bg-gray-50">
-                  <td className="px-2 py-1.5 text-gray-700">Prize out Ratio</td>
-                  <td className="px-2 py-1.5 text-right font-semibold">8.3%</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-gray-700">Prize out Ratio</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-right font-semibold">8.3%</td>
                 </tr>
                 <tr className="border-b">
-                  <td className="px-2 py-1.5 text-gray-700">Doll Rate</td>
-                  <td className="px-2 py-1.5 text-right font-semibold">150 BDT</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-gray-700">Doll Rate</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-right font-semibold">150 BDT</td>
                 </tr>
                 <tr className="border-b bg-gray-50">
-                  <td className="px-2 py-1.5 text-gray-700">Total Doll Cost</td>
-                  <td className="px-2 py-1.5 text-right font-semibold">10,500 BDT</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-gray-700">Total Doll Cost</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-right font-semibold">10,500</td>
                 </tr>
-                <tr className="border-b">
-                  <td className="px-2 py-1.5 text-gray-700 font-semibold">Total Profit (Total Sales-Doll Cost)</td>
-                  <td className="px-2 py-1.5 text-right font-bold text-green-600">10,500 BDT</td>
+                <tr className="border-b font-bold text-green-600">
+                  <td className="px-1 py-0.5 md:px-2 md:py-1">Total Profit</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-right">10,500</td>
                 </tr>
                 <tr className="border-b bg-gray-50">
-                  <td className="px-2 py-1.5 text-gray-700">10% Maintenance Charge</td>
-                  <td className="px-2 py-1.5 text-right font-semibold">1,050 BDT</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-gray-700">Maintenance(10%)</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-right">1,050</td>
                 </tr>
-                <tr className="border-b">
-                  <td className="px-2 py-1.5 text-gray-700 font-semibold">Net Profit</td>
-                  <td className="px-2 py-1.5 text-right font-bold text-blue-600">9,450 BDT</td>
+                <tr className="border-b font-bold text-blue-600">
+                  <td className="px-1 py-0.5 md:px-2 md:py-1">Net Profit</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-right">9,450</td>
                 </tr>
-                <tr className="bg-[#E291BE] text-white">
-                  <td className="px-2 py-1.5 font-bold">Restaurant Share (50%)</td>
-                  <td className="px-2 py-1.5 text-right font-bold">4,725 BDT</td>
+                <tr className="bg-[#E291BE] text-white font-bold">
+                  <td className="px-1 py-0.5 md:px-2 md:py-1">Rest. Share(50%)</td>
+                  <td className="px-1 py-0.5 md:px-2 md:py-1 text-right">4,725</td>
                 </tr>
               </tbody>
             </table>

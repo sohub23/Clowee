@@ -129,6 +129,12 @@
     animation-play-state: running !important;
   }
 
+  @media (max-width: 768px) {
+    .scroll-right, .scroll-left {
+      animation-duration: 15s !important;
+    }
+  }
+
   @keyframes scrollRight {
     0% {
       transform: translateX(0%);
