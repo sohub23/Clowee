@@ -1,5 +1,6 @@
 import { Facebook, Youtube, MessageCircle, Instagram } from "lucide-react";
 import logoImage from "@/components/landing/clowee-navbar.png";
+import QRExpandable from "./QRExpandable";
 
 const Footer = () => (
   <footer className="py-8 px-4" style={{ backgroundColor: '#E291BE' }}>
@@ -54,15 +55,16 @@ const Footer = () => (
         </div>
 
         {/* Contact Info Above Scanner */}
-        <div className="text-center mb-4">
-          <div className="bg-white/10 rounded-lg px-3 py-2 inline-block">
+        <div className="text-center mb-6">
+          <div className="bg-white/10 rounded-lg px-3 py-2 inline-block mb-4">
             <a href="mailto:support@i3technologies.com.bd" className="text-white text-xs font-medium hover:text-white/80 transition-colors">
               support@i3technologies.com.bd
             </a>
           </div>
+          <div className="flex justify-center">
+            <QRExpandable size="sm" />
+          </div>
         </div>
-
-
       </div>
 
       {/* Desktop Layout */}
@@ -138,6 +140,11 @@ const Footer = () => (
             </ul>
           </div>
 
+          {/* QR Code Section */}
+          <div className="flex flex-col items-start md:items-end justify-start">
+            <h3 className="font-heading font-bold text-white mb-4">Hotscan</h3>
+            <QRExpandable size="md" />
+          </div>
 
         </div>
       </div>
