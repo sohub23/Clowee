@@ -12,12 +12,6 @@ import kolapata from "@/assets/7. Kolapata.png";
 import chillox from "@/assets/Chillox.jpg";
 import madChef from "@/assets/Mad chef.png";
 
-// Additional restaurant images
-import img4 from "./4.jpeg";
-import img9 from "./9.jpeg";
-import img10 from "./10.jpeg";
-import img12 from "./12.jpeg";
-
 const partners = [
   {
     name: "Pizzaburg Dhanmondi",
@@ -63,26 +57,6 @@ const partners = [
     name: "Mad Chef",
     location: "Dhaka",
     image: madChef,
-  },
-  {
-    name: "Chef Mate Lounge",
-    location: "Dhaka",
-    image: img4,
-  },
-  {
-    name: "MadChef",
-    location: "Dhaka",
-    image: img9,
-  },
-  {
-    name: "Restaurant Partner 10",
-    location: "Dhaka",
-    image: img10,
-  },
-  {
-    name: "Restaurant Partner 12",
-    location: "Dhaka",
-    image: img12,
   },
 ];
 
